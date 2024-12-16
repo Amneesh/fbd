@@ -19,6 +19,13 @@
         <h1 class="visually-hidden"> Header</h1>
 
 
+        <!-- <div class="bg-video">
+            <video muted loop autoplay>
+                <source src="./resources/videos/fbd-landing.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div> -->
+
 
         <div class="header-bar">
 
@@ -37,24 +44,23 @@
 
                     <ol class="nav">
                         <li class="item"><a class="header-link" href="#about">About</a></li>
-                        <li class="item"><a class="header-link" href="#experience">Experience</a>
-                        <li class="item"><a class="header-link" href="#skills">Skills</a></li>
+                        <li class="item"><a class="header-link" href="#services">SERVICES</a>
+                        <li class="item"><a class="header-link" href="#skills">OFFERINGS</a></li>
                         <li class="item"><a class="header-link" href="#contactUs">CONTACT US</a>
-                        <li class="item"><a href="./resources/Resume-PDF/ASResume.pdf" download>Resume
-                                Download</a></li>
+
                     </ol>
 
                 </div>
 
             </div>
+
             <div class="desktop-mobile-header">
                 <ul class="nav">
                     <li class="item"><a class="header-link" href="#about">About</a></li>
-                    <li class="item"><a class="header-link" href="#experience">Experience</a>
-                    <li class="item"><a class="header-link" href="#skills">Skills</a></li>
+                    <li class="item"><a class="header-link" href="#services">SERVICES</a>
+                    <li class="item"><a class="header-link" href="#skills">OFFERINGS</a></li>
                     <li class="item"><a class="header-link" href="#contactUs">CONTACT US</a>
-                    <li class="item"><a href="./resources/Resume-PDF/ASResume.pdf" download>Resume
-                            Download</a></li>
+
                 </ul>
             </div>
 
@@ -64,7 +70,11 @@
         <div class="header-description">
 
             <div class="header-description-image">
-                <img src="./resources/images/bhangra-group.png" alt="">
+                <!-- <img src="./resources/images/bhangra-group.png" alt=""> -->
+                <video muted loop autoplay>
+                    <source src="./resources/videos/bhangra-landing.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
             <div class="header-description-content">
@@ -75,6 +85,32 @@
                 <div class="button-container">
                     <button class="bhangra-button" onclick="scrollToSection('contactUs')">JOIN FBD</button>
                     <button class="bhangra-button-inverse">Watch Demo <i class="fa-solid fa-play"></i></button>
+                </div>
+
+                <div class="counter-section">
+                    <div id="counter">
+                        <div class="item">
+                            <div class="count-number">
+                                <p class="count" data-number="100"></p>
+                                <h1>+</h1>
+                            </div>
+                            <h3 class="text">Clients</h3>
+                        </div>
+                        <div class="item">
+                            <div class="count-number">
+                                <p class="count" data-number="10"></p>
+                                <h1>+</h1>
+                            </div>
+                            <h3 class="text">Competitions</h3>
+                        </div>
+                        <div class="item">
+                            <div class="count-number">
+                                <p class="count" data-number="5"></p>
+                                <h1>+</h1>
+                            </div>
+                            <h3 class="text">Teams</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,44 +123,102 @@
     <main>
 
 
-        <section class="bhangra-male-group">
+        <!-- <section class="bhangra-male-group">
             <h2 class="visually-hidden">bhangra male group</h2>
 
             <div class="bhangra-male-group-image">
-
+        
             </div>
-        </section>
+        </section> -->
 
-        <section class="what-we-offer">
+        <section class="what-we-offer" id="services">
             <h2>WHAT WE OFFER</h2>
 
             <div class="what-we-offer-content">
 
+                <div class="bhangra-card">
+                    <div class="bhangra-card-image">
+                        <video muted loop autoplay>
+                            <source src="./resources/videos/bhangra-video-classes.MP4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="bhangra-card-content">
+                        <h4>Bhangra Classes</h4>
+                        <p>Fun, engaging lessons for all ages and skill levels.</p>
+                    </div>
+                </div>
+
+                <div class="bhangra-card">
+                    <div class="bhangra-card-image">
+                        <img src="./resources/images/bhangra-kid-illustration.jpeg" alt="bhnagra-kid">
+                    </div>
+                    <div class="bhangra-card-content">
+                        <h4>Dance for Fitness</h4>
+                        <p>Get fit while having fun to the energetic beats of Punjabi music.</p>
+                    </div>
+                </div>
+
+                <div class="bhangra-card">
+                    <div class="bhangra-card-image">
+                        <video muted loop autoplay>
+                            <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="bhangra-card-content">
+                        <h4>Live Performances</h4>
+                        <p>Shine on stage at cultural events, shows, and competitions.</p>
+                    </div>
+                </div>
+
+                <div class="bhangra-card">
+                    <div class="bhangra-card-image">
+                        <img src="./resources/images/bhangra-kid-illustration.jpeg" alt="bhnagra-kid">
+                    </div>
+                    <div class="bhangra-card-content">
+                        <h4>Custom Workshops</h4>
+                        <p>Add Bhangra to your events with tailored sessions for any occasion.</p>
+                    </div>
+                </div>
+
+
             </div>
         </section>
 
-        <section class="bhangra-group-video">
+        <!-- <section class="bhangra-group-video">
             <h2 class="visually-hidden">bhangra group video</h2>
             <div class="bhangra-group-video-container">
                 <video muted loop autoplay>
-                    <source src="./resources/videos/bhangra-video-1.mov"
-                        type="video/mp4">
+                    <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
             <div class="content">
                 <h3>Experience the energy of Bhangra with our expert instructors</h3>
             </div>
-        </section>
+        </section> -->
 
-        <section class="about-us-section">
-            <h2 class="visually-hidden">about us</h2>
-            <div class="about-section">
-                <div class="about-div">
+        <section class="meet-our-instructor">
+            <h2>meet our instructor</h2>
+            <div class="meet-our-instructor-container">
+                <div class="meet-our-instructor-image">
+                    <img src="./resources/images/fbd-coach.jpeg" alt="instructor">
+                </div>
+                <div class="meet-our-instructor-content">
+                    <h4>Bhupinder Singh</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio obcaecati assumenda ullam
+                        vel quidem at libero voluptatem eum aliquam sint!
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio obcaecati assumenda ullam
+                        vel quidem at libero voluptatem eum aliquam sint!</p>
+                    <p class="instructor-social-media"> <a
+                            href="https://www.instagram.com/bhupindersingh.fbd?igsh=bnJqa3UwODZjcDF1" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
 
-                    
+                        </a> /bhupindersingh.fbd</p>
                 </div>
             </div>
+
         </section>
 
 
@@ -133,113 +227,322 @@
         <section class="content-section">
             <h2 class="visually-hidden">content</h2>
             <div class="content-container">
-                <div class="content-videos">
 
-                    <article>
-                        <h3 class="visually-hidden">Our Mission</h3>
+                <div class="content-text-container">
 
-
-                        <div class="card">
-
-                            <div class="btn1"></div>
-                            <div class="btn2"></div>
-                            <div class="btn3"></div>
-                            <div class="btn4"></div>
-                            <div class="card-int">
-                                <video controls>
-                                    <source src="./resources/videos/bhangra-video-reel-1.MP4"
-                                        type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="top">
-                                <div class="camera">
-                                    <div class="int"></div>
-                                </div>
-                                <div class="speaker"></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article>
-                        <h3 class="visually-hidden">Our Mission</h3>
-
-
-                        <div class="card">
-
-                            <div class="btn1"></div>
-                            <div class="btn2"></div>
-                            <div class="btn3"></div>
-                            <div class="btn4"></div>
-                            <div class="card-int">
-                                <video controls>
-                                    <source src="./resources/videos/bhangra-video-reel-1.MP4"
-                                        type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="top">
-                                <div class="camera">
-                                    <div class="int"></div>
-                                </div>
-                                <div class="speaker"></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article>
-                        <h3 class="visually-hidden">Our Mission</h3>
-
-
-                        <div class="card">
-
-                            <div class="btn1"></div>
-                            <div class="btn2"></div>
-                            <div class="btn3"></div>
-                            <div class="btn4"></div>
-                            <div class="card-int">
-                                <video controls>
-                                    <source src="./resources/videos/bhangra-video-reel-1.MP4"
-                                        type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="top">
-                                <div class="camera">
-                                    <div class="int"></div>
-                                </div>
-                                <div class="speaker"></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article>
-                        <h3 class="visually-hidden">Our Mission</h3>
-
-
-                        <div class="card">
-
-                            <div class="btn1"></div>
-                            <div class="btn2"></div>
-                            <div class="btn3"></div>
-                            <div class="btn4"></div>
-                            <div class="card-int">
-                                <video controls>
-                                    <source src="./resources/videos/bhangra-video-reel-1.MP4"
-                                        type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="top">
-                                <div class="camera">
-                                    <div class="int"></div>
-                                </div>
-                                <div class="speaker"></div>
-                            </div>
-                        </div>
-                    </article>
-                    
+                    <div class="mySlideContent">
+                        <h4>Lorem</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate delectus ipsum est
+                            distinctio, quod ipsam esse non minus officia!</p>
+                    </div>
+                    <div class="mySlideContent">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat consequatur, quis quam
+                            aperiam aliquam ut.
+                        </p>
+                    </div>
+                    <div class="mySlideContent">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, sunt aliquid fugit
+                            odit cum at molestias voluptatem. Pariatur necessitatibus ex nulla, esse maiores sit fugiat
+                            commodi, vero dolorem debitis sequi quis perspiciatis itaque earum perferendis, libero
+                            aperiam natus odit? Non.</p>
+                    </div>
                 </div>
+
+                <div class="content-carousel">
+                    <div class="slideshow-container">
+
+                        <div class="mySlides fade">
+
+                            <div class="card">
+
+                                <div class="btn1"></div>
+                                <div class="btn2"></div>
+                                <div class="btn3"></div>
+                                <div class="btn4"></div>
+                                <div class="card-int">
+                                    <video controls>
+                                        <source src="./resources/videos/bhangra-video-reel-1.MP4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="top">
+                                    <div class="camera">
+                                        <div class="int"></div>
+                                    </div>
+                                    <div class="speaker"></div>
+                                </div>
+                            </div>
+
+                            <div class="text">
+                                <p>Caption Text</p>
+                            </div>
+                        </div>
+
+                        <div class="mySlides fade">
+
+                            <div class="card">
+
+                                <div class="btn1"></div>
+                                <div class="btn2"></div>
+                                <div class="btn3"></div>
+                                <div class="btn4"></div>
+                                <div class="card-int">
+                                    <video controls>
+                                        <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="top">
+                                    <div class="camera">
+                                        <div class="int"></div>
+                                    </div>
+                                    <div class="speaker"></div>
+                                </div>
+                            </div>
+
+                            <div class="text">
+                                <p>Caption Two</p>
+                            </div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="card">
+                                <div class="btn1"></div>
+                                <div class="btn2"></div>
+                                <div class="btn3"></div>
+                                <div class="btn4"></div>
+                                <div class="card-int">
+                                    <video controls>
+                                        <source src="./resources/videos/bhangra-video-reel-1.MP4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="top">
+                                    <div class="camera">
+                                        <div class="int"></div>
+                                    </div>
+                                    <div class="speaker"></div>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p>Caption Three</p>
+                            </div>
+                        </div>
+
+
+                        <div class="carousel-buttons">
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                            <div class="carousel-dot-buttons">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                        </div>
+
+                    </div>
+                    <br>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2 class="visually-hidden">REVIEWS</h2>
+            <div class="review-section-container">
+
+                <div class="scroll-container">
+                    <!-- <div class="scroll-review-container"> -->
+                    <div class="scroll-review-container" id="reviewContainer">
+                        <!-- Review cards will be dynamically inserted here -->
+                    </div>
+
+                    <!-- <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+
+                            <div class="review-card-header" >
+                                <div class="review-card-rating-star">
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                    <span class="review-star">★</span>
+                                </div>
+                                <div class="review-card-avatar">
+                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
+                                </div>
+                            </div>
+
+                            <div class="review-card-body">
+                                <div class="review-card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
+                                </div>
+
+                            </div>
+                            <div class="review-card-footer">
+                                <div class="review-card-time">
+                                    <p>5 months ago</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    <!-- Add more cards as needed -->
+                    <!-- </div> -->
+                </div>
+
             </div>
         </section>
 
