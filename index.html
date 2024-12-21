@@ -10,10 +10,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 </head>
 
 <body>
+
+    <section class="banner-landing">
+        <h2 class="visually-hidden">landing bannenr</h2>
+        <div class="banner-main">
+            <div class="banner-video">
+                <video class="banner-video-" muted loop autoplay playsinline >
+                    <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="banner-container">
+
+                <div class="banner-header">
+
+                    <ul class="nav">
+                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link" href="#about">About</a>
+                        </li>
+                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link"
+                                href="#services">SERVICES</a>
+                        <li class="item-logo" data-aos="zoom-out-up">
+                            <div class="coin-content">
+                                <div class="coin">
+                                    <div class="side heads">
+                                        <img src="./resources/images/bhangra-logo.png" alt="">
+                                    </div>
+                                    <div class="side tails">
+                                        <img src="./resources/images/bhangra-logo.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link"
+                                href="#skills">OFFERINGS</a></li>
+                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link"
+                                href="#contactUs">CONTACT</a>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="banner-sub-content">
+            <div class="banner-sub-content-text">
+                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam debitis architecto atque corrupti
+                    molestiae! Nostrum, facilis. Dolores nulla quae eum.</h3>
+
+            </div>
+        </div>
+
+    </section>
 
     <header class="header-section">
         <h1 class="visually-hidden"> Header</h1>
@@ -31,9 +84,9 @@
 
 
             <div class="header-nav">
-                <div class="header-logo">
+                <!-- <div class="header-logo">
                     <img src="./resources/images/bhangra-logo.png" alt="">
-                </div>
+                </div> -->
 
 
                 <div class="bloom-mobile-header" id="header-menu-mobile">
@@ -50,11 +103,14 @@
 
                     </ol>
 
+                    <button class="bhangra-button" onclick="scrollToSection('contactUs')">JOIN FBD</button>
+
+
                 </div>
 
             </div>
 
-            <div class="desktop-mobile-header">
+            <!-- <div class="desktop-mobile-header">
                 <ul class="nav">
                     <li class="item"><a class="header-link" href="#about">About</a></li>
                     <li class="item"><a class="header-link" href="#services">SERVICES</a>
@@ -62,7 +118,7 @@
                     <li class="item"><a class="header-link" href="#contactUs">CONTACT US</a>
 
                 </ul>
-            </div>
+            </div> -->
 
 
         </div>
@@ -71,7 +127,7 @@
 
             <div class="header-description-image">
                 <!-- <img src="./resources/images/bhangra-group.png" alt=""> -->
-                <video muted loop autoplay>
+                <video muted loop autoplay playsinline>
                     <source src="./resources/videos/bhangra-landing.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -123,6 +179,7 @@
     <main>
 
 
+
         <!-- <section class="bhangra-male-group">
             <h2 class="visually-hidden">bhangra male group</h2>
 
@@ -138,7 +195,7 @@
 
                 <div class="bhangra-card">
                     <div class="bhangra-card-image">
-                        <video muted loop autoplay>
+                        <video muted loop autoplay playsinline>
                             <source src="./resources/videos/bhangra-video-classes.MP4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -161,7 +218,7 @@
 
                 <div class="bhangra-card">
                     <div class="bhangra-card-image">
-                        <video muted loop autoplay>
+                        <video muted loop autoplay playsinline>
                             <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -260,7 +317,7 @@
                                 <div class="btn3"></div>
                                 <div class="btn4"></div>
                                 <div class="card-int">
-                                    <video controls>
+                                    <video controls playsinline>
                                         <source src="./resources/videos/bhangra-video-reel-1.MP4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -287,7 +344,7 @@
                                 <div class="btn3"></div>
                                 <div class="btn4"></div>
                                 <div class="card-int">
-                                    <video controls>
+                                    <video controls playsinline>
                                         <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -312,7 +369,7 @@
                                 <div class="btn3"></div>
                                 <div class="btn4"></div>
                                 <div class="card-int">
-                                    <video controls>
+                                    <video controls playsinline>
                                         <source src="./resources/videos/bhangra-video-reel-1.MP4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
