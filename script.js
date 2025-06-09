@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const reviews = [
   {
     rating: 5,
+  name: "Harpreet Saini",
     content: "Excellent experience with fanbhangrede . they did really gud we want learn choreography again from fanbhangrede . The choreography they taught that was awesome everyone praised .",
     time: "4 months ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-1.png",
@@ -95,13 +96,15 @@ const reviews = [
   },
   {
     rating: 5,
-    content: "Bhangra enjoyable classes and amazing we all had fun learning our beautiful routine thank you Bhupinder and team 👍",
+  name: 'gursewak singh',
+    content: "Bhangra enjoyable classes and amazing we all had fun learning our beautiful routine thank you Bhupinder and team",
     time: "5 months ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-2.png",
     link: "https://g.co/kgs/x3xsiGx"
   },
   {
     rating: 5,
+  name: 'Hitesh Arora',
     content: "Great place for Bhangra lovers. The instructor Bhupinder Singh is really energetic and skilled, making the dance steps easy to follow. The music is lively, creating a fantastic atmosphere. Great workout and cultural experience – highly recommend!",
     time: "11 month ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-3.png",
@@ -109,45 +112,45 @@ const reviews = [
   },
   {
     rating: 5,
+  name: 'Jaspreet Kaur',
     content: "These Bhangra classes for kids are a fantastic way to introduce young ones to the lively and colorful world of dance. The energy and enthusiasm in the classes make learning Bhangra a truly enjoyable experience for children, combining fun with cultural learning. I highly recommend these classes for any kids interested in exploring the vibrant art of Bhangra!",
     time: "11 month ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-4.png",
     link: "https://g.co/kgs/eoPY4ZB"
   },
-
   {
     rating: 5,
+  name: 'HARVINDER SINGH',
     content: "Bhangra class has an amazing crowd and a well-trained instructor. It's always fun to learn under the supervision of a skilled teacher. Will highly recommend Instructor Mr. Bhupinder Singh.",
     time: "5 month ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-5.png",
     link: "https://g.co/kgs/pJsTp3a"
   },
-
   {
     rating: 5,
-    content: "Enjoyable classes! You learn bhangra steps  while having fun! The instructor Bhupinder explains the steps and corrects my errors in a nice calm manner. I would definitely recommend joining the Rpd Academy classes",
+  name: 'Sony',
+    content: "Enjoyable classes! You learn bhangra steps while having fun! The instructor Bhupinder explains the steps and corrects my errors in a nice calm manner. I would definitely recommend joining the Rpd Academy classes",
     time: "11 month ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-6.png",
     link: "https://g.co/kgs/n6Fcxik"
   },
-
   {
     rating: 5,
+  name: 'Raman Brar',
     content: "Fan Bhangra de whole team is very awesome. Bhupinder was very generous and cooperative. Team did community event at our site within very short notice. Well performed. Thanks to the whole team for making our Vaisakhi event more enjoyable and memorable.",
     time: "8 month ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-7.png",
     link: "https://g.co/kgs/RYsw8uB"
   },
-
   {
     rating: 5,
+  name: 'Manpreet Kaur',
     content: "Best place to learn Bhangra as well as gidha. The coaches are really talented and they provide you needed training accordingly. This place will not only boost your confidence in dancing but will also motivate you to learn new dance skills everyday.",
     time: "1 year ago",
     avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-8.png",
     link: "https://g.co/kgs/ZPTMwwN"
   },
-
-];
+]
 
 // Function to truncate text
 function truncateText(text, maxLength) {
@@ -166,18 +169,36 @@ function generateReviewCards() {
     reviewCard.className = 'review-card';
 
     // Limit the review content to 100 characters
-    const limitedContent = truncateText(review.content, 50);
+    const limitedContent = truncateText(review.content, 150);
 
     // Create elements for review card
     const reviewCardHeader = document.createElement('div');
     reviewCardHeader.className = 'review-card-header';
     reviewCardHeader.innerHTML = `
-          <div class="review-card-rating-star">
-              ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)} <!-- Display stars -->
-          </div>
-          <div class="review-card-avatar">
-              <img src="${review.avatar}" alt="User Avatar">
-          </div>
+
+                                <div class="review-card-left-content-header">
+                                    <div class="review-card-avatar">
+                                    
+ <img src="${review.avatar}" alt="User Avatar">
+                                      </div>
+                                     <div class="review-card-name-time">
+                                       <div class="review-card-name">  <p>${review.name}</p></div>
+                                       <div class="review-card-time"><p>${review.time}</p></div>
+                                     </div>
+                                </div>
+                                <div class="review-card-right-content-header">
+                                    <a href="${review.link}" target= "_blank">
+                                              <img src="./resources/images/google-icon-review.png" alt="">
+    
+                                    </a>
+                                </div>
+
+                               
+                               
+
+    
+          
+         
       `;
 
     const reviewCardBody = document.createElement('div');
@@ -185,7 +206,12 @@ function generateReviewCards() {
 
     const limitedContentDiv = document.createElement('div');
     limitedContentDiv.className = 'review-card-content';
-    limitedContentDiv.innerHTML = `<p>${limitedContent}</p>`;
+    limitedContentDiv.innerHTML = `
+     <div class="review-card-rating-star">
+              ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)} <!-- Display stars -->
+          </div>
+    <p>${limitedContent}</p>
+    `;
 
     const fullContentDiv = document.createElement('div');
     fullContentDiv.className = 'full-content';
@@ -215,20 +241,11 @@ function generateReviewCards() {
     reviewCardBody.appendChild(toggleButton);
 
     const reviewCardFooter = document.createElement('div');
-    reviewCardFooter.className = 'review-card-footer';
-    reviewCardFooter.innerHTML = `
-          <div class="review-card-time">
-              <p>${review.time}</p>
-          </div>
-          <div class="review-card-link">
-              <a href="${review.link}" target= "_blank"><i class="fa-solid fa-circle-info"></i></a>
-          </div>
-      `;
+    
 
     // Append all parts to the review card
     reviewCard.appendChild(reviewCardHeader);
     reviewCard.appendChild(reviewCardBody);
-    reviewCard.appendChild(reviewCardFooter);
 
     // Append the review card to the container
     reviewContainer.appendChild(reviewCard);
@@ -301,3 +318,91 @@ arr.map(function (item) {
 })
 
 // counter
+
+
+// const { ScrollObserver, valueAtPercentage } = aat
+
+// const cardsContainer = document.querySelector('.cards')
+// const cards = document.querySelectorAll('.card')
+// cardsContainer.style.setProperty('--cards-count', cards.length)
+// cardsContainer.style.setProperty(
+//   '--card-height',
+//   `${cards[0].clientHeight}px`
+// )
+// Array.from(cards).forEach((card, index) => {
+//   const offsetTop = 20 + index * 20
+//   card.style.paddingTop = `${offsetTop}px`
+//   if (index === cards.length - 1) {
+//     return
+//   }
+//   const toScale = 1 - (cards.length - 1 - index) * 0.1
+//   const nextCard = cards[index + 1]
+//   const cardInner = card.querySelector('.card__inner')
+//   ScrollObserver.Element(nextCard, {
+//     offsetTop,
+//     offsetBottom: window.innerHeight - card.clientHeight
+//   }).onScroll(({ percentageY }) => {
+//     cardInner.style.scale = valueAtPercentage({
+//       from: 1,
+//       to: toScale,
+//       percentage: percentageY
+//     })
+//     cardInner.style.filter = `brightness(${valueAtPercentage({
+//       from: 1,
+//       to: 0.6,
+//       percentage: percentageY
+//     })})`
+//   })
+// })
+
+gsap.registerPlugin(ScrollTrigger);
+
+const wrapper = document.querySelector('.horizontal-scroll-wrapper');
+const cards = gsap.utils.toArray('.services-card');
+const totalScrollWidth = wrapper.scrollWidth - window.innerWidth;
+
+// Create horizontal scroll animation
+gsap.to(wrapper, {
+  x: () => -totalScrollWidth,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".horizontal-scroll-container",
+    pin: true,
+    scrub: 1,
+    end: () => "+=" + totalScrollWidth,
+  }
+});
+
+// Function to detect and highlight the center card
+function updateActiveCard() {
+  const centerX = window.innerWidth / 2;
+
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.left + rect.width / 2;
+    const distance = Math.abs(centerX - cardCenter);
+
+    if (distance < rect.width / 2) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+}
+
+// Update active card on scroll
+ScrollTrigger.addEventListener('scroll', updateActiveCard);
+window.addEventListener('load', updateActiveCard);
+
+gsap.to(".panel-2", {
+  yPercent: -100,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".panel-1",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    pin: true,
+    anticipatePin: 1
+  }
+});

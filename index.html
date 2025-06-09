@@ -1,130 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fan Bhangre Da</title>
     <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aatjs@0.0.3/dist/aat.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-yH8ek+t9RwY+hlW/cBoBPmN2OyLVzkW2QG9k9nQaR9aT7aJ+qUrGC/8EPnBRP+AwBT7b2a/9Ytc9hklKnz8/hQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
 
-
-</head>
-
-<body>
-
+  <body>
     <section class="banner-discount">
-        <h2 class="visually-hidden">discount bannenr</h2>
-        <div class="banner-container-discount">
-            <div class="discount-text">
-                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium molestias non dignissimos
-                    expedita ea consectetur veniam maiores quae.</h4>
-                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium molestias non dignissimos
-                    expedita ea consectetur veniam maiores quae.</h4>
-
-            </div>
-
+      <h2 class="visually-hidden">discount bannenr</h2>
+      <div class="banner-container-discount">
+        <div class="discount-text">
+          <h4>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            molestias non dignissimos expedita ea consectetur veniam maiores
+            quae.
+          </h4>
+          <h4>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            molestias non dignissimos expedita ea consectetur veniam maiores
+            quae.
+          </h4>
         </div>
+      </div>
     </section>
 
     <section class="banner-landing">
-        <h2 class="visually-hidden">landing bannenr</h2>
-        <div class="banner-main">
-            <div class="banner-video">
-                <video class="banner-video-" muted loop autoplay playsinline>
-                    <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
-                </video>
-            </div>
+      <h2 class="visually-hidden">landing bannenr</h2>
+      <div class="banner-main">
+        <div class="banner-video">
+          <video class="banner-video-" muted loop autoplay playsinline>
+            <source
+              src="./resources/videos/bhangra-video-main-landing.MOV"
+              type="video/mp4"
+            />
+          </video>
+        </div>
 
-            <div class="banner-container">
+        <div class="banner-container">
+          <div class="banner-header">
+            <ul class="nav">
+              <li class="item-desktop" data-aos="zoom-out-up">
+                <a class="header-link" href="#about">About</a>
+              </li>
+              <li class="item-desktop" data-aos="zoom-out-up">
+                <a class="header-link" href="#services">SERVICES</a>
+              </li>
 
-                <div class="banner-header">
-
-                    <ul class="nav">
-                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link" href="#about">About</a>
-                        </li>
-                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link"
-                                href="#services">SERVICES</a>
-                        <li class="item-logo" data-aos="zoom-out-up">
-                            <div class="coin-content">
-                                <div class="coin">
-                                    <div class="side heads">
-                                        <img src="./resources/images/bhangra-logo.png" alt="">
-                                    </div>
-                                    <div class="side tails">
-                                        <img src="./resources/images/bhangra-logo.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link"
-                                href="#skills">OFFERINGS</a></li>
-                        <li class="item-desktop" data-aos="zoom-out-up"><a class="header-link"
-                                href="#contactUs">CONTACT</a>
-                    </ul>
-
+              <li class="item-logo" data-aos="zoom-out-up">
+                <div class="coin-content">
+                  <div class="coin">
+                    <div class="side heads">
+                      <img src="./resources/images/bhangra-logo.png" alt="" />
+                    </div>
+                    <div class="side tails">
+                      <img src="./resources/images/bhangra-logo.png" alt="" />
+                    </div>
+                  </div>
                 </div>
-
-            </div>
+              </li>
+              <li class="item-desktop" data-aos="zoom-out-up">
+                <a class="header-link" href="#instructor">OFFERINGS</a>
+              </li>
+              <li class="item-desktop" data-aos="zoom-out-up">
+                <a class="header-link" href="#contactUs">CONTACT</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="banner-sub-content">
-            <div class="banner-sub-content-text">
-                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam debitis architecto atque corrupti
-                    molestiae! Nostrum, facilis. Dolores nulla quae eum.</h3>
-
-            </div>
+      </div>
+      <div class="banner-sub-content">
+        <div class="banner-sub-content-text">
+          <h3>From stage to soul, we lead the way</h3>
+          <h3>We are Fan Bhangre De!</h3>
         </div>
-
+      </div>
     </section>
 
     <header class="header-section">
-        <h1 class="visually-hidden"> Header</h1>
+      <h1 class="visually-hidden">Header</h1>
 
-
-        <!-- <div class="bg-video">
+      <!-- <div class="bg-video">
             <video muted loop autoplay>
                 <source src="./resources/videos/fbd-landing.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div> -->
 
-
-        <div class="header-bar">
-
-
-            <div class="header-nav">
-                <!-- <div class="header-logo">
+      <div class="header-bar">
+        <div class="header-nav">
+          <!-- <div class="header-logo">
                     <img src="./resources/images/bhangra-logo.png" alt="">
                 </div> -->
 
-
-                <div class="bloom-mobile-header" id="header-menu-mobile">
-                    <div class="toggle-nav">
-                        <i class="fa-solid fa-bars" id="openNavButton"></i>
-                        <i class="fa-solid fa-xmark" id="closeNavButton"></i>
-                    </div>
-
-                    <ol class="nav">
-                        <li class="item"><a class="header-link" href="#about">About</a></li>
-                        <li class="item"><a class="header-link" href="#services">SERVICES</a>
-                        <li class="item"><a class="header-link" href="#skills">OFFERINGS</a></li>
-                        <li class="item"><a class="header-link" href="#contactUs">CONTACT US</a>
-
-                    </ol>
-
-                    <button class="bhangra-button-purple" onclick="scrollToSection('contactUs')">JOIN FBD</button>
-
-
-                </div>
-
+          <div class="bloom-mobile-header" id="header-menu-mobile">
+            <div class="toggle-nav">
+              <i class="fa-solid fa-bars" id="openNavButton"></i>
+              <i class="fa-solid fa-xmark" id="closeNavButton"></i>
             </div>
 
-            <!-- <div class="desktop-mobile-header">
+            <ol class="nav">
+              <li class="item">
+                <a class="header-link" href="#about">About</a>
+              </li>
+              <li class="item">
+                <a class="header-link" href="#services">SERVICES</a>
+              </li>
+              <li class="item">
+                <a class="header-link" href="#instructor">OFFERINGS</a>
+              </li>
+              <li class="item">
+                <a class="header-link" href="#contactUs">CONTACT US</a>
+              </li>
+            </ol>
+
+            <button
+              class="bhangra-button-purple"
+              onclick="scrollToSection('contactUs')"
+            >
+              JOIN FBD
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="desktop-mobile-header">
                 <ul class="nav">
                     <li class="item"><a class="header-link" href="#about">About</a></li>
                     <li class="item"><a class="header-link" href="#services">SERVICES</a>
@@ -133,589 +153,760 @@
 
                 </ul>
             </div> -->
+      </div>
 
+      <!-- <div class="team-image-section">
 
+        </div> -->
+      <div class="header-description">
+        <div class="video-card">
+          <div class="header-description-video">
+            <video muted loop autoplay playsinline>
+              <source
+                src="./resources/videos/bhangra-landing.MP4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
-        <div class="header-description">
-
-            <div class="header-description-image">
-                <!-- <img src="./resources/images/bhangra-group.png" alt=""> -->
-                <video muted loop autoplay playsinline>
-                    <source src="./resources/videos/bhangra-landing.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <div class="header-description-container">
+          <div class="header-description-content">
+            <h1>Learn Bhangra with <span> FAN BHANGRA DE</span></h1>
+            <h3>
+              Join our vibrant community and master the traditional Punjabi
+              dance from expert instructors.
+            </h3>
+            <div class="button-container">
+              <button
+                class="bhangra-button"
+                onclick="scrollToSection('contactUs')"
+              >
+                JOIN FBD
+              </button>
+              <button class="bhangra-button-inverse">
+                Watch Demo <i class="fa-solid fa-play"></i>
+              </button>
             </div>
-
-            <div class="header-description-content">
-                <h1>
-                    Learn Bhangra Dance with<span> FAN BHANGRA DA</span>
-                </h1>
-                <h3>Join our vibrant community and master the traditional Punjabi dance from expert instructors.</h3>
-                <div class="button-container">
-                    <button class="bhangra-button" onclick="scrollToSection('contactUs')">JOIN FBD</button>
-                    <button class="bhangra-button-inverse">Watch Demo <i class="fa-solid fa-play"></i></button>
+            <div class="counter-section">
+              <div id="counter">
+                <div class="item">
+                  <div class="count-number">
+                    <p class="count" data-number="100"></p>
+                    <h1>+</h1>
+                  </div>
+                  <h3 class="text">Clients</h3>
                 </div>
-
-                <div class="counter-section">
-                    <div id="counter">
-                        <div class="item">
-                            <div class="count-number">
-                                <p class="count" data-number="100"></p>
-                                <h1>+</h1>
-                            </div>
-                            <h3 class="text">Clients</h3>
-                        </div>
-                        <div class="item">
-                            <div class="count-number">
-                                <p class="count" data-number="10"></p>
-                                <h1>+</h1>
-                            </div>
-                            <h3 class="text">Competitions</h3>
-                        </div>
-                        <div class="item">
-                            <div class="count-number">
-                                <p class="count" data-number="5"></p>
-                                <h1>+</h1>
-                            </div>
-                            <h3 class="text">Teams</h3>
-                        </div>
-                    </div>
+                <div class="item">
+                  <div class="count-number">
+                    <p class="count" data-number="10"></p>
+                    <h1>+</h1>
+                  </div>
+                  <h3 class="text">Competitions</h3>
                 </div>
+                <div class="item">
+                  <div class="count-number">
+                    <p class="count" data-number="5"></p>
+                    <h1>+</h1>
+                  </div>
+                  <h3 class="text">Teams</h3>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-
-
-
-
+      </div>
     </header>
 
     <main>
+      
 
+      <section class="services-offer">
+        <h2 class="visually-hidden">Experience Our Signature Services</h2>
 
+        <div class="services-container">
+          <div class="left-offer-section">
+            <section class="horizontal-scroll-container">
+              <h2>Experience Our Signature Services</h2>
 
-        <!-- <section class="bhangra-male-group">
-            <h2 class="visually-hidden">bhangra male group</h2>
+              <div class="horizontal-scroll-wrapper">
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/kids-bhangra.MOV"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Junior Bhangra Program</h4>
+                    <!-- <p>Energetic and fun-filled Bhangra classes designed to introduce kids to the rhythm, culture, and confidence of Punjabi dance.</p> -->
+                  </div>
+                </div>
 
-            <div class="bhangra-male-group-image">
-        
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/1-1-training.mov"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Private 1-on-1 Bhangra Coaching</h4>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat.</p> -->
+                  </div>
+                </div>
+
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/professional-gidha.mov"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Professional Giddha Training</h4>
+                    <!-- <p>Master the grace and rhythm of Giddha with expert-led, performance-ready instruction.
+                      </p> -->
+                  </div>
+                </div>
+
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/live-singing-shows.MOV"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Cultural Fusion Shows</h4>
+                    <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
+                  </div>
+                </div>
+
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/bhangra-video-classes.MP4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Bhangra Fitness Sessions</h4>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit..</p> -->
+                  </div>
+                </div>
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/turban-tying.MOV"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Turban Tying Services</h4>
+                    <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
+                  </div>
+                </div>
+
+                <div class="services-card">
+                  <div class="services-card-video">
+                    <video muted loop autoplay playsinline>
+                      <source
+                        src="./resources/videos/choreography.MP4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="services-card-content">
+                    <h4>Custom Choreography</h4>
+                    <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- <div class="right-offer-section">
+                        <video class="service-video" muted loop autoplay playsinline>
+                            <source src="./resources/videos/bhangra-video-main-landing.MOV" type="video/mp4">
+                        </video>
+                    </div> -->
+        </div>
+      </section>
+
+      <section class="bhangra-male-group">
+
+    
+    </section>
+      <!-- <hr class="line-intersection"> -->
+
+      <section class="content-section">
+        <h2 class="visually-hidden">OUR SPECIALIZATION</h2>
+        <div class="content-container">
+          <div class="content-text-container">
+            <div class="mySlideContent">
+              <h1>Who Are We, Really?</h1>
+              <p>
+                Fan Bhangre De was founded in 2021 by Bhupinder Singh, a
+                passionate performer with a vision to promote authentic Punjabi
+                folk dance in the modern world. What began as a small dance
+                group has grown into a thriving community of learners and
+                performers. Over the past three years, we’ve trained students of
+                all ages, performed at major live events, and provided
+                choreography and dancers for weddings, cultural shows, and live
+                singers. With a focus on authenticity, energy, and excellence,
+                we’re proud to share the vibrant spirit of Punjab with every
+                beat.
+              </p>
+              <div class="slide-button">
+                <a href="#instructor" class="bhangra-button-inverse"
+                  >Meet the Instructor</a
+                >
+              </div>
             </div>
-        </section> -->
-
-        <section class="what-we-offer" id="services">
-            <h2>WHAT WE OFFER</h2>
-
-            <div class="what-we-offer-content">
-
-                <div class="bhangra-card">
-                    <div class="bhangra-card-image">
-                        <video muted loop autoplay playsinline>
-                            <source src="./resources/videos/bhangra-video-classes.MP4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="bhangra-card-content">
-                        <h4>Bhangra Classes</h4>
-                        <p>Fun, engaging lessons for all ages and skill levels.</p>
-                    </div>
-                </div>
-
-                <div class="bhangra-card">
-                    <div class="bhangra-card-image">
-                        <img src="./resources/images/bhangra-kid-illustration.jpeg" alt="bhnagra-kid">
-                    </div>
-                    <div class="bhangra-card-content">
-                        <h4>Bhangra Fitness Programs</h4>
-                        <p>Get fit while having fun to the energetic beats of Punjabi music.</p>
-                    </div>
-                </div>
-
-                <div class="bhangra-card">
-                    <div class="bhangra-card-image">
-                        <video muted loop autoplay playsinline>
-                            <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="bhangra-card-content">
-                        <h4>Live Performances</h4>
-                        <p>Shine on stage at cultural events, shows, and competitions.</p>
-                    </div>
-                </div>
-
-                <div class="bhangra-card">
-                    <div class="bhangra-card-image">
-                        <img src="./resources/images/bhangra-kid-illustration.jpeg" alt="bhnagra-kid">
-                    </div>
-                    <div class="bhangra-card-content">
-                        <h4>Custom Workshops</h4>
-                        <p>Add Bhangra to your events with tailored sessions for any occasion.</p>
-                    </div>
-                </div>
-
-
-                <div class="bhangra-card">
-                    <div class="bhangra-card-image">
-                        <video muted loop autoplay playsinline>
-                            <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="bhangra-card-content">
-                        <h4>Event Choreography</h4>
-                        <p>Tailored routines for weddings, sangeet nights, cultural programs, or corporate events.</p>
-                    </div>
-                </div>
-
-
-                <div class="bhangra-card">
-                    <div class="bhangra-card-image">
-                        <video muted loop autoplay playsinline>
-                            <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="bhangra-card-content">
-                        <h4>Online Classes and Virtual Fitness</h4>
-                        <p>Live-streamed or pre-recorded lessons for individuals unable to attend in-person sessions.
-                        </p>
-                    </div>
-                </div>
-
-
-
+            <div class="mySlideContent">
+              <h1>Why Join Fan Bhangre De?</h1>
+              <p>
+                Fan Bhangre De is more than a dance school — it’s a vibrant
+                community rooted deeply in Punjabi culture and Sikh traditions.
+                Our classes celebrate not only the energetic art of Bhangra and
+                Giddha but also the rich heritage, values, and spirituality that
+                unite us. Through dance, we honor our history, strengthen
+                community bonds, and pass down meaningful customs to every
+                generation. Join us to be part of a supportive family that
+                embraces culture, faith, and togetherness with every step.
+              </p>
             </div>
-        </section>
+            <div class="mySlideContent">
+              <h1>How Do You Join Our Cultural Family?
 
-        <!-- <section class="bhangra-group-video">
-            <h2 class="visually-hidden">bhangra group video</h2>
-            <div class="bhangra-group-video-container">
-                <video muted loop autoplay>
-                    <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
+              </h1>
+              <p>
+                Joining Fan Bhangre De means stepping into a warm, welcoming community that cherishes Punjabi culture, faith, and tradition. Here, dance is more than movement — it’s a celebration of identity and togetherness. Whether you’re a beginner or an experienced performer, you’ll find support, friendship, and a shared passion that connects generations. Through classes, events, and performances, we nurture not just skills but lifelong bonds rooted in respect, heritage, and joy. Become part of our family and keep the spirit of Punjab alive in every beat.
+              </p>
+              <div class="slide-button">
+                <a href="#contact" class="bhangra-button-inverse"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="content-carousel">
+            <div class="slideshow-container">
+              <div class="mySlides fade">
+                <div class="card">
+                  <div class="btn1"></div>
+                  <div class="btn2"></div>
+                  <div class="btn3"></div>
+                  <div class="btn4"></div>
+                  <div class="card-int">
+                    <video controls playsinline>
+                      <source
+                        src="./resources/videos/bhangra-video-reel-1.MP4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="top">
+                    <div class="camera">
+                      <div class="int"></div>
+                    </div>
+                    <div class="speaker"></div>
+                  </div>
+                </div>
+
+                <div class="text">
+                  <p>Caption Text</p>
+                </div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="card">
+                  <div class="btn1"></div>
+                  <div class="btn2"></div>
+                  <div class="btn3"></div>
+                  <div class="btn4"></div>
+                  <div class="card-int">
+                    <video controls playsinline>
+                      <source
+                        src="./resources/videos/bhangra-video-1.mov"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="top">
+                    <div class="camera">
+                      <div class="int"></div>
+                    </div>
+                    <div class="speaker"></div>
+                  </div>
+                </div>
+
+                <div class="text">
+                  <p>Caption Two</p>
+                </div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="card">
+                  <div class="btn1"></div>
+                  <div class="btn2"></div>
+                  <div class="btn3"></div>
+                  <div class="btn4"></div>
+                  <div class="card-int">
+                    <video controls playsinline>
+                      <source
+                        src="./resources/videos/contact-video.MP4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="top">
+                    <div class="camera">
+                      <div class="int"></div>
+                    </div>
+                    <div class="speaker"></div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>Caption Three</p>
+                </div>
+              </div>
+
+              <div class="carousel-buttons">
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <div class="carousel-dot-buttons">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </section>
+
+      <section class="meet-our-instructor" id="instructor">
+        <h2 class="visually-hidden">meet our instructor</h2>
+        <div class="instructor-wrapper">
+          <div class="instructor-logo">
+            <img src="./resources/images/bhangra-logo.png" alt="" />
+          </div>
+          <!-- <video autoplay muted loop playsinline class="background-video">
+                    <source src="./resources/videos/instructor-background.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="content">
-                <h3>Experience the energy of Bhangra with our expert instructors</h3>
-            </div>
-        </section> -->
-
-        <section class="meet-our-instructor">
-            <h2>meet our instructor</h2>
-            <div class="meet-our-instructor-container">
-                <div class="meet-our-instructor-image">
-                    <img src="./resources/images/fbd-coach.jpeg" alt="instructor">
+                  </video>  -->
+          <div class="meet-our-instructor-container">
+            <div class="meet-out-instructor-card">
+              <!-- <div class="owner-badge">
+                        <img src="./resources/images/owner-tag.png" alt="owner-tag">
+                    </div> -->
+              <div class="meet-our-instructor-image">
+                <img src="./resources/images/fbd-coach.png" alt="instructor" />
+                <!-- <video autoplay muted loop playsinline class="instructor-video">
+                            <source src="./resources/videos/instructor-bg.mov" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video> -->
+              </div>
+              <div class="meet-our-instructor-data">
+                <div class="quote">
+                  <blockquote>
+                    <p>
+                      It’s not just moves, it’s heart and grace — Bhangra brings
+                      a smile to every face.
+                    </p>
+                    <cite
+                      ><img
+                        src="./resources/images/instructor-sign.png"
+                        alt="signature"
+                    /></cite>
+                  </blockquote>
                 </div>
-                <div class="meet-our-instructor-content">
-                    <h4>Bhupinder Singh</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio obcaecati assumenda ullam
-                        vel quidem at libero voluptatem eum aliquam sint!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio obcaecati assumenda ullam
-                        vel quidem at libero voluptatem eum aliquam sint!</p>
-                    <p class="instructor-social-media"> <a
-                            href="https://www.instagram.com/bhupindersingh.fbd?igsh=bnJqa3UwODZjcDF1" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
+                <!-- <p><span>“ </span>When the dhol calls, Bhangra answers <span>”</span> - </p> -->
+                <!-- <div class="coach-sign"><img src="./resources/images/instructor-sign.png" alt="signature"></div> -->
+              </div>
+            </div>
+            <div class="meet-our-instructor-content">
+              <!-- <h2>Bhupinder Singh</h2>
+                    <p>
+                      With over 8 years of dedicated experience in Bhangra, the journey
+                      began in 2010 with championship wins at both state and
+                      university-level dance competitions across India. By 2012, the
+                      passion for performance evolved into mentorship, coaching multiple
+                      college teams to victory in prestigious inter-university dance
+                      festivals. Since 2016, professional Bhangra coaching has been at
+                      the core—blending traditional techniques with dynamic choreography
+                      to train dancers of all levels.
+                    </p>
+                    <p class="instructor-social-media">
+                      <a
+                        href="https://www.instagram.com/bhupindersingh.fbd?igsh=bnJqa3UwODZjcDF1"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                      /bhupindersingh.fbd
+                    </p> -->
+              <!-- timeline started -->
+              <ul class="timeline">
+                <!-- Item 1 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag">Bhangra Journey Begins</span>
+                      <span class="time-wrapper"
+                        ><span class="time">2010</span></span
+                      >
+                    </div>
+                    <div class="desc">
+                      Started performing Bhangra with state and university-level
+                      championship wins across India.
+                    </div>
+                  </div>
+                </li>
+                <!-- Item 2 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag">Transition to Mentorship</span>
+                      <span class="time-wrapper"
+                        ><span class="time">2012</span></span
+                      >
+                    </div>
+                    <div class="desc">
+                      Began mentoring and coaching college dance teams, leading
+                      them to victories in inter-university dance festivals.
+                    </div>
+                  </div>
+                </li>
+                <!-- Item 3 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag">Professional Coaching</span>
+                      <span class="time-wrapper"
+                        ><span class="time">2016</span></span
+                      >
+                    </div>
+                    <div class="desc">
+                      Started offering professional Bhangra coaching, blending
+                      traditional techniques with dynamic choreography to train
+                      dancers of all levels.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                        </a> /bhupindersingh.fbd</p>
-                </div>
+      <section class="review-section">
+        <h2>What our client says about us -</h2>
+
+        <div class="review-section-header">
+          <div class="header-left-section">
+            <h3>Customer reviews on Google</h3>
+            <div class="customer-total-review">
+              <div class="review-card-rating-star">
+                <span class="review-star">★</span>
+                <span class="review-star">★</span>
+                <span class="review-star">★</span>
+                <span class="review-star">★</span>
+                <span class="review-star">★</span>
+              </div>
+              <p>5.0 rating of 60 reviews</p>
+            </div>
+          </div>
+          <div class="header-right-section">
+            <button
+              onclick="window.open(`https://search.google.com/local/writereview?placeid=ChIJ8RFa1zLZhVQRi2tuQWvG2JE`, '_blank')"
+              class="bhangra-button-inverse"
+            >
+              Leave a Review
+            </button>
+          </div>
+        </div>
+
+        <div class="review-section-container">
+          <div class="scroll-container">
+            <!-- <div class="scroll-review-container"> -->
+            <div class="scroll-review-container" id="reviewContainer">
+              <!-- Review cards will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contactUs">
+        <h2 class="visually-hidden">Contact Us</h2>
+
+        <div class="contact-container">
+          <div class="contact-form-container">
+            <h1>Get In Touch</h1>
+
+            <div class="contact-form">
+              <div class="box">
+                <form
+                  action="mailto:your-email@example.com"
+                  method="POST"
+                  enctype="text/plain"
+                >
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" id="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" name="email" id="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" required></textarea>
+                  </div>
+                  <button type="submit" class="bhangra-button">Send</button>
+                </form>
+              </div>
+            </div>
+            <div class="social-links social-web">
+              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <h2>Contact Info</h2>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>your.email@example.com</span>
             </div>
 
-        </section>
-
-
-
-
-        <section class="content-section">
-            <h2 class="visually-hidden">content</h2>
-            <div class="content-container">
-
-                <div class="content-text-container">
-
-                    <div class="mySlideContent">
-                        <h4>Lorem</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate delectus ipsum est
-                            distinctio, quod ipsam esse non minus officia!</p>
-                    </div>
-                    <div class="mySlideContent">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat consequatur, quis quam
-                            aperiam aliquam ut.
-                        </p>
-                    </div>
-                    <div class="mySlideContent">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, sunt aliquid fugit
-                            odit cum at molestias voluptatem. Pariatur necessitatibus ex nulla, esse maiores sit fugiat
-                            commodi, vero dolorem debitis sequi quis perspiciatis itaque earum perferendis, libero
-                            aperiam natus odit? Non.</p>
-                    </div>
-                </div>
-
-                <div class="content-carousel">
-                    <div class="slideshow-container">
-
-                        <div class="mySlides fade">
-
-                            <div class="card">
-
-                                <div class="btn1"></div>
-                                <div class="btn2"></div>
-                                <div class="btn3"></div>
-                                <div class="btn4"></div>
-                                <div class="card-int">
-                                    <video controls playsinline>
-                                        <source src="./resources/videos/bhangra-video-reel-1.MP4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="top">
-                                    <div class="camera">
-                                        <div class="int"></div>
-                                    </div>
-                                    <div class="speaker"></div>
-                                </div>
-                            </div>
-
-                            <div class="text">
-                                <p>Caption Text</p>
-                            </div>
-                        </div>
-
-                        <div class="mySlides fade">
-
-                            <div class="card">
-
-                                <div class="btn1"></div>
-                                <div class="btn2"></div>
-                                <div class="btn3"></div>
-                                <div class="btn4"></div>
-                                <div class="card-int">
-                                    <video controls playsinline>
-                                        <source src="./resources/videos/bhangra-video-1.mov" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="top">
-                                    <div class="camera">
-                                        <div class="int"></div>
-                                    </div>
-                                    <div class="speaker"></div>
-                                </div>
-                            </div>
-
-                            <div class="text">
-                                <p>Caption Two</p>
-                            </div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="card">
-                                <div class="btn1"></div>
-                                <div class="btn2"></div>
-                                <div class="btn3"></div>
-                                <div class="btn4"></div>
-                                <div class="card-int">
-                                    <video controls playsinline>
-                                        <source src="./resources/videos/bhangra-video-reel-1.MP4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="top">
-                                    <div class="camera">
-                                        <div class="int"></div>
-                                    </div>
-                                    <div class="speaker"></div>
-                                </div>
-                            </div>
-                            <div class="text">
-                                <p>Caption Three</p>
-                            </div>
-                        </div>
-
-
-                        <div class="carousel-buttons">
-                            <a class="prev" onclick="plusSlides(-1)">❮</a>
-                            <div class="carousel-dot-buttons">
-                                <span class="dot" onclick="currentSlide(1)"></span>
-                                <span class="dot" onclick="currentSlide(2)"></span>
-                                <span class="dot" onclick="currentSlide(3)"></span>
-                            </div>
-                            <a class="next" onclick="plusSlides(1)">❯</a>
-                        </div>
-
-                    </div>
-                    <br>
-
-                </div>
-
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+1 (123) 456-7890</span>
             </div>
-        </section>
 
-        <section class="review-section">
-            <h2 class="visually-hidden">REVIEWS</h2>
-            <div class="review-section-container">
-
-                <div class="scroll-container">
-                    <!-- <div class="scroll-review-container"> -->
-                    <div class="scroll-review-container" id="reviewContainer">
-                        <!-- Review cards will be dynamically inserted here -->
-                    </div>
-
-                    <!-- <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-card">
-
-                            <div class="review-card-header" >
-                                <div class="review-card-rating-star">
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                    <span class="review-star">★</span>
-                                </div>
-                                <div class="review-card-avatar">
-                                   <img src="./resources/images/review-avatar/man1-emoji.jpg" alt="man emoji">
-                                </div>
-                            </div>
-
-                            <div class="review-card-body">
-                                <div class="review-card-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.</p>
-                                </div>
-
-                            </div>
-                            <div class="review-card-footer">
-                                <div class="review-card-time">
-                                    <p>5 months ago</p>
-                                </div>
-                            </div>
-                        </div> -->
-                    <!-- Add more cards as needed -->
-                    <!-- </div> -->
-                </div>
-
+            <div class="info-item">
+              <i class="fas fa-location-dot"></i>
+              <span>123 Main St, Vancouver, BC</span>
             </div>
-        </section>
 
-        <section class="contact-us-section" id="contactUs">
-            <h2 class="visually-hidden"> Contact us</h2>
-            <div class="visme_d" data-title="Business Contact Form" data-url="1jzpz7qw-business-contact-form"
-                data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="107015"></div>
-            <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
-        </section>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
 
+          <div class="contact-map">
+            <div class="contact-info-web">
+              <div class="info-item-web">
+                <h2>ADDRESS</h2>
+                <!-- <i class="fas fa-envelope"></i> -->
+
+                <p>123 Main St, Vancouver, BC</p>
+              </div>
+              <div class="info-item-web">
+                <h2>CALL US</h2>
+                <p>+1 (123) 456-7890</p>
+              </div>
+              <div class="info-item-web">
+                <h2>OPENING OURS</h2>
+                <p>Monday - Friday : 07:00 to 23:00</p>
+                <p>Saturday - Sunday : Closed</p>
+              </div>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2609.699754141574!2d-122.8625132!3d49.149324799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d932d75a11f1%3A0x91d8c66b416e6b8b!2sSurrey%20Bhangra%20-%20Fan%20Bhangre%20De%20By%20Bhupinder%20Singh!5e0!3m2!1sen!2sca!4v1748404067097!5m2!1sen!2sca"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="contact-us-section">
+        <h2 class="visually-hidden">Contact us</h2>
+        <div
+          class="visme_d"
+          data-title="Business Contact Form"
+          data-url="1jzpz7qw-business-contact-form"
+          data-domain="forms"
+          data-full-page="false"
+          data-min-height="500px"
+          data-form-id="107015"
+        ></div>
+        <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+      </section> -->
+      <!-- 
+      <section class="gallery">
+        <h2 class="visually-hidden">Gallery</h2>
+
+        <div class="space space--small"></div>
+        <div class="cards">
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img
+                  class="card__image"
+                  src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=100"
+                  alt=""
+                />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Card Title</h1>
+                <p class="card__description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                  dicta error nam eaque. Eum fuga laborum quos expedita iste
+                  saepe similique, unde possimus quia at magnam sed cupiditate?
+                  Reprehenderit, harum!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img
+                  class="card__image"
+                  src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=100"
+                  alt=""
+                />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Card Title</h1>
+                <p class="card__description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                  dicta error nam eaque. Eum fuga laborum quos expedita iste
+                  saepe similique, unde possimus quia at magnam sed cupiditate?
+                  Reprehenderit, harum!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img
+                  class="card__image"
+                  src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=100"
+                  alt=""
+                />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Card Title</h1>
+                <p class="card__description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                  dicta error nam eaque. Eum fuga laborum quos expedita iste
+                  saepe similique, unde possimus quia at magnam sed cupiditate?
+                  Reprehenderit, harum!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+        <!-- <div class="card-3d">
+                <div><img src="./resources/images/team/team1.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team2.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team3.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team4.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team5.HEIC" alt="team-image"></div>
+                <div><img src="./resources/images/team/team6.HEIC" alt="team-image"></div>
+                <div><img src="./resources/images/team/team1.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team2.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team3.JPG" alt="team-image"></div>
+                <div><img src="./resources/images/team/team4.JPG" alt="team-image"></div>
+              </div> -->
+      <!-- </section> -->
     </main>
 
     <footer class="footer-section">
+      <section class="footer-info">
+        <h4 class="visually-hidden">Logo and description</h4>
+        <div class="footer-logo">
+          <img src="./resources/images/bhangra-logo.png" alt="Fan B" />
+        </div>
+        <div class="footer-description">
+          <p>Learn Bhangra Dance with Fan Bhangra De</p>
+        </div>
+      </section>
 
-        <section class="footer-info">
-            <h4 class="visually-hidden">Logo and description</h4>
-            <div class="footer-logo">
-                <img src="./resources/images/bhangra-logo.png" alt="Fan B">
-            </div>
-            <div class="footer-description">
-                <p>Learn Bhangra Dance with Fan Bhangra Da</p>
-            </div>
-        </section>
+      <section class="footer-quick-links">
+        <h4>Quick Links</h4>
+        <div class="quick-links">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Instructors</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </section>
 
+      <section class="footer-contact-us">
+        <h4>Contact us</h4>
+        <div class="footer-contact">
+          <ul>
+            <li>Phone: 123-456-7890</li>
+            <li>
+              Email:
+              <a href="mailto:info@fanbhangradance.com">
+                info@fanbhangradance.com
+              </a>
+            </li>
+            <li>Address: 123 Main St, Anytown, USA</li>
+          </ul>
+        </div>
+      </section>
 
-        <section class="footer-quick-links">
-            <h4>Quick Links</h4>
-            <div class="quick-links">
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Classes</a></li>
-                    <li><a href="#">Instructors</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="footer-contact-us">
-            <h4>Contact us</h4>
-            <div class="footer-contact">
-                <ul>
-
-                    <li>Phone: 123-456-7890</li>
-                    <li>Email: <a href="mailto:info@fanbhangradance.com">
-                            info@fanbhangradance.com </a></li>
-                    <li>Address: 123 Main St, Anytown, USA</li>
-                </ul>
-
-            </div>
-        </section>
-
-        <section class="footer-social-media">
-            <h4>Social media</h4>
-            <div class="footer-social-media-icons">
-                <a href="https://www.facebook.com/fanbhangradance" target="_blank">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/fanbhangradance" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-
-                </a>
-                <a href="https://www.youtube.com/fanbhangradance" target="_blank">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-            </div>
-        </section>
-
-
-
+      <section class="footer-social-media">
+        <h4>Social media</h4>
+        <div class="footer-social-media-icons">
+          <a href="https://www.facebook.com/fanbhangradance" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/fanbhangradance" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/fanbhangradance" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </section>
     </footer>
-
-
-</body>
-
+  </body>
 </html>
