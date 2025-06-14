@@ -689,14 +689,14 @@ header {
 .header-description {
     background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(55, 10, 78, 1) 47%, rgba(55, 10, 78, 1) 50%, rgba(55, 10, 78, 1) 54%, rgba(55, 10, 78, 1) 100%);
 
-  padding: 0rem 0rem 2rem 0rem;
+  padding: 0rem 1rem 2rem 1rem;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: space-between;
   row-gap: 2rem;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
 
   h1 {
     line-height: 50px;
@@ -731,7 +731,7 @@ header {
 }
 .header-description-content {
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1rem;
 
   gap: 1.5rem;
   max-width: 600px;
@@ -1106,7 +1106,7 @@ nav {
 }
 
 .meet-our-instructor{
-    padding:  1.5rem 2.5rem;
+    padding:  0rem 5%;
 
 }
 .instructor-wrapper {
@@ -1119,7 +1119,8 @@ nav {
   min-height: 100vh;
   overflow: hidden;
   background-color: black;
-  border-radius: 100px;
+  border-radius: 4em;
+  
   background: var(--primary-royal-purple-color);
 }
 
@@ -1264,8 +1265,10 @@ nav {
     display: inline-block;
     margin: 1em;
     overflow: hidden;
+    padding: 0px 20px;
     blockquote {
       background-color: var(--primary-royal-purple-color);
+      
       border: solid 2px #757575;
       display: inline-block;
       margin: 0;
@@ -1751,7 +1754,7 @@ background: white;
 }
 
 .content-section {
-    padding: 10rem 0 5rem 0;
+    padding: 10rem 0 0rem 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -2363,7 +2366,7 @@ background: white;
 
   width: 100%;
   overflow: hidden;
-  padding: 2rem !important;
+  padding: 1rem !important;
   
 
   h2 {
@@ -2382,7 +2385,7 @@ background: white;
   padding: 0px 0px 0px 0px !important;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow-x: scroll;
+  overflow-x: hidden;
 
 }
 .spacer {

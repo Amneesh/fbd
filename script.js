@@ -291,9 +291,9 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
   
 }
-setInterval(() => {
-  plusSlides(1);
-}, 5000);
+// setInterval(() => {
+//   plusSlides(1);
+// }, 5000);
 
 
 // counter
@@ -367,7 +367,7 @@ function setSpacerWidth() {
   if (!card) return;
 
   const cardWidth = card.offsetWidth;
-  const spacerSize = window.innerWidth / 2 - cardWidth / 2;
+  const spacerSize = window.innerWidth / 2 - cardWidth / 1;
 
   document.querySelectorAll('.spacer').forEach(spacer => {
     spacer.style.width = `${spacerSize}px`;
