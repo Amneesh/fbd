@@ -289,7 +289,11 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "flex";
   slidesContent[slideIndex - 1].style.display = "flex";
   dots[slideIndex - 1].className += " active";
+  
 }
+setInterval(() => {
+  plusSlides(1);
+}, 5000);
 
 
 // counter
@@ -355,25 +359,45 @@ arr.map(function (item) {
 //   })
 // })
 
-gsap.registerPlugin(ScrollTrigger);
-
 const wrapper = document.querySelector('.horizontal-scroll-wrapper');
-const cards = gsap.utils.toArray('.services-card');
-const totalScrollWidth = wrapper.scrollWidth - window.innerWidth;
+const cards = document.querySelectorAll('.services-card');
 
-// Create horizontal scroll animation
-gsap.to(wrapper, {
-  x: () => -totalScrollWidth,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".horizontal-scroll-container",
-    pin: true,
-    scrub: 1,
-    end: () => "+=" + totalScrollWidth,
-  }
+function setSpacerWidth() {
+  const card = document.querySelector('.services-card');
+  if (!card) return;
+
+  const cardWidth = card.offsetWidth;
+  const spacerSize = window.innerWidth / 2 - cardWidth / 2;
+
+  document.querySelectorAll('.spacer').forEach(spacer => {
+    spacer.style.width = `${spacerSize}px`;
+    spacer.style.flex = `0 0 ${spacerSize}px`;
+  });
+}
+
+function getCardScrollAmount() {
+  const card = document.querySelector('.services-card');
+  const style = window.getComputedStyle(card);
+  const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+  return card.offsetWidth + margin;
+}
+
+function getMaxScrollLeft() {
+  return wrapper.scrollWidth - wrapper.clientWidth;
+}
+
+document.getElementById('scroll-left').addEventListener('click', () => {
+  const scrollAmount = getCardScrollAmount();
+  const newScroll = Math.max(0, wrapper.scrollLeft - scrollAmount);
+  wrapper.scrollTo({ left: newScroll, behavior: 'smooth' });
 });
 
-// Function to detect and highlight the center card
+document.getElementById('scroll-right').addEventListener('click', () => {
+  const scrollAmount = getCardScrollAmount();
+  const newScroll = Math.min(getMaxScrollLeft(), wrapper.scrollLeft + scrollAmount);
+  wrapper.scrollTo({ left: newScroll, behavior: 'smooth' });
+});
+
 function updateActiveCard() {
   const centerX = window.innerWidth / 2;
 
@@ -381,8 +405,7 @@ function updateActiveCard() {
     const rect = card.getBoundingClientRect();
     const cardCenter = rect.left + rect.width / 2;
     const distance = Math.abs(centerX - cardCenter);
-
-    if (distance < rect.width / 2) {
+    if (distance < card.offsetWidth / 2) {
       card.classList.add('active');
     } else {
       card.classList.remove('active');
@@ -390,19 +413,124 @@ function updateActiveCard() {
   });
 }
 
-// Update active card on scroll
-ScrollTrigger.addEventListener('scroll', updateActiveCard);
-window.addEventListener('load', updateActiveCard);
+// Initialize on load and resize
+window.addEventListener('load', () => {
+  setSpacerWidth();
+  wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+  updateActiveCard();
+});
+window.addEventListener('resize', () => {
+  setSpacerWidth();
+  updateActiveCard();
+});
+wrapper.addEventListener('scroll', () => {
+  requestAnimationFrame(updateActiveCard);
+});
 
-gsap.to(".panel-2", {
-  yPercent: -100,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".panel-1",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-    pin: true,
-    anticipatePin: 1
-  }
+const scrollLeftBtn = document.getElementById('scroll-left');
+const scrollRightBtn = document.getElementById('scroll-right');
+
+function updateButtonsVisibility() {
+  const maxScrollLeft = getMaxScrollLeft();
+  const scrollLeft = wrapper.scrollLeft;
+
+  // Hide left button if at start
+  scrollLeftBtn.style.display = scrollLeft <= 0 ? 'none' : 'block';
+
+  // Hide right button if at end (using a small buffer to handle rounding)
+  scrollRightBtn.style.display = scrollLeft >= maxScrollLeft - 1 ? 'none' : 'block';
+}
+
+// Run once on load and resize
+window.addEventListener('load', updateButtonsVisibility);
+window.addEventListener('resize', updateButtonsVisibility);
+
+// Update on scroll
+wrapper.addEventListener('scroll', () => {
+  requestAnimationFrame(() => {
+    updateActiveCard();
+    updateButtonsVisibility();
+  });
+});
+
+// Also update after button clicks, allowing smooth scroll animation to finish
+scrollLeftBtn.addEventListener('click', () => {
+  setTimeout(updateButtonsVisibility, 350);
+});
+
+scrollRightBtn.addEventListener('click', () => {
+  setTimeout(updateButtonsVisibility, 350);
+});
+
+
+
+
+
+document.querySelectorAll('.services-card-video').forEach(card => {
+  const servicesVideo = card.querySelector('video');
+  const button = card.querySelector('.play-button');
+  const overlay = card.querySelector('.video-overlay');
+
+  // Remove autoplay so it starts paused
+  servicesVideo.removeAttribute('autoplay');
+  servicesVideo.pause();
+  overlay.style.opacity = '1'; // Start with overlay visible
+
+  // Play/pause when clicking the play button
+  button.addEventListener('click', () => {
+    if (servicesVideo.paused) {
+      servicesVideo.play();
+      button.style.display = 'none'; // Hide button when playing
+      overlay.style.opacity = '0'; // ✅ Hide overlay
+
+    } else {
+      servicesVideo.pause();
+      button.style.display = 'flex';
+      overlay.style.opacity = '1'; // ✅ Show overlay
+
+    }
+  });
+
+  // 🔁 Play/pause when clicking the video itself
+  servicesVideo.addEventListener('click', () => {
+    if (servicesVideo.paused) {
+      servicesVideo.play();
+      button.style.display = 'none';
+      overlay.style.opacity = '0';
+
+    } else {
+      servicesVideo.pause();
+      button.style.display = 'flex';
+      overlay.style.opacity = '1';
+
+    }
+  });
+
+  // Show play button again when video ends
+  servicesVideo.addEventListener('ended', () => {
+    button.style.display = 'flex';
+    overlay.style.opacity = '1';
+
+  });
+});
+
+
+
+const openGalleryBtn = document.querySelectorAll('.open-gallery');
+const closeGalleryBtn = document.getElementById('close-gallery');
+const galleryOverlay = document.getElementById('gallery-overlay');
+
+openGalleryBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    galleryOverlay.classList.remove('hidden');
+    galleryOverlay.classList.add('active');
+  });
+});
+
+// Close popup
+closeGalleryBtn.addEventListener('click', () => {
+  galleryOverlay.classList.remove('active');
+  setTimeout(() => {
+    galleryOverlay.classList.add('hidden');
+  }, 500); // match transition duration
 });

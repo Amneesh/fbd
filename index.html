@@ -6,25 +6,26 @@
     <title>Fan Bhangre Da</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/aatjs@0.0.3/dist/aat.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-yH8ek+t9RwY+hlW/cBoBPmN2OyLVzkW2QG9k9nQaR9aT7aJ+qUrGC/8EPnBRP+AwBT7b2a/9Ytc9hklKnz8/hQ=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </head>
 
   <body>
@@ -52,7 +53,7 @@
         <div class="banner-video">
           <video class="banner-video-" muted loop autoplay playsinline>
             <source
-              src="./resources/videos/bhangra-video-main-landing.MOV"
+              src="./resources/videos/bhangra-video-main-landing.mp4"
               type="video/mp4"
             />
           </video>
@@ -81,7 +82,7 @@
                 </div>
               </li>
               <li class="item-desktop" data-aos="zoom-out-up">
-                <a class="header-link" href="#instructor">OFFERINGS</a>
+                <a class="header-link open-gallery">GALLERY</a>
               </li>
               <li class="item-desktop" data-aos="zoom-out-up">
                 <a class="header-link" href="#contactUs">CONTACT</a>
@@ -92,8 +93,22 @@
       </div>
       <div class="banner-sub-content">
         <div class="banner-sub-content-text">
-          <h3>From stage to soul, we lead the way</h3>
-          <h3>We are Fan Bhangre De!</h3>
+          <h3
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
+            From stage to soul, we lead the way
+          </h3>
+          <h3
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
+            We are Fan Bhangre De!
+          </h3>
         </div>
       </div>
     </section>
@@ -101,19 +116,8 @@
     <header class="header-section">
       <h1 class="visually-hidden">Header</h1>
 
-      <!-- <div class="bg-video">
-            <video muted loop autoplay>
-                <source src="./resources/videos/fbd-landing.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div> -->
-
       <div class="header-bar">
         <div class="header-nav">
-          <!-- <div class="header-logo">
-                    <img src="./resources/images/bhangra-logo.png" alt="">
-                </div> -->
-
           <div class="bloom-mobile-header" id="header-menu-mobile">
             <div class="toggle-nav">
               <i class="fa-solid fa-bars" id="openNavButton"></i>
@@ -136,30 +140,17 @@
             </ol>
 
             <button
-              class="bhangra-button-purple"
+              class="bhangra-button"
               onclick="scrollToSection('contactUs')"
             >
               JOIN FBD
             </button>
           </div>
         </div>
-
-        <!-- <div class="desktop-mobile-header">
-                <ul class="nav">
-                    <li class="item"><a class="header-link" href="#about">About</a></li>
-                    <li class="item"><a class="header-link" href="#services">SERVICES</a>
-                    <li class="item"><a class="header-link" href="#skills">OFFERINGS</a></li>
-                    <li class="item"><a class="header-link" href="#contactUs">CONTACT US</a>
-
-                </ul>
-            </div> -->
       </div>
 
-      <!-- <div class="team-image-section">
-
-        </div> -->
-      <div class="header-description">
-        <div class="video-card">
+      <div class="header-description" id="about">
+        <div class="video-card" data-aos="fade-up">
           <div class="header-description-video">
             <video muted loop autoplay playsinline>
               <source
@@ -173,8 +164,10 @@
 
         <div class="header-description-container">
           <div class="header-description-content">
-            <h1>Learn Bhangra with <span> FAN BHANGRA DE</span></h1>
-            <h3>
+            <h1 data-aos="fade-left" data-aos-duration="500">
+              Learn Bhangra with <span> FAN BHANGRE DE</span>
+            </h1>
+            <h3 data-aos="fade-left" data-aos-duration="600">
               Join our vibrant community and master the traditional Punjabi
               dance from expert instructors.
             </h3>
@@ -182,11 +175,18 @@
               <button
                 class="bhangra-button"
                 onclick="scrollToSection('contactUs')"
+                data-aos="zoom-in"
+                data-aos-duration="1000"
               >
                 JOIN FBD
               </button>
-              <button class="bhangra-button-inverse">
-                Watch Demo <i class="fa-solid fa-play"></i>
+              <button
+                class="bhangra-button-inverse open-gallery"
+                data-aos-duration="2000"
+                data-aos="zoom-in"
+                id="open-gallery"
+              >
+                Watch Gallery <i class="fa-solid fa-play"></i>
               </button>
             </div>
             <div class="counter-section">
@@ -220,26 +220,40 @@
     </header>
 
     <main>
-      
-
-      <section class="services-offer">
+      <section class="services-offer" id="services">
         <h2 class="visually-hidden">Experience Our Signature Services</h2>
 
         <div class="services-container">
           <div class="left-offer-section">
             <section class="horizontal-scroll-container">
-              <h2>Experience Our Signature Services</h2>
+              <h2 class="heading-line">Experience Our Signature Services</h2>
 
-              <div class="horizontal-scroll-wrapper">
+              <div class="horizontal-scroll-wrapper" data-aos="fade-left">
+                <div class="scroll-buttons">
+                  <button id="scroll-left" class="scroll-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                  </button>
+                  <button id="scroll-right" class="scroll-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+
+                <div class="spacer"></div>
+                <!-- spacer before -->
+
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/kids-bhangra.MOV"
+                        src="./resources/videos/services-video/kids-bhangra.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Junior Bhangra Program</h4>
@@ -249,13 +263,17 @@
 
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/1-1-training.mov"
+                        src="./resources/videos/services-video/1-1-training.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Private 1-on-1 Bhangra Coaching</h4>
@@ -265,13 +283,17 @@
 
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/professional-gidha.mov"
+                        src="./resources/videos/services-video/professional-gidha.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Professional Giddha Training</h4>
@@ -282,13 +304,17 @@
 
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/live-singing-shows.MOV"
+                        src="./resources/videos/services-video/live-singing-shows.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Cultural Fusion Shows</h4>
@@ -298,13 +324,17 @@
 
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/bhangra-video-classes.MP4"
+                        src="./resources/videos/services-video/bhangra-video-classes.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Bhangra Fitness Sessions</h4>
@@ -313,13 +343,17 @@
                 </div>
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/turban-tying.MOV"
+                        src="./resources/videos/services-video/turban-tying.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Turban Tying Services</h4>
@@ -329,39 +363,51 @@
 
                 <div class="services-card">
                   <div class="services-card-video">
-                    <video muted loop autoplay playsinline>
+                    <video muted loop playsinline>
                       <source
-                        src="./resources/videos/choreography.MP4"
+                        src="./resources/videos/services-video/choreography.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
+                    <div class="play-button">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
                     <h4>Custom Choreography</h4>
                     <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
                   </div>
                 </div>
+                <div class="spacer"></div>
+                <!-- spacer before -->
               </div>
             </section>
           </div>
-          <!-- <div class="right-offer-section">
-                        <video class="service-video" muted loop autoplay playsinline>
-                            <source src="./resources/videos/bhangra-video-main-landing.MOV" type="video/mp4">
-                        </video>
-                    </div> -->
         </div>
       </section>
 
       <section class="bhangra-male-group">
-
-    
-    </section>
-      <!-- <hr class="line-intersection"> -->
+        <h2 class="visually-hidden">Bhangra quotation</h2>
+        <div data-aos="zoom-in-down">
+          <blockquote class="inspiring-quote">
+            <p>
+              With every beat, we celebrate Panjab — with every step, we
+              remember Waheguru.
+            </p>
+            <cite>Fan Bhangre De</cite>
+          </blockquote>
+        </div>
+      </section>
 
       <section class="content-section">
         <h2 class="visually-hidden">OUR SPECIALIZATION</h2>
-        <div class="content-container">
+        <div
+          class="content-container"
+          data-aos="zoom-out-up"
+          data-aos-duration="2000"
+        >
           <div class="content-text-container">
             <div class="mySlideContent">
               <h1>Who Are We, Really?</h1>
@@ -397,16 +443,20 @@
               </p>
             </div>
             <div class="mySlideContent">
-              <h1>How Do You Join Our Cultural Family?
-
-              </h1>
+              <h1>How Do You Join Our Cultural Family?</h1>
               <p>
-                Joining Fan Bhangre De means stepping into a warm, welcoming community that cherishes Punjabi culture, faith, and tradition. Here, dance is more than movement — it’s a celebration of identity and togetherness. Whether you’re a beginner or an experienced performer, you’ll find support, friendship, and a shared passion that connects generations. Through classes, events, and performances, we nurture not just skills but lifelong bonds rooted in respect, heritage, and joy. Become part of our family and keep the spirit of Punjab alive in every beat.
+                Joining Fan Bhangre De means stepping into a warm, welcoming
+                community that cherishes Punjabi culture, faith, and tradition.
+                Here, dance is more than movement — it’s a celebration of
+                identity and togetherness. Whether you’re a beginner or an
+                experienced performer, you’ll find support, friendship, and a
+                shared passion that connects generations. Through classes,
+                events, and performances, we nurture not just skills but
+                lifelong bonds rooted in respect, heritage, and joy. Become part
+                of our family and keep the spirit of Punjab alive in every beat.
               </p>
               <div class="slide-button">
-                <a href="#contact" class="bhangra-button-inverse"
-                  >Contact Us</a
-                >
+                <a href="#contact" class="bhangra-button-inverse">Contact Us</a>
               </div>
             </div>
           </div>
@@ -436,9 +486,9 @@
                   </div>
                 </div>
 
-                <div class="text">
+                <!-- <div class="text">
                   <p>Caption Text</p>
-                </div>
+                </div> -->
               </div>
 
               <div class="mySlides fade">
@@ -463,10 +513,10 @@
                     <div class="speaker"></div>
                   </div>
                 </div>
-
+                <!-- 
                 <div class="text">
                   <p>Caption Two</p>
-                </div>
+                </div> -->
               </div>
 
               <div class="mySlides fade">
@@ -491,9 +541,9 @@
                     <div class="speaker"></div>
                   </div>
                 </div>
-                <div class="text">
+                <!-- <div class="text">
                   <p>Caption Three</p>
-                </div>
+                </div> -->
               </div>
 
               <div class="carousel-buttons">
@@ -514,24 +564,10 @@
       <section class="meet-our-instructor" id="instructor">
         <h2 class="visually-hidden">meet our instructor</h2>
         <div class="instructor-wrapper">
-          <div class="instructor-logo">
-            <img src="./resources/images/bhangra-logo.png" alt="" />
-          </div>
-          <!-- <video autoplay muted loop playsinline class="background-video">
-                    <source src="./resources/videos/instructor-background.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>  -->
           <div class="meet-our-instructor-container">
             <div class="meet-out-instructor-card">
-              <!-- <div class="owner-badge">
-                        <img src="./resources/images/owner-tag.png" alt="owner-tag">
-                    </div> -->
               <div class="meet-our-instructor-image">
                 <img src="./resources/images/fbd-coach.png" alt="instructor" />
-                <!-- <video autoplay muted loop playsinline class="instructor-video">
-                            <source src="./resources/videos/instructor-bg.mov" type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </video> -->
               </div>
               <div class="meet-our-instructor-data">
                 <div class="quote">
@@ -552,31 +588,15 @@
               </div>
             </div>
             <div class="meet-our-instructor-content">
-              <!-- <h2>Bhupinder Singh</h2>
-                    <p>
-                      With over 8 years of dedicated experience in Bhangra, the journey
-                      began in 2010 with championship wins at both state and
-                      university-level dance competitions across India. By 2012, the
-                      passion for performance evolved into mentorship, coaching multiple
-                      college teams to victory in prestigious inter-university dance
-                      festivals. Since 2016, professional Bhangra coaching has been at
-                      the core—blending traditional techniques with dynamic choreography
-                      to train dancers of all levels.
-                    </p>
-                    <p class="instructor-social-media">
-                      <a
-                        href="https://www.instagram.com/bhupindersingh.fbd?igsh=bnJqa3UwODZjcDF1"
-                        target="_blank"
-                      >
-                        <i class="fa-brands fa-instagram"></i>
-                      </a>
-                      /bhupindersingh.fbd
-                    </p> -->
               <!-- timeline started -->
               <ul class="timeline">
                 <!-- Item 1 -->
                 <li>
-                  <div class="direction-r">
+                  <div
+                    class="direction-r"
+                    data-aos="zoom-out"
+                    data-aos-duration="1000"
+                  >
                     <div class="flag-wrapper">
                       <span class="hexa"></span>
                       <span class="flag">Bhangra Journey Begins</span>
@@ -592,7 +612,11 @@
                 </li>
                 <!-- Item 2 -->
                 <li>
-                  <div class="direction-l">
+                  <div
+                    class="direction-l"
+                    data-aos="zoom-out"
+                    data-aos-duration="2000"
+                  >
                     <div class="flag-wrapper">
                       <span class="hexa"></span>
                       <span class="flag">Transition to Mentorship</span>
@@ -608,7 +632,11 @@
                 </li>
                 <!-- Item 3 -->
                 <li>
-                  <div class="direction-r">
+                  <div
+                    class="direction-r"
+                    data-aos="zoom-out"
+                    data-aos-duration="3000"
+                  >
                     <div class="flag-wrapper">
                       <span class="hexa"></span>
                       <span class="flag">Professional Coaching</span>
@@ -629,8 +657,8 @@
         </div>
       </section>
 
-      <section class="review-section">
-        <h2>What our client says about us -</h2>
+      <section class="review-section" id="reviews">
+        <h2 class="heading-line">What our client says about us</h2>
 
         <div class="review-section-header">
           <div class="header-left-section">
@@ -671,10 +699,16 @@
 
         <div class="contact-container">
           <div class="contact-form-container">
-            <h1>Get In Touch</h1>
+            <h2 class="heading-half-line">Get In Touch</h2>
 
             <div class="contact-form">
-              <div class="box">
+              <div
+                class="box"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-offset="100"
+                data-aos-duration="2000"
+              >
                 <form
                   action="mailto:your-email@example.com"
                   method="POST"
@@ -697,52 +731,124 @@
               </div>
             </div>
             <div class="social-links social-web">
-              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <div  data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-offset="100"
+              data-aos-duration="2500">
+                <a href="tel:+1236971-5969"
+                  ><i class="fa-solid fa-phone"></i
+                ></a>
+              </div>
+              <div  data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-offset="100"
+              data-aos-duration="3000">
+                <a href="mailto:fanbhangrede@gmail.com"
+                  ><i class="fa-solid fa-envelope"></i
+                ></a>
+              </div>
+              <div  data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-offset="100"
+              data-aos-duration="3500">
+                <a
+                  href="https://www.instagram.com/fanbhangrede/?hl=en"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <div  data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-offset="100"
+              data-aos-duration="4000">
+                <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </div>
             </div>
           </div>
 
           <div class="contact-info">
-            <h2>Contact Info</h2>
+            <h3 class="heading-half-line">Contact Info</h3>
             <div class="info-item">
               <i class="fas fa-envelope"></i>
-              <span>your.email@example.com</span>
+              <span>fanbhangrede@gmail.com</span>
             </div>
 
             <div class="info-item">
               <i class="fas fa-phone"></i>
-              <span>+1 (123) 456-7890</span>
+              <span>+1 (236) 971-5969</span>
             </div>
 
             <div class="info-item">
               <i class="fas fa-location-dot"></i>
-              <span>123 Main St, Vancouver, BC</span>
+              <span>8065 D 130 St Surrey, BC V3W 4G1</span>
             </div>
 
             <div class="social-links">
-              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-offset="100"
+                data-aos-duration="2500"
+              >
+                <a href="tel:+1236971-5969"
+                  ><i class="fa-solid fa-phone"></i
+                ></a>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-offset="100"
+                data-aos-duration="3000"
+              >
+                <a href="mailto:fanbhangrede@gmail.com"
+                  ><i class="fa-solid fa-envelope"></i
+                ></a>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-offset="100"
+                data-aos-duration="3500"
+              >
+                <a
+                  href="https://www.instagram.com/fanbhangrede/?hl=en"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-offset="100"
+                data-aos-duration="4000"
+              >
+                <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </div>
             </div>
           </div>
 
-          <div class="contact-map">
+          <div class="contact-map"  data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-offset="100"
+          data-aos-duration="2000">
             <div class="contact-info-web">
               <div class="info-item-web">
-                <h2>ADDRESS</h2>
+                <h3>ADDRESS</h3>
                 <!-- <i class="fas fa-envelope"></i> -->
 
-                <p>123 Main St, Vancouver, BC</p>
+                <p>8065 D 130 St Surrey, BC V3W 4G1</p>
               </div>
               <div class="info-item-web">
-                <h2>CALL US</h2>
-                <p>+1 (123) 456-7890</p>
+                <h3>CALL US</h3>
+                <p>+1 (236) 971-5969</p>
+                <p>+1 (778) 628-7121</p>
               </div>
               <div class="info-item-web">
-                <h2>OPENING OURS</h2>
+                <h3>OPENING OURS</h3>
                 <p>Monday - Friday : 07:00 to 23:00</p>
                 <p>Saturday - Sunday : Closed</p>
               </div>
@@ -757,101 +863,6 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="contact-us-section">
-        <h2 class="visually-hidden">Contact us</h2>
-        <div
-          class="visme_d"
-          data-title="Business Contact Form"
-          data-url="1jzpz7qw-business-contact-form"
-          data-domain="forms"
-          data-full-page="false"
-          data-min-height="500px"
-          data-form-id="107015"
-        ></div>
-        <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
-      </section> -->
-      <!-- 
-      <section class="gallery">
-        <h2 class="visually-hidden">Gallery</h2>
-
-        <div class="space space--small"></div>
-        <div class="cards">
-          <div class="card" data-index="0">
-            <div class="card__inner">
-              <div class="card__image-container">
-                <img
-                  class="card__image"
-                  src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=100"
-                  alt=""
-                />
-              </div>
-              <div class="card__content">
-                <h1 class="card__title">Card Title</h1>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                  dicta error nam eaque. Eum fuga laborum quos expedita iste
-                  saepe similique, unde possimus quia at magnam sed cupiditate?
-                  Reprehenderit, harum!
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card" data-index="0">
-            <div class="card__inner">
-              <div class="card__image-container">
-                <img
-                  class="card__image"
-                  src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=100"
-                  alt=""
-                />
-              </div>
-              <div class="card__content">
-                <h1 class="card__title">Card Title</h1>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                  dicta error nam eaque. Eum fuga laborum quos expedita iste
-                  saepe similique, unde possimus quia at magnam sed cupiditate?
-                  Reprehenderit, harum!
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card" data-index="0">
-            <div class="card__inner">
-              <div class="card__image-container">
-                <img
-                  class="card__image"
-                  src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=100"
-                  alt=""
-                />
-              </div>
-              <div class="card__content">
-                <h1 class="card__title">Card Title</h1>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                  dicta error nam eaque. Eum fuga laborum quos expedita iste
-                  saepe similique, unde possimus quia at magnam sed cupiditate?
-                  Reprehenderit, harum!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="space"></div>
-        <!-- <div class="card-3d">
-                <div><img src="./resources/images/team/team1.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team2.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team3.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team4.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team5.HEIC" alt="team-image"></div>
-                <div><img src="./resources/images/team/team6.HEIC" alt="team-image"></div>
-                <div><img src="./resources/images/team/team1.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team2.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team3.JPG" alt="team-image"></div>
-                <div><img src="./resources/images/team/team4.JPG" alt="team-image"></div>
-              </div> -->
-      <!-- </section> -->
     </main>
 
     <footer class="footer-section">
@@ -861,52 +872,77 @@
           <img src="./resources/images/bhangra-logo.png" alt="Fan B" />
         </div>
         <div class="footer-description">
-          <p>Learn Bhangra Dance with Fan Bhangra De</p>
+          <p>Learn Bhangra with Fan Bhangre De</p>
         </div>
       </section>
 
-      <section class="footer-quick-links">
+      <section class="footer-quick-links footer-column">
         <h4>Quick Links</h4>
         <div class="quick-links">
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Classes</a></li>
-            <li><a href="#">Instructors</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Client Reviews</a></li>
+            <li><a href="#instructor">Instructor</a></li>
           </ul>
         </div>
       </section>
 
-      <section class="footer-contact-us">
+      <section class="footer-contact-us footer-column">
         <h4>Contact us</h4>
         <div class="footer-contact">
           <ul>
-            <li>Phone: 123-456-7890</li>
+            <li>Phone: +1 (236)-971-5969</li>
             <li>
               Email:
               <a href="mailto:info@fanbhangradance.com">
-                info@fanbhangradance.com
+                fanbhangrede@gmail.com
               </a>
             </li>
-            <li>Address: 123 Main St, Anytown, USA</li>
+            <li>Address: 8065 D 130 St Surrey, BC V3W 4G1</li>
           </ul>
         </div>
       </section>
 
-      <section class="footer-social-media">
+      <section class="footer-social-media footer-column">
         <h4>Social media</h4>
         <div class="footer-social-media-icons">
-          <a href="https://www.facebook.com/fanbhangradance" target="_blank">
+          <a href="https://www.facebook.com/fanbhangreda/" target="_blank">
             <i class="fa-brands fa-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/fanbhangradance" target="_blank">
+          <a href="https://www.instagram.com/fanbhangrede/?hl=en" target="_blank">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/fanbhangradance" target="_blank">
+          <a href="https://www.youtube.com/channel/UC3q0f7nz5L0Znzi573fLhpg" target="_blank">
             <i class="fa-brands fa-youtube"></i>
           </a>
         </div>
       </section>
     </footer>
+
+    <div id="gallery-overlay" class="gallery-overlay">
+        <div class="gallery-header">
+          <h2 class="heading-half-line">Dance Gallery</h2>
+          <button id="close-gallery" class="close-btn">&times;</button>
+        </div>
+        <div class="gallery-grid">
+          <!-- Images -->
+          <img src="resources/images/team/team1.JPG" alt="Team 1" />
+          <img src="resources/images/team/team2.JPG" alt="Team 2" />
+          <img src="resources/images/team/team3.JPG" alt="Team 3" />
+          <img src="resources/images/team/team4.JPG" alt="Team 4" />
+         
+
+
+
+          <!-- Videos -->
+          <!-- <video controls>
+            <source src="resources/videos/bhangra-video-1.mov" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="resources/videos/bhangra-video-main.MOV" type="video/mp4" />
+          </video> -->
+        </div>
+      </div>
   </body>
 </html>
