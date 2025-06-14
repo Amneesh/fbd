@@ -63,12 +63,12 @@ h1 {
 }
 
 .heading-line {
-    width: 90%;
+    width: 100%;
     text-transform:uppercase;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 20px 0;
-    grid-gap: 20px;
+    grid-template-rows: 25px 0;
+    grid-gap: 10px;
   }
   
   .heading-line:after,.heading-line:before {
@@ -1507,8 +1507,8 @@ iframe {
         text-transform:uppercase;
         display: grid;
         grid-template-columns: auto 1fr;
-        grid-template-rows: 20px 0;
-        grid-gap: 20px;
+        grid-template-rows: 25px 0;
+        grid-gap: 10px;
       }
       
       .heading-half-line:after {
@@ -1592,7 +1592,7 @@ iframe {
 
 
 .review-section-header{
-    margin-bottom: -5rem;
+
     padding: 2rem;
     width: 100%;
     display: flex;
@@ -2360,10 +2360,15 @@ background: white;
 .horizontal-scroll-container {
   position: relative;
  min-height: 100vh;
-
+display: flex;
+align-items: center;
+justify-content: center;
+flex-flow: column;
+gap: 5rem;
   width: 100%;
+  
   overflow: hidden;
-  padding: 1rem !important;
+  padding: 3rem  0rem!important;
   
 
   h2 {
@@ -2376,14 +2381,20 @@ background: white;
 .horizontal-scroll-wrapper {
     
   display: flex;
-  height: 100vh;
+height:700px;
   align-items: center;
   /* will-change: transform; */
   padding: 0px 0px 0px 0px !important;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow-x: hidden;
+  overflow-x: scroll;
+  scrollbar-width: 0;
 
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
 }
 .spacer {
     flex-shrink: 0;
@@ -2412,8 +2423,9 @@ background: white;
   .scroll-arrow{
     width: 50px;
     height: 50px;
-    background: #f8db9c;
-    background-size: 30px 30px;
+    background: rgba(0, 0, 0, 0.451);
+    backdrop-filter: blur(10px);
+        /* background-size: 30px 30px; */
     border-radius: 50%;
     cursor: pointer;
     position: relative;
@@ -2421,7 +2433,7 @@ background: white;
     border: none;
 
     i{
-      color:black;
+      color:var(--secondary-energetic-orange-color);
         font-size: 25px;
     }
   }
@@ -2441,8 +2453,9 @@ background: white;
   z-index: 1;
   flex: 0 0 auto;
   max-width: 350px;
-  width: 100vw;
-  height: 70vh;
+  width: 100%;
+  /* width: 100vw; */
+  height: 600px;
 
   margin: 0 2.5vw;
   font-size: 2rem;
