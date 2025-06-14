@@ -50,7 +50,7 @@
 html,
 body,
 main {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
   overflow-x: hidden;
   background-color: var(--primary-black-color);
   padding: 0;
@@ -401,7 +401,7 @@ font-weight: 500;
 .banner-main {
   height: 70vh;
   position: relative;
-  width: 100%;
+  width: 100vw;
 
   .banner-video {
     width: 100%;
@@ -417,7 +417,7 @@ font-weight: 500;
     width: 100%;
     height: 100vh;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
   }
 }
 .banner-video::before {
@@ -432,7 +432,7 @@ font-weight: 500;
     180deg,
     rgb(0, 0, 0) 0%,
     rgb(0, 0, 0) 10%,
-    rgba(0, 0, 0, 0.42) 80%,
+    rgba(0, 0, 0, 0) 80%,
     rgba(0, 0, 0, 0.5) 90%,
     rgb(0, 0, 0) 100%
   );
@@ -1322,7 +1322,7 @@ nav {
 }
 .contact-container {
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1342,7 +1342,7 @@ iframe {
   max-height: 400px;
 }
 .contact-form {
-  width: 70vw;
+  width: 80vw;
   min-width: 300px;
   max-width: 700px;
   height: 500px;
@@ -1372,6 +1372,7 @@ iframe {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid var(--secondary-energetic-orange-color);
+    border-radius: 0%;
     font-size: 1rem;
     color: var(--secondary-energetic-orange-color);
     outline: none;
@@ -1608,38 +1609,31 @@ iframe {
 
 .review-section-container {
   width: 100%;
+}
+.scroll-review-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+.scroll-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* Ensures container uses the full width of the parent */
+}
+.scroll-review-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  padding: 20px;
+  border-radius: 10px;
 
-  .scroll-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    /* Ensures container uses the full width of the parent */
-  }
+  -webkit-overflow-scrolling:touch;
 
-  .scroll-review-container {
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    white-space: nowrap;
-    padding: 20px;
-
-    border-radius: 10px;
-
-    /* Hide the scrollbar */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE and Edge */
-  }
-
-  .scroll-review-container::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari, Opera */
-  }
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .review-card-header {
@@ -1679,6 +1673,7 @@ flex-flow: row;
   flex: 0 0 auto;
   width: 380px;
   min-height: 300px;
+
   margin:0px 20px;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.202);
@@ -2426,6 +2421,7 @@ background: white;
     border: none;
 
     i{
+      color:black;
         font-size: 25px;
     }
   }
