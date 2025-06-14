@@ -38,49 +38,58 @@ function navigateToPage(pageUrl) {
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.scroll-review-container');
 
-  // Define scroll speed and interval
-  const scrollSpeed = 3; // Adjust scroll speed (higher value for faster scrolling)
-  const scrollInterval = 30; // Adjust scroll interval in milliseconds
-  let scrollDirection = 'right'; // Initial scroll direction
+  if (!container) return;
 
-  // Function to scroll container automatically
+  const scrollSpeed = 3;
+  const scrollInterval = 30;
+  let scrollDirection = 'right';
+  let isScrolling = true;
+
   function autoScroll() {
+    if (!isScrolling) return;
+
     if (scrollDirection === 'right') {
       container.scrollLeft += scrollSpeed;
-      // Check if reached end of scroll
       if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
         scrollDirection = 'left';
       }
-    } else if (scrollDirection === 'left') {
+    } else {
       container.scrollLeft -= scrollSpeed;
-      // Check if scrolled back to start
       if (container.scrollLeft <= 0) {
         scrollDirection = 'right';
       }
     }
   }
 
-  // Start auto-scrolling
   let scrollIntervalId = setInterval(autoScroll, scrollInterval);
 
-  // Stop auto-scrolling when mouse enters container
+  // 💻 Desktop Hover Events
   container.addEventListener('mouseenter', () => {
-    clearInterval(scrollIntervalId);
+    isScrolling = false;
   });
 
-  // Resume auto-scrolling when mouse leaves container
   container.addEventListener('mouseleave', () => {
-    scrollIntervalId = setInterval(autoScroll, scrollInterval);
+    isScrolling = true;
   });
 
-  // Optional: Stop auto-scrolling when clicking on a card
+  // 📱 Mobile Touch Events
+  container.addEventListener('touchstart', () => {
+    isScrolling = false;
+  });
+
+  container.addEventListener('touchend', () => {
+    isScrolling = true;
+  });
+
+  // Optional: stop on review card click
   const cards = document.querySelectorAll('.review-card');
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      clearInterval(scrollIntervalId);
+      isScrolling = false;
     });
   });
 });
+
 
 
 

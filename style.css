@@ -1620,7 +1620,7 @@ iframe {
 
   .scroll-review-container {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-behavior: smooth;
     white-space: nowrap;
     padding: 20px;
