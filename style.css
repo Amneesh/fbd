@@ -1467,6 +1467,10 @@ iframe {
   width: 30px;
   color: var(--secondary-energetic-orange-color);
 }
+.info-item span{
+  color: var(--secondary-energetic-orange-color);
+text-decoration: none;
+}
 .info-item-web{
     h3{
         padding-bottom: 5px;
