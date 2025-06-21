@@ -313,14 +313,14 @@ font-weight: 500;
 
 /* From Uiverse.io by JohnnyCSilva */
 .coin {
-  font-size: 200px;
+  font-size: 150px;
   width: 0.1em;
   height: 1em;
   background: linear-gradient(#f6ddac, #141001);
   margin: auto;
   position: relative;
   z-index: 99;
-  top: 0;
+  top: -15px;
   left: 0;
   /* position: absolute;
     top: 0;
@@ -527,6 +527,11 @@ header {
 }
 
 @media only screen and (min-width: 700px) {
+  .coin {
+    font-size: 200px !important;
+    top: 0px;
+  }
+
   .bloom-mobile-header {
     display: none !important;
   }
@@ -1475,7 +1480,7 @@ iframe {
 }
 
 .social-links a {
-  color: var(--primary-energetic-orange-color);
+  color: var(--secondary-energetic-orange-color);
   text-decoration: none;
   font-size: 1.5rem;
   transition: color 0.3s ease;
