@@ -555,8 +555,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Reviews data (unchanged)
   const reviews = [
-    // ... (your reviews array here) ...
-  ];
+  {
+    rating: 5,
+  name: "Harpreet Saini",
+    content: "Excellent experience with fanbhangrede . they did really gud we want learn choreography again from fanbhangrede . The choreography they taught that was awesome everyone praised .",
+    time: "4 months ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-1.webp",
+    link: "https://g.co/kgs/h2gzBHi"
+  },
+  {
+    rating: 5,
+  name: 'gursewak singh',
+    content: "Bhangra enjoyable classes and amazing we all had fun learning our beautiful routine thank you Bhupinder and team",
+    time: "5 months ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-2.webp",
+    link: "https://g.co/kgs/x3xsiGx"
+  },
+  {
+    rating: 5,
+  name: 'Hitesh Arora',
+    content: "Great place for Bhangra lovers. The instructor Bhupinder Singh is really energetic and skilled, making the dance steps easy to follow. The music is lively, creating a fantastic atmosphere. Great workout and cultural experience – highly recommend!",
+    time: "11 month ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-3.webp",
+    link: "https://g.co/kgs/khh1qo2"
+  },
+  {
+    rating: 5,
+  name: 'Jaspreet Kaur',
+    content: "These Bhangra classes for kids are a fantastic way to introduce young ones to the lively and colorful world of dance. The energy and enthusiasm in the classes make learning Bhangra a truly enjoyable experience for children, combining fun with cultural learning. I highly recommend these classes for any kids interested in exploring the vibrant art of Bhangra!",
+    time: "11 month ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-4.webp",
+    link: "https://g.co/kgs/eoPY4ZB"
+  },
+  {
+    rating: 5,
+  name: 'HARVINDER SINGH',
+    content: "Bhangra class has an amazing crowd and a well-trained instructor. It's always fun to learn under the supervision of a skilled teacher. Will highly recommend Instructor Mr. Bhupinder Singh.",
+    time: "5 month ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-5.webp",
+    link: "https://g.co/kgs/pJsTp3a"
+  },
+  {
+    rating: 5,
+  name: 'Sony',
+    content: "Enjoyable classes! You learn bhangra steps while having fun! The instructor Bhupinder explains the steps and corrects my errors in a nice calm manner. I would definitely recommend joining the Rpd Academy classes",
+    time: "11 month ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-6.webp",
+    link: "https://g.co/kgs/n6Fcxik"
+  },
+  {
+    rating: 5,
+  name: 'Raman Brar',
+    content: "Fan Bhangra de whole team is very awesome. Bhupinder was very generous and cooperative. Team did community event at our site within very short notice. Well performed. Thanks to the whole team for making our Vaisakhi event more enjoyable and memorable.",
+    time: "8 month ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-7.webp",
+    link: "https://g.co/kgs/RYsw8uB"
+  },
+  {
+    rating: 5,
+  name: 'Manpreet Kaur',
+    content: "Best place to learn Bhangra as well as gidha. The coaches are really talented and they provide you needed training accordingly. This place will not only boost your confidence in dancing but will also motivate you to learn new dance skills everyday.",
+    time: "1 year ago",
+    avatar: "./resources/images/bitmoji-fbd/fbd-bitmoji-8.webp",
+    link: "https://g.co/kgs/ZPTMwwN"
+  },
+]
 
   // Truncate text helper
   function truncateText(text, maxLength) {
