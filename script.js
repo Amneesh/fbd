@@ -509,3 +509,14 @@ closeGalleryBtn.addEventListener('click', () => {
   }, 500); // match transition duration
 });
 
+
+window.addEventListener('load', function () {
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname);
+  }
+});
+
+// Always scroll to top on refresh
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
