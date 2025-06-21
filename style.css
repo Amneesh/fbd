@@ -861,7 +861,7 @@ nav {
 
 .bhangra-male-group {
   height: 100vh;
-  background-image: url("./resources/images/waheguru.JPG");
+  background-image: url("./resources/images/waheguru.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1237,7 +1237,7 @@ nav {
     left: -10%;
     width: 100%;
     height: 200%;
-    background-image: url('./resources/images/founder-tag.png');
+    background-image: url('./resources/images/founder-tag.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
