@@ -1467,7 +1467,7 @@ iframe {
   width: 30px;
   color: var(--secondary-energetic-orange-color);
 }
-.info-item span{
+.info-item p{
   color: var(--secondary-energetic-orange-color) !important;
 text-decoration: none !important;
 }
