@@ -508,3 +508,6 @@ closeGalleryBtn.addEventListener('click', () => {
     galleryOverlay.classList.add('hidden');
   }, 500); // match transition duration
 });
+
+
+
