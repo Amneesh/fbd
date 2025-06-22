@@ -520,3 +520,29 @@ window.addEventListener('load', function () {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+
+const video = document.getElementById('bhangraVideo');
+const playButton = document.getElementById('playButtonBhangra');
+const overlay = document.getElementById('videoOverlayBhangra');
+
+playButton.addEventListener('click', () => {
+  video.play();
+  playButton.style.display = 'none';
+  overlay.style.opacity = '0';
+});
+
+video.addEventListener('click', () => {
+  if (!video.paused) {
+    video.pause();
+    playButton.style.display = 'block';
+    overlay.style.opacity = '0.3';
+  } else {
+    video.play();
+    playButton.style.display = 'none';
+    overlay.style.opacity = '0';
+  }
+});
+
+// Optional: Hide controls and prevent autoplay on load
+video.removeAttribute('autoplay');
