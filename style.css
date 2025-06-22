@@ -885,7 +885,7 @@ nav {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1rem;
-  flex-flow: row;
+  flex-flow: row wrap;
 
   i {
     font-size: clamp(12px, 4vw, 16px);
