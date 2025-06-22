@@ -159,6 +159,8 @@ margin: 0 auto;
     width: 500px;
 }
 
+
+
 .bhangra-button {
   text-transform: uppercase;
   position: relative;
@@ -383,6 +385,7 @@ font-weight: 500;
   padding: 0rem 1rem 0rem;
 }
 
+
 .banner-sub-content-text {
   display: flex;
   flex-flow: column;
@@ -397,6 +400,49 @@ font-weight: 500;
     font-weight: 300;
   }
 }
+
+.fbd-animation {
+  padding: 1rem 0rem;
+  min-width: 300px;
+width: 50vw;
+  svg {
+    width: 100%;
+  
+  }
+}
+
+     /* Google chrome */
+     @-webkit-keyframes svg-text-anim {
+      40% {
+         stroke-dashoffset: 0;
+         fill: transparent;
+       }
+       60% {
+         stroke-dashoffset: 0;
+         fill: #f8db9c;
+       }
+       100% {
+         stroke-dashoffset: 0;
+         fill: #f8db9c;
+       }
+       
+   }
+   /* Most browsers */
+   @keyframes svg-text-anim {
+      40% {
+         stroke-dashoffset: 0;
+         fill: transparent;
+       }
+       60% {
+         stroke-dashoffset: 0;
+         fill: #f8db9c;
+       }
+       100% {
+         stroke-dashoffset: 0;
+         fill: #f8db9c;
+       }
+       
+   }
 
 .banner-main {
   height: 70vh;
