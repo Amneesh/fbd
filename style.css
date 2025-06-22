@@ -586,7 +586,7 @@ header {
   z-index: 99;
   transition: all 0.9s ease-in-out;
   display: flex;
-  top: 1rem;
+  top: 0rem;
   background-color: var(--primary-black-color);
   right: 0;
 
