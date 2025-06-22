@@ -1631,8 +1631,8 @@ text-decoration: none !important;
 
 
 .review-section-header{
-
-    padding: 2rem;
+max-width: 1400px;
+    padding: 1rem;
     width: 100%;
     display: flex;
     gap: 2rem;
