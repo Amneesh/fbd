@@ -1643,7 +1643,7 @@ text-decoration: none !important;
     flex-flow: column;
     justify-content: space-evenly;
     padding: 2rem 0rem 2rem 2rem;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #000000;
     clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
 
