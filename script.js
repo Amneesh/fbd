@@ -1,6 +1,28 @@
 AOS.init();
 
 var headerMenu = document.getElementById('header-menu-mobile');
+window.addEventListener('load', () => {
+  const banner = document.getElementById('banner-video-placeholder');
+
+  const video = document.createElement('video');
+  video.className = 'banner-video-run';
+  video.poster = './resources/videos/main-landing.webp';
+  video.muted = true;
+  video.loop = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.style.width = '100%';
+  video.style.height = '100vh';
+  video.style.objectFit = 'cover';
+
+  const source = document.createElement('source');
+  source.src = './resources/videos/bhangra-video-main-landing-c.mp4';
+  source.type = 'video/mp4';
+
+  video.appendChild(source);
+  banner.innerHTML = '';
+  banner.appendChild(video);
+});
 
 function openMenu() {
   headerMenu.setAttribute('class', 'bloom-mobile-header nav-visible');

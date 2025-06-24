@@ -18,13 +18,13 @@
     />
 
     <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://cdn.example.com" crossorigin />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/aatjs@0.0.3/dist/aat.min.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'"/>
 
     <link
       rel="stylesheet"
@@ -67,21 +67,9 @@
     <section class="banner-landing">
       <h2 class="visually-hidden">landing bannenr</h2>
       <div class="banner-main">
-        <div class="banner-video">
-          <video
-            class="banner-video-run"
-            poster="./resources/videos/main-landing.webp"
-            muted
-            loop
-            autoplay
-            preload="metadata"
-            playsinline
-          >
-            <source
-              src="./resources/videos/bhangra-video-main-landing.mp4"
-              type="video/mp4"
-            />
-          </video>
+        <div class="banner-video" id="banner-video-placeholder">
+          <img src="./resources/videos/main-landing.webp" alt="Landing Banner"
+            style="width: 100%; height: 100vh; object-fit: cover" />
         </div>
 
         <div class="banner-container">
@@ -1143,28 +1131,64 @@
       </div>
       <div class="gallery-grid">
         <!-- Images -->
-        <img src="resources/images/team/team1.webp" alt="Team 1" />
-        <img src="resources/images/team/team2.webp" alt="Team 2" />
-        <img src="resources/images/team/team3.webp" alt="Team 3" />
-        <img src="resources/images/team/team4.webp" alt="Team 4" />
-
-        <img src="resources/images/team/team1.webp" alt="Team 1" />
-        <img src="resources/images/team/team2.webp" alt="Team 2" />
-        <img src="resources/images/team/team3.webp" alt="Team 3" />
-        <img src="resources/images/team/team4.webp" alt="Team 4" />
-
-        <img src="resources/images/team/team1.webp" alt="Team 1" />
-        <img src="resources/images/team/team2.webp" alt="Team 2" />
-        <img src="resources/images/team/team3.webp" alt="Team 3" />
-        <img src="resources/images/team/team4.webp" alt="Team 4" />
-
+        <img src="resources/images/team/team1-c.webp" 
+        srcset="resources/images/team/team1-c.webp 300w, resources/images/team/team1.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px"
+        alt="Team 1" loading="lazy" />
+        <img src="resources/images/team/team2-c.webp" 
+        srcset="resources/images/team/team2-c.webp 300w,  resources/images/team/team2.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px" 
+        alt="Team 2" loading="lazy" />
+        <img src="resources/images/team/team3-c.webp" 
+        srcset="resources/images/team/team3-c.webp 300w, resources/images/team/team3.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px" 
+        alt="Team 3" loading="lazy"/>
+        <img src="resources/images/team/team4-c.webp" 
+        srcset="resources/images/team/team4-c.webp 300w, resources/images/team/team4.webp 600w" 
+        sizes="(max-width: 480px) 100vw, 300px"
+        alt="Team 4" loading="lazy"/>
+      
+        <img src="resources/images/team/team1-c.webp" 
+        srcset="resources/images/team/team1-c.webp 300w, resources/images/team/team1.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px"
+        alt="Team 1" loading="lazy" />
+        <img src="resources/images/team/team2-c.webp" 
+        srcset="resources/images/team/team2-c.webp 300w,  resources/images/team/team2.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px" 
+        alt="Team 2" loading="lazy" />
+        <img src="resources/images/team/team3-c.webp" 
+        srcset="resources/images/team/team3-c.webp 300w, resources/images/team/team3.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px" 
+        alt="Team 3" loading="lazy"/>
+        <img src="resources/images/team/team4-c.webp" 
+        srcset="resources/images/team/team4-c.webp 300w, resources/images/team/team4.webp 600w" 
+        sizes="(max-width: 480px) 100vw, 300px"
+        alt="Team 4" loading="lazy"/>
+      
+        <img src="resources/images/team/team1-c.webp" 
+        srcset="resources/images/team/team1-c.webp 300w, resources/images/team/team1.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px"
+        alt="Team 1" loading="lazy" />
+        <img src="resources/images/team/team2-c.webp" 
+        srcset="resources/images/team/team2-c.webp 300w,  resources/images/team/team2.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px" 
+        alt="Team 2" loading="lazy" />
+        <img src="resources/images/team/team3-c.webp" 
+        srcset="resources/images/team/team3-c.webp 300w, resources/images/team/team3.webp 600w"
+        sizes="(max-width: 480px) 100vw, 300px" 
+        alt="Team 3" loading="lazy"/>
+        <img src="resources/images/team/team4-c.webp" 
+        srcset="resources/images/team/team4-c.webp 300w, resources/images/team/team4.webp 600w" 
+        sizes="(max-width: 480px) 100vw, 300px"
+        alt="Team 4" loading="lazy"/>
+      
         <!-- Videos -->
         <!-- <video controls>
-            <source src="resources/videos/bhangra-video-1.mov" type="video/mp4" />
-          </video>
-          <video controls>
-            <source src="resources/videos/bhangra-video-main.MOV" type="video/mp4" />
-          </video> -->
+        <source src="resources/videos/bhangra-video-1.mov" type="video/mp4" />
+        </video>
+        <video controls>
+        <source src="resources/videos/bhangra-video-main.MOV" type="video/mp4" />
+        </video> -->
       </div>
     </div>
   </body>
