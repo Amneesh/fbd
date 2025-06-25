@@ -314,7 +314,7 @@ font-weight: 500;
 }
 
 /* From Uiverse.io by JohnnyCSilva */
-.coin {
+/* .coin {
   font-size: 150px;
   width: 0.1em;
   height: 1em;
@@ -324,15 +324,39 @@ font-weight: 500;
   z-index: 99;
   top: -15px;
   left: 0;
-  /* position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
+  
   animation: rotate_4001510 7s infinite linear;
   transform-style: preserve-3d;
+} */
+
+.coin {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: auto;
+  animation: coinFlip 2s ease-in-out forwards;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.coin-content {
+.coin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes coinFlip {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/* .coin-content {
   position: relative;
 }
 .coin .side,
@@ -375,7 +399,7 @@ font-weight: 500;
   100% {
     transform: rotateY(360deg);
   }
-}
+} */
 
 .svg_back {
   transform: scaleX(-1);
@@ -616,7 +640,7 @@ header {
   display: none;
 }
 .mobile-nav{
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

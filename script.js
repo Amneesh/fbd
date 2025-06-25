@@ -1,4 +1,18 @@
+window.addEventListener("load", function () {
+  const aosScript = document.createElement("script");
+  aosScript.src = "https://unpkg.com/aos@next/dist/aos.js";
+  aosScript.defer = true;
+  document.body.appendChild(aosScript);
 
+  const aatScript = document.createElement("script");
+  aatScript.src = "https://unpkg.com/aatjs@0.0.3/dist/aat.min.js";
+  aatScript.defer = true;
+  document.body.appendChild(aatScript);
+
+  aosScript.onload = function () {
+    AOS.init({ duration: 1000, once: true });
+  };
+});
 var headerMenu = document.getElementById('header-menu-mobile');
 // window.addEventListener('load', () => {
 //   const banner = document.getElementById('banner-video-placeholder');

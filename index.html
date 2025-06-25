@@ -62,24 +62,9 @@
     <!-- Your main script (deferred) -->
     <script src="./script.js" defer></script>
 
-    <!-- Lazy load AOS and AAT scripts AFTER page load -->
-    <script>
-      window.addEventListener("load", function () {
-        const aosScript = document.createElement("script");
-        aosScript.src = "https://unpkg.com/aos@next/dist/aos.js";
-        aosScript.defer = true;
-        document.body.appendChild(aosScript);
-
-        const aatScript = document.createElement("script");
-        aatScript.src = "https://unpkg.com/aatjs@0.0.3/dist/aat.min.js";
-        aatScript.defer = true;
-        document.body.appendChild(aatScript);
-
-        aosScript.onload = function () {
-          AOS.init({ duration: 1000, once: true });
-        };
-      });
-    </script>
+  
+   
+  
   </head>
 
   <body>
@@ -109,6 +94,7 @@
             src="./resources/videos/main-landing.webp"
             alt="Landing Banner"
             style="width: 100%; height: 100vh; object-fit: cover"
+
           />
         </div>
 
@@ -125,7 +111,7 @@
               <li class="item-logo">
                 <div class="coin-content">
                   <div class="coin">
-                    <div class="side heads">
+                    <!-- <div class="side heads">
                       <img
                         src="./resources/images/bhangra-logo.webp"
                         alt="fan bhangre de logo"
@@ -136,7 +122,12 @@
                         src="./resources/images/bhangra-logo.webp"
                         alt="fan bhangre de logo"
                       />
-                    </div>
+                    </div> -->
+                    <img
+                    src="./resources/images/bhangra-logo.webp"
+                    alt="fan bhangre de logo"
+                    loading="lazy"
+                  />
                   </div>
                 </div>
               </li>
