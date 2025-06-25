@@ -1,50 +1,49 @@
-AOS.init();
 
 var headerMenu = document.getElementById('header-menu-mobile');
-window.addEventListener('load', () => {
-  const banner = document.getElementById('banner-video-placeholder');
+// window.addEventListener('load', () => {
+//   const banner = document.getElementById('banner-video-placeholder');
 
-  const video = document.createElement('video');
-  video.className = 'banner-video-run';
-  video.poster = './resources/videos/main-landing.webp';
-  video.muted = true;
-  video.loop = true;
-  video.autoplay = true;
-  video.playsInline = true;
-  video.style.width = '100%';
-  video.style.height = '100vh';
-  video.style.objectFit = 'cover';
+//   const video = document.createElement('video');
+//   video.className = 'banner-video-run';
+//   video.poster = './resources/videos/main-landing.webp';
+//   video.muted = true;
+//   video.loop = true;
+//   video.autoplay = true;
+//   video.playsInline = true;
+//   video.style.width = '100%';
+//   video.style.height = '100vh';
+//   video.style.objectFit = 'cover';
 
-  const source = document.createElement('source');
-  source.src = './resources/videos/bhangra-video-main-landing-c.mp4';
-  source.type = 'video/mp4';
+//   const source = document.createElement('source');
+//   source.src = './resources/videos/bhangra-video-main-landing-c.mp4';
+//   source.type = 'video/mp4';
 
-  video.appendChild(source);
-  banner.innerHTML = '';
-  banner.appendChild(video);
-});
+//   video.appendChild(source);
+//   banner.innerHTML = '';
+//   banner.appendChild(video);
+// });
 
-function openMenu() {
-  headerMenu.setAttribute('class', 'bloom-mobile-header nav-visible');
-}
-function closeMenu() {
-  headerMenu.removeAttribute('class', ' bloom-mobile-header nav-visible');
-  headerMenu.setAttribute('class', ' bloom-mobile-header');
-}
-openNavButton.addEventListener("click", function (event) {
-  openMenu();
-})
+// function openMenu() {
+//   headerMenu.setAttribute('class', 'bloom-mobile-header nav-visible');
+// }
+// function closeMenu() {
+//   headerMenu.removeAttribute('class', ' bloom-mobile-header nav-visible');
+//   headerMenu.setAttribute('class', ' bloom-mobile-header');
+// }
+// openNavButton.addEventListener("click", function (event) {
+//   openMenu();
+// })
 
-closeNavButton.addEventListener("click", function (event) {
-  closeMenu();
-})
+// closeNavButton.addEventListener("click", function (event) {
+//   closeMenu();
+// })
 
-var navLinks = document.querySelectorAll('.nav .header-link, .nav a:not(.header-link)');
-navLinks.forEach(function (link) {
-  link.addEventListener('click', function () {
-    closeMenu();
-  });
-});
+// var navLinks = document.querySelectorAll('.nav .header-link, .nav a:not(.header-link)');
+// navLinks.forEach(function (link) {
+//   link.addEventListener('click', function () {
+//     closeMenu();
+//   });
+// });
 
 
 function scrollToSection(sectionId) {
@@ -138,186 +137,146 @@ function truncateText(text, maxLength) {
   return text;
 }
 
-function generateReviewCards() {
+window.addEventListener('load', () => {
   const reviewContainer = document.getElementById('reviewContainer');
-  reviewContainer.innerHTML = ''; // Clear existing content
 
-  reviews.forEach(review => {
-    const reviewCard = document.createElement('div');
-    reviewCard.className = 'review-card';
+  function generateReviewCards() {
+    reviewContainer.innerHTML = ''; // Clear previous content if any
 
-    // Limit the review content to 100 characters
-    const limitedContent = truncateText(review.content, 150);
+    reviews.forEach((review) => {
+      const reviewCard = document.createElement('div');
+      reviewCard.className = 'review-card';
 
-    // Create elements for review card
-    const reviewCardHeader = document.createElement('div');
-    reviewCardHeader.className = 'review-card-header';
-    reviewCardHeader.innerHTML = `
+      const limitedContent = truncateText(review.content, 150);
 
-                                <div class="review-card-left-content-header">
-                                    <div class="review-card-avatar">
-                                    
- <img src="${review.avatar}" alt="User Avatar">
-                                      </div>
-                                     <div class="review-card-name-time">
-                                       <div class="review-card-name">  <p>${review.name}</p></div>
-                                       <div class="review-card-time"><p>${review.time}</p></div>
-                                     </div>
-                                </div>
-                                <div class="review-card-right-content-header">
-                                    <a href="${review.link}" target= "_blank">
-                                              <img src="./resources/images/google-icon-review.webp" alt="">
-    
-                                    </a>
-                                </div>
-
-                               
-                               
-
-    
-          
-         
-      `;
-
-    const reviewCardBody = document.createElement('div');
-    reviewCardBody.className = 'review-card-body';
-
-    const limitedContentDiv = document.createElement('div');
-    limitedContentDiv.className = 'review-card-content';
-    limitedContentDiv.innerHTML = `
-     <div class="review-card-rating-star">
-              ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)} <!-- Display stars -->
+      const reviewCardHeader = document.createElement('div');
+      reviewCardHeader.className = 'review-card-header';
+      reviewCardHeader.innerHTML = `
+        <div class="review-card-left-content-header">
+          <div class="review-card-avatar">
+            <img src="${review.avatar}" alt="User Avatar" loading="lazy">
           </div>
-    <p>${limitedContent}</p>
-    `;
+          <div class="review-card-name-time">
+            <div class="review-card-name"><p>${review.name}</p></div>
+            <div class="review-card-time"><p>${review.time}</p></div>
+          </div>
+        </div>
+        <div class="review-card-right-content-header">
+          <a href="${review.link}" target="_blank" rel="noopener noreferrer">
+            <img src="./resources/images/google-icon-review.webp" alt="Google Review Icon" loading="lazy">
+          </a>
+        </div>`;
 
-    const fullContentDiv = document.createElement('div');
-    fullContentDiv.className = 'full-content';
-    fullContentDiv.style.display = 'none'; // Initially hidden
-    fullContentDiv.innerHTML = `<p>${review.content}</p>`;
+      const reviewCardBody = document.createElement('div');
+      reviewCardBody.className = 'review-card-body';
 
-    const toggleButton = document.createElement('button');
-    toggleButton.className = 'toggle-button';
-    toggleButton.innerText = 'Show More';
+      const limitedContentDiv = document.createElement('div');
+      limitedContentDiv.className = 'review-card-content';
+      limitedContentDiv.innerHTML = `
+        <div class="review-card-rating-star">
+          ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+        </div>
+        <p>${limitedContent}</p>`;
 
-    // Add toggle functionality
-    toggleButton.addEventListener('click', () => {
-      if (fullContentDiv.style.display === 'none') {
-        fullContentDiv.style.display = 'block';
-        toggleButton.innerText = 'Show Less';
-        limitedContentDiv.style.display = 'none'; // Hide the truncated content
-      } else {
-        fullContentDiv.style.display = 'none';
-        toggleButton.innerText = 'Show More';
-        limitedContentDiv.style.display = 'block'; // Show the truncated content
-      }
-    });
+      const fullContentDiv = document.createElement('div');
+      fullContentDiv.className = 'full-content';
+      fullContentDiv.style.display = 'none';
+      fullContentDiv.innerHTML = `<p>${review.content}</p>`;
 
-    // Append elements to the review card body
-    reviewCardBody.appendChild(limitedContentDiv);
-    reviewCardBody.appendChild(fullContentDiv);
-    reviewCardBody.appendChild(toggleButton);
+      const toggleButton = document.createElement('button');
+      toggleButton.className = 'toggle-button';
+      toggleButton.innerText = 'Show More';
 
-    const reviewCardFooter = document.createElement('div');
-    
-
-    // Append all parts to the review card
-    reviewCard.appendChild(reviewCardHeader);
-    reviewCard.appendChild(reviewCardBody);
-
-    // Append the review card to the container
-    reviewContainer.appendChild(reviewCard);
-  });
-}
-
-generateReviewCards();
-
-  const container = document.getElementById('reviewContainer');
-
-  // Define scroll speed and interval
-  const scrollSpeed = 5; // Adjust scroll speed (higher value for faster scrolling)
-  const scrollInterval = 30; // Adjust scroll interval in milliseconds
-  let scrollDirection = 'right'; // Initial scroll direction
-
-  // Function to scroll container automatically
-  function autoScroll() {
-      if (scrollDirection === 'right') {
-          container.scrollLeft += scrollSpeed;
-          // Check if reached end of scroll
-          if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-              scrollDirection = 'left';
-          }
-      } else if (scrollDirection === 'left') {
-          container.scrollLeft -= scrollSpeed;
-          // Check if scrolled back to start
-          if (container.scrollLeft <= 0) {
-              scrollDirection = 'right';
-          }
-      }
-  }
-
-  // Start auto-scrolling
-  let scrollIntervalId = setInterval(autoScroll, scrollInterval);
-
-  // Stop auto-scrolling when mouse enters container
-  container.addEventListener('touchmove', () => {
-      clearInterval(scrollIntervalId);
-  });
-
-  // Resume auto-scrolling when mouse leaves container
-  // container.addEventListener('mousemove', () => {
-  //     scrollIntervalId = setInterval(autoScroll, scrollInterval);
-  // });
-
-  // Optional: Stop auto-scrolling when clicking on a card
-  const reviewCards = document.querySelectorAll('.review-card');
-  reviewCards.forEach(card => {
-      card.addEventListener('click', () => {
-          clearInterval(scrollIntervalId);
+      toggleButton.addEventListener('click', () => {
+        const isExpanded = fullContentDiv.style.display === 'block';
+        fullContentDiv.style.display = isExpanded ? 'none' : 'block';
+        limitedContentDiv.style.display = isExpanded ? 'block' : 'none';
+        toggleButton.innerText = isExpanded ? 'Show More' : 'Show Less';
       });
+
+      reviewCardBody.appendChild(limitedContentDiv);
+      reviewCardBody.appendChild(fullContentDiv);
+      reviewCardBody.appendChild(toggleButton);
+
+      reviewCard.appendChild(reviewCardHeader);
+      reviewCard.appendChild(reviewCardBody);
+      reviewContainer.appendChild(reviewCard);
+    });
+  }
+
+  generateReviewCards();
+
+  // === Auto-scroll logic ===
+  let scrollDirection = 'right';
+  const scrollSpeed = 5;
+  const scrollInterval = 30;
+  let scrollIntervalId;
+
+  function autoScroll() {
+    if (!reviewContainer) return;
+    if (scrollDirection === 'right') {
+      reviewContainer.scrollLeft += scrollSpeed;
+      if (reviewContainer.scrollLeft >= reviewContainer.scrollWidth - reviewContainer.clientWidth) {
+        scrollDirection = 'left';
+      }
+    } else {
+      reviewContainer.scrollLeft -= scrollSpeed;
+      if (reviewContainer.scrollLeft <= 0) {
+        scrollDirection = 'right';
+      }
+    }
+  }
+
+  scrollIntervalId = setInterval(autoScroll, scrollInterval);
+
+  // Stop auto-scroll on interaction
+  reviewContainer.addEventListener('touchmove', () => clearInterval(scrollIntervalId));
+  reviewContainer.addEventListener('click', () => clearInterval(scrollIntervalId));
+
+  // Stop on individual card interaction too
+  reviewContainer.querySelectorAll('.review-card').forEach((card) => {
+    card.addEventListener('click', () => clearInterval(scrollIntervalId));
   });
+});
 
 
 
 
+window.addEventListener('load', () => {
+  let slideIndex = 1;
+  showSlides(slideIndex);
 
-let slideIndex = 1;
-showSlides(slideIndex);
+  // Expose these functions to global scope if you call them from HTML buttons
+  window.plusSlides = function(n) {
+    showSlides(slideIndex += n);
+  };
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+  window.currentSlide = function(n) {
+    showSlides(slideIndex = n);
+  };
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let slidesContent = document.getElementsByClassName("mySlideContent");
+    let dots = document.getElementsByClassName("dot");
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let slidesContent = document.getElementsByClassName("mySlideContent");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
 
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    slidesContent[i].style.display = "none";
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      slidesContent[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "flex";
+    slidesContent[slideIndex - 1].style.display = "flex";
+    dots[slideIndex - 1].className += " active";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "flex";
-  slidesContent[slideIndex - 1].style.display = "flex";
-  dots[slideIndex - 1].className += " active";
-  
-}
-// setInterval(() => {
-//   plusSlides(1);
-// }, 5000);
+});
 
-
-// counter
 
 let count = document.querySelectorAll(".count")
 let arr = Array.from(count)
@@ -569,18 +528,18 @@ window.onbeforeunload = function () {
 // // Optional: Hide controls and prevent autoplay on load
 // video.removeAttribute('autoplay');
 
-function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
-  let paths = document.querySelectorAll("path");
-  let mode=repeat?'infinite':'forwards'
-  for (let i = 0; i < paths.length; i++) {
-      const path = paths[i];
-      const length = path.getTotalLength();
-      path.style["stroke-dashoffset"] = `${length}px`;
-      path.style["stroke-dasharray"] = `${length}px`;
-      path.style["stroke-width"] = `${strokeWidth}px`;
-      path.style["stroke"] = `${strokeColor}`;
-      path.style["animation"] = `${duration}s svg-text-anim ${mode} ${timingFunction}`;
-      path.style["animation-delay"] = `${i * delay}s`;
-  }
-}
-setTextAnimation(0.2,5.6,1,'ease-in-out','#f8db9c',false);
+// function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
+//   let paths = document.querySelectorAll("path");
+//   let mode=repeat?'infinite':'forwards'
+//   for (let i = 0; i < paths.length; i++) {
+//       const path = paths[i];
+//       const length = path.getTotalLength();
+//       path.style["stroke-dashoffset"] = `${length}px`;
+//       path.style["stroke-dasharray"] = `${length}px`;
+//       path.style["stroke-width"] = `${strokeWidth}px`;
+//       path.style["stroke"] = `${strokeColor}`;
+//       path.style["animation"] = `${duration}s svg-text-anim ${mode} ${timingFunction}`;
+//       path.style["animation-delay"] = `${i * delay}s`;
+//   }
+// }
+// setTextAnimation(0.2,5.6,1,'ease-in-out','#f8db9c',false);

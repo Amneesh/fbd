@@ -9,38 +9,75 @@
       content="Fan Bhangre De (FBD) delivers high-energy Bhangra, Giddha, and live entertainment for weddings, festivals, and cultural events."
     />
     <link rel="canonical" href="https://fanbhangrede.com/" />
-
     <title>Fan Bhangre De</title>
+
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/x-icon"
       href="./resources/images/bhangra-logo.webp"
     />
 
-    <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all'">
+    <!-- Preconnect for fonts and CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://cdn.example.com" crossorigin />
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://unpkg.com/aatjs@0.0.3/dist/aat.min.js"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'"/>
+    <!-- Main styles (non-blocking) -->
+    <link
+      rel="stylesheet"
+      href="./style.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="./style.css" /></noscript>
 
+    <!-- AOS CSS (non-blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@next/dist/aos.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"
+    /></noscript>
+
+    <!-- Font Awesome CSS (non-blocking) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      media="print"
+      onload="this.media='all'"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      />
+    </noscript>
 
+    <!-- Your main script (deferred) -->
+    <script src="./script.js" defer></script>
+
+    <!-- Lazy load AOS and AAT scripts AFTER page load -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        AOS.init({
-          duration: 1000,
-          once: true,
-        });
+      window.addEventListener("load", function () {
+        const aosScript = document.createElement("script");
+        aosScript.src = "https://unpkg.com/aos@next/dist/aos.js";
+        aosScript.defer = true;
+        document.body.appendChild(aosScript);
+
+        const aatScript = document.createElement("script");
+        aatScript.src = "https://unpkg.com/aatjs@0.0.3/dist/aat.min.js";
+        aatScript.defer = true;
+        document.body.appendChild(aatScript);
+
+        aosScript.onload = function () {
+          AOS.init({ duration: 1000, once: true });
+        };
       });
     </script>
   </head>
@@ -68,21 +105,24 @@
       <h2 class="visually-hidden">landing bannenr</h2>
       <div class="banner-main">
         <div class="banner-video" id="banner-video-placeholder">
-          <img src="./resources/videos/main-landing.webp" alt="Landing Banner"
-            style="width: 100%; height: 100vh; object-fit: cover" />
+          <img
+            src="./resources/videos/main-landing.webp"
+            alt="Landing Banner"
+            style="width: 100%; height: 100vh; object-fit: cover"
+          />
         </div>
 
         <div class="banner-container">
           <div class="banner-header">
             <ul class="nav">
-              <li class="item-desktop" data-aos="zoom-out-up">
+              <li class="item-desktop">
                 <a class="header-link" href="#about">ABOUT</a>
               </li>
-              <li class="item-desktop" data-aos="zoom-out-up">
+              <li class="item-desktop">
                 <a class="header-link" href="#services">SERVICES</a>
               </li>
 
-              <li class="item-logo" data-aos="zoom-out-up">
+              <li class="item-logo">
                 <div class="coin-content">
                   <div class="coin">
                     <div class="side heads">
@@ -100,10 +140,10 @@
                   </div>
                 </div>
               </li>
-              <li class="item-desktop" data-aos="zoom-out-up">
+              <li class="item-desktop">
                 <a class="header-link open-gallery">GALLERY</a>
               </li>
-              <li class="item-desktop" data-aos="zoom-out-up">
+              <li class="item-desktop">
                 <a class="header-link" href="#contactUs">CONTACT</a>
               </li>
             </ul>
@@ -112,15 +152,9 @@
       </div>
       <div class="banner-sub-content">
         <div class="banner-sub-content-text">
-          <h3
-            data-aos="fade-left"
-            data-aos-anchor="#example-anchor"
-            data-aos-offset="500"
-            data-aos-duration="500"
-          >
-            From stage to soul, we lead the way
-          </h3>
-<div class="fbd-animation">
+          <h3 data-aos="fade-left">From stage to soul, we lead the way</h3>
+          <h3 data-aos="fade-left">We are FAN BHANGRE DE</h3>
+          <!-- <div class="fbd-animation">
           <svg
         
             viewBox="0 0 1785.752 151.501"
@@ -228,7 +262,7 @@
               />
             </g>
           </svg>
-        </div>
+        </div> -->
         </div>
       </div>
     </section>
@@ -238,7 +272,35 @@
 
       <div class="header-bar">
         <div class="header-nav">
-          <div class="bloom-mobile-header" id="header-menu-mobile">
+          <input type="checkbox" id="menuToggle" hidden />
+
+          <label for="menuToggle" class="toggle-nav">
+            <i class="fa-solid fa-bars" id="openNavButton"></i>
+            <i class="fa-solid fa-xmark" id="closeNavButton"></i>
+          </label>
+
+          <nav class="bloom-mobile-header" id="header-menu-mobile">
+            <ol class="nav mobile-nav">
+              <li class="item">
+                <a class="header-link" href="#about">ABOUT</a>
+              </li>
+              <li class="item">
+                <a class="header-link" href="#services">SERVICES</a>
+              </li>
+              <li class="item">
+                <a class="header-link open-gallery">GALLERY</a>
+              </li>
+              <li class="item">
+                <a class="header-link" href="#whyFbd">WHY FBD?</a>
+              </li>
+              <li class="item">
+                <a class="header-link" href="#contactUs">CONTACT US</a>
+              </li>
+            </ol>
+          
+          </nav>
+          
+          <!-- <div class="bloom-mobile-header" id="header-menu-mobile">
             <div class="toggle-nav">
               <i class="fa-solid fa-bars" id="openNavButton"></i>
               <i class="fa-solid fa-xmark" id="closeNavButton"></i>
@@ -268,15 +330,22 @@
             >
               JOIN FBD
             </button>
-          </div>
+          </div> -->
         </div>
+        <button
+          class="bhangra-button-inverse joinUs"
+          onclick="scrollToSection('contactUs')"
+        >
+          JOIN FBD
+        </button>
       </div>
 
       <div class="header-description" id="about">
-        <div class="video-card" data-aos="fade-up">
+        <div class="video-card">
           <div class="header-description-video">
             <!-- <div class="video-overlay-bhangra" id="videoOverlayBhangra"></div> -->
-            <video
+            <img src="./resources/videos/bhangra-landing.webp" alt="" />
+            <!-- <video
               id="bhangraVideo"
               poster="./resources/videos/bhangra-landing.webp"
               muted
@@ -290,7 +359,7 @@
                 type="video/mp4"
               />
               Your browser does not support the video tag.
-            </video>
+            </video> -->
             <!-- <div class="play-button-bhangra" id="playButtonBhangra">&#9658;</div> -->
           </div>
         </div>
@@ -368,7 +437,7 @@
                 Experience Our Signature Services
               </h2>
 
-              <div class="horizontal-scroll-wrapper" data-aos="fade-left">
+              <div class="horizontal-scroll-wrapper">
                 <div class="scroll-buttons">
                   <button id="scroll-left" class="scroll-arrow">
                     <i class="fa-solid fa-angles-left fa-beat-fade"></i>
@@ -1131,57 +1200,129 @@
       </div>
       <div class="gallery-grid">
         <!-- Images -->
-        <img src="resources/images/team/team1-c.webp" 
-        srcset="resources/images/team/team1-c.webp 300w, resources/images/team/team1.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px"
-        alt="Team 1" loading="lazy" />
-        <img src="resources/images/team/team2-c.webp" 
-        srcset="resources/images/team/team2-c.webp 300w,  resources/images/team/team2.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px" 
-        alt="Team 2" loading="lazy" />
-        <img src="resources/images/team/team3-c.webp" 
-        srcset="resources/images/team/team3-c.webp 300w, resources/images/team/team3.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px" 
-        alt="Team 3" loading="lazy"/>
-        <img src="resources/images/team/team4-c.webp" 
-        srcset="resources/images/team/team4-c.webp 300w, resources/images/team/team4.webp 600w" 
-        sizes="(max-width: 480px) 100vw, 300px"
-        alt="Team 4" loading="lazy"/>
-      
-        <img src="resources/images/team/team1-c.webp" 
-        srcset="resources/images/team/team1-c.webp 300w, resources/images/team/team1.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px"
-        alt="Team 1" loading="lazy" />
-        <img src="resources/images/team/team2-c.webp" 
-        srcset="resources/images/team/team2-c.webp 300w,  resources/images/team/team2.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px" 
-        alt="Team 2" loading="lazy" />
-        <img src="resources/images/team/team3-c.webp" 
-        srcset="resources/images/team/team3-c.webp 300w, resources/images/team/team3.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px" 
-        alt="Team 3" loading="lazy"/>
-        <img src="resources/images/team/team4-c.webp" 
-        srcset="resources/images/team/team4-c.webp 300w, resources/images/team/team4.webp 600w" 
-        sizes="(max-width: 480px) 100vw, 300px"
-        alt="Team 4" loading="lazy"/>
-      
-        <img src="resources/images/team/team1-c.webp" 
-        srcset="resources/images/team/team1-c.webp 300w, resources/images/team/team1.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px"
-        alt="Team 1" loading="lazy" />
-        <img src="resources/images/team/team2-c.webp" 
-        srcset="resources/images/team/team2-c.webp 300w,  resources/images/team/team2.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px" 
-        alt="Team 2" loading="lazy" />
-        <img src="resources/images/team/team3-c.webp" 
-        srcset="resources/images/team/team3-c.webp 300w, resources/images/team/team3.webp 600w"
-        sizes="(max-width: 480px) 100vw, 300px" 
-        alt="Team 3" loading="lazy"/>
-        <img src="resources/images/team/team4-c.webp" 
-        srcset="resources/images/team/team4-c.webp 300w, resources/images/team/team4.webp 600w" 
-        sizes="(max-width: 480px) 100vw, 300px"
-        alt="Team 4" loading="lazy"/>
-      
+        <img
+          src="resources/images/team/team1-c.webp"
+          srcset="
+            resources/images/team/team1-c.webp 300w,
+            resources/images/team/team1.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 1"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team2-c.webp"
+          srcset="
+            resources/images/team/team2-c.webp 300w,
+            resources/images/team/team2.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 2"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team3-c.webp"
+          srcset="
+            resources/images/team/team3-c.webp 300w,
+            resources/images/team/team3.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 3"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team4-c.webp"
+          srcset="
+            resources/images/team/team4-c.webp 300w,
+            resources/images/team/team4.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 4"
+          loading="lazy"
+        />
+
+        <img
+          src="resources/images/team/team1-c.webp"
+          srcset="
+            resources/images/team/team1-c.webp 300w,
+            resources/images/team/team1.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 1"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team2-c.webp"
+          srcset="
+            resources/images/team/team2-c.webp 300w,
+            resources/images/team/team2.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 2"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team3-c.webp"
+          srcset="
+            resources/images/team/team3-c.webp 300w,
+            resources/images/team/team3.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 3"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team4-c.webp"
+          srcset="
+            resources/images/team/team4-c.webp 300w,
+            resources/images/team/team4.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 4"
+          loading="lazy"
+        />
+
+        <img
+          src="resources/images/team/team1-c.webp"
+          srcset="
+            resources/images/team/team1-c.webp 300w,
+            resources/images/team/team1.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 1"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team2-c.webp"
+          srcset="
+            resources/images/team/team2-c.webp 300w,
+            resources/images/team/team2.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 2"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team3-c.webp"
+          srcset="
+            resources/images/team/team3-c.webp 300w,
+            resources/images/team/team3.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 3"
+          loading="lazy"
+        />
+        <img
+          src="resources/images/team/team4-c.webp"
+          srcset="
+            resources/images/team/team4-c.webp 300w,
+            resources/images/team/team4.webp   600w
+          "
+          sizes="(max-width: 480px) 100vw, 300px"
+          alt="Team 4"
+          loading="lazy"
+        />
+
         <!-- Videos -->
         <!-- <video controls>
         <source src="resources/videos/bhangra-video-1.mov" type="video/mp4" />
