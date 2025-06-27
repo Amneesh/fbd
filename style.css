@@ -3028,6 +3028,11 @@ h2 {
   }
 }
 #toggleSocial {
+
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 9999999999999;
+  
   background-color: var(--primary-energetic-orange-color);
   color: var(--secondary-energetic-orange-color);
   border: none;

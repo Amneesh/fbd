@@ -599,9 +599,11 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   }
 });
 
-const toggleBtn = document.getElementById('toggleSocial');
-const socialPopup = document.getElementById('socialPopup');
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById('toggleSocial');
+  const socialPopup = document.getElementById('socialPopup');
 
-toggleBtn.addEventListener('click', () => {
-  socialPopup.classList.toggle('hidden');
+  toggleBtn.addEventListener('click', () => {
+    socialPopup.classList.toggle('hidden');
+  });
 });
