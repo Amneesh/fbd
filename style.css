@@ -2903,6 +2903,7 @@ h3{
 
 .gallery-overlay {
   position: fixed;
+
   left: 0;
   bottom: -100%;
   width: 100%;
@@ -2933,14 +2934,15 @@ h3{
   background-blend-mode: screen;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 9999;
+  z-index: 999999999999999999999999;
   transition: bottom 0.5s ease;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
 
   backdrop-filter: blur(20px);
 }
+
 
 .gallery-overlay.active {
   bottom: 0;
