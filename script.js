@@ -608,3 +608,23 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.classList.toggle('active'); // <--- Add this line
   });
 });
+
+
+window.onload = function () {
+  document.querySelectorAll('.card-int').forEach(card => {
+    const poster = card.getAttribute('data-poster');
+    const src = card.getAttribute('data-src');
+
+    const video = document.createElement('video');
+    video.setAttribute('poster', poster);
+    video.setAttribute('controls', '');
+    video.setAttribute('playsinline', '');
+
+    const source = document.createElement('source');
+    source.setAttribute('src', src);
+    source.setAttribute('type', 'video/mp4');
+
+    video.appendChild(source);
+    card.appendChild(video);
+  });
+};
