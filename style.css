@@ -881,7 +881,8 @@ nav {
 }
 
 #counter .item {
-  text-align: center;
+  width: 100px;
+  text-align: left;
   border-radius: 20px;
 }
 
