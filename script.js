@@ -145,7 +145,7 @@ function truncateText(text, maxLength) {
 }
 
 window.addEventListener('load', () => {
-  const reviewContainer = document.getElementById('reviewContainer');
+  const reviewContainer = document.getElementById('reviewContainerInner');
 
   function generateReviewCards() {
     reviewContainer.innerHTML = ''; // Clear previous content if any
@@ -153,7 +153,7 @@ window.addEventListener('load', () => {
     reviews.forEach((review) => {
       const reviewCard = document.createElement('div');
       reviewCard.className = 'review-card';
-
+reviewCard.role = "listitem"
       const limitedContent = truncateText(review.content, 150);
 
       const reviewCardHeader = document.createElement('div');
@@ -213,37 +213,7 @@ window.addEventListener('load', () => {
 
   generateReviewCards();
 
-  // === Auto-scroll logic ===
-  let scrollDirection = 'right';
-  const scrollSpeed = 5;
-  const scrollInterval = 30;
-  let scrollIntervalId;
 
-  function autoScroll() {
-    if (!reviewContainer) return;
-    if (scrollDirection === 'right') {
-      reviewContainer.scrollLeft += scrollSpeed;
-      if (reviewContainer.scrollLeft >= reviewContainer.scrollWidth - reviewContainer.clientWidth) {
-        scrollDirection = 'left';
-      }
-    } else {
-      reviewContainer.scrollLeft -= scrollSpeed;
-      if (reviewContainer.scrollLeft <= 0) {
-        scrollDirection = 'right';
-      }
-    }
-  }
-
-  scrollIntervalId = setInterval(autoScroll, scrollInterval);
-
-  // Stop auto-scroll on interaction
-  reviewContainer.addEventListener('touchmove', () => clearInterval(scrollIntervalId));
-  reviewContainer.addEventListener('click', () => clearInterval(scrollIntervalId));
-
-  // Stop on individual card interaction too
-  reviewContainer.querySelectorAll('.review-card').forEach((card) => {
-    card.addEventListener('click', () => clearInterval(scrollIntervalId));
-  });
 });
 
 window.addEventListener('load', () => {

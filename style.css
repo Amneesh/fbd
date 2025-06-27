@@ -261,7 +261,7 @@ i {
   background-color: var(--primary-energetic-orange-color);
   color: var(--secondary-white-color);
   z-index: 999;
-  padding: 5px 0; /* Optional: padding for the banner */
+  padding: 0rem 0; /* Optional: padding for the banner */
   /* border-bottom: 1px solid var(--secondary-energetic-orange-color); */
 }
 
@@ -1669,12 +1669,11 @@ h3{
   }
 }
 .review-section {
-  padding: 4rem 1rem;
+  padding: 4rem 0rem;
   display: flex;
-  gap: 2rem;
-  flex-flow: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-flow: column;
   min-height: 100vh;
   /* background: linear-gradient(270deg,rgba(55, 10, 78, 0.99) 0%, rgba(248, 219, 156, 1) 100%); */
   color: var(--secondary-energetic-orange-color);
@@ -1687,6 +1686,19 @@ h3{
     rgba(0, 0, 0, 1) 100%
   );
   /* background-color: black; */
+}
+.review-section-inner{width: 100%;
+  padding: 0rem 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll-review-inner:hover {
+  animation-play-state: paused;
+  cursor: pointer;
 }
 
 .review-section-header {
@@ -1714,32 +1726,63 @@ h3{
 
 .review-section-container {
   width: 100%;
+  margin: 0rem -2rem;
 }
-.scroll-review-container::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari, Opera */
-}
-.scroll-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  /* Ensures container uses the full width of the parent */
-}
+
 .scroll-review-container {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  padding: 20px;
-  border-radius: 10px;
-
-  -webkit-overflow-scrolling: touch;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
 }
+
+/* Wrap your cards twice inside an inner container */
+.scroll-review-inner {
+  display: flex;
+  width: max-content; /* allow width as wide as needed */
+  animation: scrollLeft 20s linear infinite;
+}
+
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.review-card {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 2rem;
+
+  flex: 0 0 auto;
+  width: 380px;
+  min-height: 300px;
+
+  margin: 0px 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.202);
+  /* border: 1px solid var(--primary-royal-purple-color); */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--primary-royal-purple-color);
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  /* animation: bannermove 2s linear infinite; */
+}
+
+
+
+
 
 .review-card-header {
   display: flex;
@@ -1764,29 +1807,6 @@ h3{
   }
 }
 
-.review-card {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  flex: 0 0 auto;
-  width: 380px;
-  min-height: 300px;
-
-  margin: 0px 20px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.202);
-  /* border: 1px solid var(--primary-royal-purple-color); */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: var(--primary-royal-purple-color);
-  cursor: pointer;
-  transition: transform 0.2s;
-  position: relative;
-  overflow: hidden;
-  /* background: linear-gradient(135deg, rgb(26, 1, 46) 20%, rgb(57, 1, 105) 55%, rgb(92, 1, 161) 100%); */
-  background: white;
-}
 
 .review-card-rating-star {
   color: rgb(255, 174, 0);

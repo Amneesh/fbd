@@ -66,23 +66,7 @@
   </head>
 
   <body id="top">
-    <section class="banner-discount">
-      <h2 class="visually-hidden">discount bannenr</h2>
-      <div class="banner-container-discount">
-        <div class="discount-text">
-          <h4>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            molestias non dignissimos expedita ea consectetur veniam maiores
-            quae.
-          </h4>
-          <h4>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            molestias non dignissimos expedita ea consectetur veniam maiores
-            quae.
-          </h4>
-        </div>
-      </div>
-    </section>
+  
 
     <section class="banner-landing">
       <h2 class="visually-hidden">landing bannenr</h2>
@@ -739,6 +723,7 @@
       </section>
 
       <section class="review-section" id="reviews">
+        <div class="review-section-inner">
         <h3
           class="heading-line"
           data-aos="fade-right"
@@ -748,38 +733,42 @@
           What our client says about us
         </h3>
 
-        <div class="review-section-header">
-          <div class="header-left-section">
-            <h4>Customer reviews on Google</h4>
-            <div class="customer-total-review">
-              <div class="review-card-rating-star">
-                <span class="review-star">★</span>
-                <span class="review-star">★</span>
-                <span class="review-star">★</span>
-                <span class="review-star">★</span>
-                <span class="review-star">★</span>
+        
+          <div class="review-section-header">
+            <div class="header-left-section">
+              <h4>Customer reviews on Google</h4>
+              <div class="customer-total-review">
+                <div class="review-card-rating-star">
+                  <span class="review-star">★</span>
+                  <span class="review-star">★</span>
+                  <span class="review-star">★</span>
+                  <span class="review-star">★</span>
+                  <span class="review-star">★</span>
+                </div>
+                <p>5.0 rating of 60 reviews</p>
               </div>
-              <p>5.0 rating of 60 reviews</p>
             </div>
-          </div>
-          <div class="header-right-section">
-            <button
-              onclick="window.open(`https://search.google.com/local/writereview?placeid=ChIJ8RFa1zLZhVQRi2tuQWvG2JE`, '_blank')"
-              class="bhangra-button-inverse"
-            >
-              Leave a Review
-            </button>
+            <div class="header-right-section">
+              <button
+                onclick="window.open(`https://search.google.com/local/writereview?placeid=ChIJ8RFa1zLZhVQRi2tuQWvG2JE`, '_blank')"
+                class="bhangra-button-inverse"
+              >
+                Leave a Review
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="review-section-container">
-          <div class="scroll-container">
-            <!-- <div class="scroll-review-container"> -->
-            <div class="scroll-review-container" id="reviewContainer">
+        <div class="review-section-container" role="region" aria-label="User reviews">
+         
+            
+            <div class="scroll-review-container" id="reviewContainer" >
+              <div class="scroll-review-inner" id="reviewContainerInner" aria-live="off">
               <!-- Review cards will be dynamically inserted here -->
             </div>
+            </div>
           </div>
-        </div>
+
       </section>
 
       <section class="contact-section" id="contactUs">
