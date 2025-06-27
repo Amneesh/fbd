@@ -590,12 +590,12 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     if (!res.ok) throw new Error("Server error");
     const data = await res.json();
     form.style.display = "none";
-    formSuccess.style.display ='block';
+    formSuccess.style.display ='flex';
 
   
   } catch (err) {
    
-    formFail.style.display ='block';
+    formFail.style.display ='flex';
   }
 });
 
