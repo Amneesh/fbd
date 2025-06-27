@@ -611,6 +611,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 window.onload = function () {
+  // 1. Inject videos dynamically
   document.querySelectorAll('.card-int').forEach(card => {
     const poster = card.getAttribute('data-poster');
     const src = card.getAttribute('data-src');
@@ -626,5 +627,25 @@ window.onload = function () {
 
     video.appendChild(source);
     card.appendChild(video);
+  });
+
+  // 2. Pause videos when they leave the viewport
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('video');
+        if (video && !entry.isIntersecting && !video.paused) {
+          video.pause();
+        }
+      });
+    },
+    {
+      threshold: 0.25, // Trigger when at least 25% of the element is visible
+    }
+  );
+
+  // 3. Observe each card that contains a video
+  document.querySelectorAll('.card-int').forEach(card => {
+    observer.observe(card);
   });
 };
