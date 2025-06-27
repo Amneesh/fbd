@@ -246,8 +246,67 @@ window.addEventListener('load', () => {
   });
 });
 
+window.addEventListener('load', () => {
+  const coinDiv = document.querySelector('.coin');
+  const staticImg = coinDiv.querySelector('.coin-static');
+
+  // Remove static image
+  if (staticImg) staticImg.remove();
+
+  // Create animated img
+  const animatedImg = document.createElement('img');
+  animatedImg.src = './resources/images/bhangra-logo.webp'; // animated/actual logo
+  animatedImg.alt = 'fan bhangre de logo';
+  animatedImg.width = 150;
+  animatedImg.height = 150;
+  animatedImg.classList.add('coin-animated');
+  animatedImg.style.width = '150px';
+  animatedImg.style.height = '150px';
+
+  coinDiv.appendChild(animatedImg);
+
+  // Add animation class to coin
+  coinDiv.classList.add('animate');
+});
 
 
+
+window.addEventListener('load', () => {
+  const images = [
+    "./resources/videos/main-landing-1.webp",
+    "./resources/videos/main-landing-2.webp",
+    "./resources/videos/main-landing-3.webp"
+  ];
+
+  const container = document.getElementById("carouselContainer");
+
+  images.forEach((src, index) => {
+    const slideDiv = document.createElement("div");
+    slideDiv.className = "auto-slide";
+    if (index === 0) slideDiv.classList.add("active");
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `Team ${index + 1}`;
+
+    slideDiv.appendChild(img);
+    container.appendChild(slideDiv);
+  });
+
+  // Start carousel autoplay
+  let autoIndex = 0;
+  const slides = document.querySelectorAll(".auto-slide");
+
+  function showAutoSlides() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    autoIndex = (autoIndex + 1) % slides.length;
+    slides[autoIndex].classList.add("active");
+  }
+
+  if (slides.length > 0) {
+    setInterval(showAutoSlides, 5000);
+  }
+});
 
 window.addEventListener('load', () => {
   let slideIndex = 1;
@@ -508,45 +567,41 @@ window.addEventListener('load', function () {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+document.querySelector("form").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
+  const name = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  const message = document.querySelector("#message").value;
+  const formSuccess = document.querySelector("#form-status-success");
+  const formFail = document.querySelector("#form-status-fail");
 
-// const video = document.getElementById('bhangraVideo');
-// const playButton = document.getElementById('playButtonBhangra');
-// const overlay = document.getElementById('videoOverlayBhangra');
+  const form = document.querySelector("form");
+  console.log(name , email , message)
+  try {
+    const res = await fetch("https://email-backend-live.vercel.app/api/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
 
-// playButton.addEventListener('click', () => {
-//   video.play();
-//   playButton.style.display = 'none';
-//   overlay.style.opacity = '0';
-// });
+    if (!res.ok) throw new Error("Server error");
+    const data = await res.json();
+    form.style.display = "none";
+    formSuccess.style.display ='block';
 
-// video.addEventListener('click', () => {
-//   if (!video.paused) {
-//     video.pause();
-//     playButton.style.display = 'block';
-//     overlay.style.opacity = '0.3';
-//   } else {
-//     video.play();
-//     playButton.style.display = 'none';
-//     overlay.style.opacity = '0';
-//   }
-// });
+  
+  } catch (err) {
+   
+    formFail.style.display ='block';
+  }
+});
 
-// // Optional: Hide controls and prevent autoplay on load
-// video.removeAttribute('autoplay');
+const toggleBtn = document.getElementById('toggleSocial');
+const socialPopup = document.getElementById('socialPopup');
 
-// function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
-//   let paths = document.querySelectorAll("path");
-//   let mode=repeat?'infinite':'forwards'
-//   for (let i = 0; i < paths.length; i++) {
-//       const path = paths[i];
-//       const length = path.getTotalLength();
-//       path.style["stroke-dashoffset"] = `${length}px`;
-//       path.style["stroke-dasharray"] = `${length}px`;
-//       path.style["stroke-width"] = `${strokeWidth}px`;
-//       path.style["stroke"] = `${strokeColor}`;
-//       path.style["animation"] = `${duration}s svg-text-anim ${mode} ${timingFunction}`;
-//       path.style["animation-delay"] = `${i * delay}s`;
-//   }
-// }
-// setTextAnimation(0.2,5.6,1,'ease-in-out','#f8db9c',false);
+toggleBtn.addEventListener('click', () => {
+  socialPopup.classList.toggle('hidden');
+});

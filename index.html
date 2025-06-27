@@ -23,12 +23,13 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
     <!-- Main styles (non-blocking) -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="./style.css"
       media="print"
       onload="this.media='all'"
-    />
+    /> -->
+    <link rel="stylesheet" href="./style.css" />
     <noscript><link rel="stylesheet" href="./style.css" /></noscript>
 
     <!-- AOS CSS (non-blocking) -->
@@ -61,13 +62,9 @@
 
     <!-- Your main script (deferred) -->
     <script src="./script.js" defer></script>
-
-  
-   
-  
   </head>
 
-  <body>
+  <body id="top">
     <section class="banner-discount">
       <h2 class="visually-hidden">discount bannenr</h2>
       <div class="banner-container-discount">
@@ -90,12 +87,7 @@
       <h2 class="visually-hidden">landing bannenr</h2>
       <div class="banner-main">
         <div class="banner-video" id="banner-video-placeholder">
-          <img
-            src="./resources/videos/main-landing.webp"
-            alt="Landing Banner"
-            style="width: 100%; height: 100vh; object-fit: cover"
-
-          />
+          <div class="auto-carousel" id="carouselContainer"></div>
         </div>
 
         <div class="banner-container">
@@ -111,23 +103,14 @@
               <li class="item-logo">
                 <div class="coin-content">
                   <div class="coin">
-                    <!-- <div class="side heads">
-                      <img
-                        src="./resources/images/bhangra-logo.webp"
-                        alt="fan bhangre de logo"
-                      />
-                    </div>
-                    <div class="side tails">
-                      <img
-                        src="./resources/images/bhangra-logo.webp"
-                        alt="fan bhangre de logo"
-                      />
-                    </div> -->
                     <img
-                    src="./resources/images/bhangra-logo.webp"
-                    alt="fan bhangre de logo"
-                    loading="lazy"
-                  />
+                      src="./resources/images/bhangra-logo.webp"
+                      alt="fan bhangre de logo"
+                      width="150"
+                      height="150"
+                      loading="eager"
+                      class="coin-static"
+                    />
                   </div>
                 </div>
               </li>
@@ -143,117 +126,8 @@
       </div>
       <div class="banner-sub-content">
         <div class="banner-sub-content-text">
-          <h3 data-aos="fade-left">From stage to soul, we lead the way</h3>
-          <h3 data-aos="fade-left">We are FAN BHANGRE DE</h3>
-          <!-- <div class="fbd-animation">
-          <svg
-        
-            viewBox="0 0 1785.752 151.501"
-            xmlns="https://www.w3.org/2000/svg"
-          >
-            <g
-              id="svgGroup"
-              stroke-linecap="round"
-              fill-rule="evenodd"
-              font-size="9pt"
-              stroke="#000"
-              stroke-width="0.25mm"
-              fill="none"
-              style="stroke: #000; stroke-width: 0.25mm; fill: none"
-            >
-              <path
-                d="M 124.8 6.45 L 139.5 6.45 L 109.2 111 L 93.9 111 L 69.6 26.85 L 44.4 111 L 29.25 111.15 L 0 6.45 L 14.55 6.45 L 37.35 95.1 L 62.55 6.45 L 77.85 6.45 L 101.85 94.8 L 124.8 6.45 Z"
-                id="p1"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 229.05 75 L 163.35 75 A 33.607 33.607 0 0 0 164.872 83.364 A 24.011 24.011 0 0 0 171.675 93.975 Q 179.25 100.8 190.05 100.8 A 31.368 31.368 0 0 0 196.758 100.119 A 22.288 22.288 0 0 0 204.825 96.675 Q 210.75 92.55 213.15 85.65 L 227.85 85.65 Q 224.55 97.5 214.65 104.925 A 36.473 36.473 0 0 1 199.18 111.551 A 49.988 49.988 0 0 1 190.05 112.35 A 44.606 44.606 0 0 1 177.349 110.595 A 38.808 38.808 0 0 1 169.125 107.1 Q 159.9 101.85 154.65 92.175 Q 149.4 82.5 149.4 69.75 Q 149.4 57 154.5 47.4 Q 159.6 37.8 168.825 32.625 Q 178.05 27.45 190.05 27.45 A 45.63 45.63 0 0 1 201.639 28.868 A 37.81 37.81 0 0 1 210.75 32.55 Q 219.75 37.65 224.625 46.575 Q 229.5 55.5 229.5 66.75 A 75.313 75.313 0 0 1 229.324 71.801 A 89.424 89.424 0 0 1 229.05 75 Z M 163.5 63.9 L 215.4 63.9 Q 215.4 56.1 211.95 50.475 Q 208.5 44.85 202.575 41.925 A 28.587 28.587 0 0 0 191.669 39.071 A 34.056 34.056 0 0 0 189.45 39 A 26.922 26.922 0 0 0 179.389 40.835 A 24.96 24.96 0 0 0 171.825 45.6 A 24.64 24.64 0 0 0 164.695 57.323 A 35.152 35.152 0 0 0 163.5 63.9 Z"
-                id="p2"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 352.05 43.8 L 352.05 28.8 L 365.85 28.8 L 365.85 111 L 352.05 111 L 352.05 95.7 Q 348 102.9 339.975 107.625 A 34.037 34.037 0 0 1 327.083 111.976 A 43.497 43.497 0 0 1 321.3 112.35 A 38.098 38.098 0 0 1 306.368 109.445 A 36.578 36.578 0 0 1 301.5 106.95 A 37.689 37.689 0 0 1 287.954 92.555 A 44.851 44.851 0 0 1 287.55 91.8 A 44.807 44.807 0 0 1 282.81 76.024 A 55.982 55.982 0 0 1 282.45 69.6 A 52.703 52.703 0 0 1 283.685 57.942 A 41.447 41.447 0 0 1 287.55 47.475 Q 292.65 37.95 301.575 32.7 A 38.325 38.325 0 0 1 320.768 27.455 A 45.288 45.288 0 0 1 321.45 27.45 A 42.249 42.249 0 0 1 330.949 28.472 A 32.765 32.765 0 0 1 340.2 32.1 Q 348.15 36.75 352.05 43.8 Z M 352.05 69.75 A 38.917 38.917 0 0 0 351.226 61.559 A 29.782 29.782 0 0 0 348.3 53.55 Q 344.55 46.65 338.175 42.975 Q 331.8 39.3 324.15 39.3 A 28.029 28.029 0 0 0 312.815 41.586 A 27.171 27.171 0 0 0 310.2 42.9 A 25.697 25.697 0 0 0 301.001 51.93 A 31.237 31.237 0 0 0 300.15 53.4 Q 296.4 60.3 296.4 69.6 A 40.099 40.099 0 0 0 297.21 77.851 A 30.32 30.32 0 0 0 300.15 86.025 Q 303.9 93 310.2 96.675 Q 316.5 100.35 324.15 100.35 Q 331.8 100.35 338.175 96.675 A 26.018 26.018 0 0 0 347.574 87.304 A 31.453 31.453 0 0 0 348.3 86.025 A 31.109 31.109 0 0 0 351.602 75.902 A 40.767 40.767 0 0 0 352.05 69.75 Z"
-                id="p3"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 429.15 27.3 L 429.15 41.4 L 425.55 41.4 A 30.281 30.281 0 0 0 416.19 42.723 Q 402.607 47.136 402.6 66.279 A 55.358 55.358 0 0 0 402.6 66.3 L 402.6 111 L 388.95 111 L 388.95 28.8 L 402.6 28.8 L 402.6 42.15 Q 406.2 35.1 412.875 31.2 A 27.566 27.566 0 0 1 421.31 28.046 Q 424.722 27.347 428.627 27.303 A 46.675 46.675 0 0 1 429.15 27.3 Z"
-                id="p4"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 519.45 75 L 453.75 75 A 33.607 33.607 0 0 0 455.272 83.364 A 24.011 24.011 0 0 0 462.075 93.975 Q 469.65 100.8 480.45 100.8 A 31.368 31.368 0 0 0 487.158 100.119 A 22.288 22.288 0 0 0 495.225 96.675 Q 501.15 92.55 503.55 85.65 L 518.25 85.65 Q 514.95 97.5 505.05 104.925 A 36.473 36.473 0 0 1 489.58 111.551 A 49.988 49.988 0 0 1 480.45 112.35 A 44.606 44.606 0 0 1 467.749 110.595 A 38.808 38.808 0 0 1 459.525 107.1 Q 450.3 101.85 445.05 92.175 Q 439.8 82.5 439.8 69.75 Q 439.8 57 444.9 47.4 Q 450 37.8 459.225 32.625 Q 468.45 27.45 480.45 27.45 A 45.63 45.63 0 0 1 492.039 28.868 A 37.81 37.81 0 0 1 501.15 32.55 Q 510.15 37.65 515.025 46.575 Q 519.9 55.5 519.9 66.75 A 75.313 75.313 0 0 1 519.724 71.801 A 89.424 89.424 0 0 1 519.45 75 Z M 453.9 63.9 L 505.8 63.9 Q 505.8 56.1 502.35 50.475 Q 498.9 44.85 492.975 41.925 A 28.587 28.587 0 0 0 482.069 39.071 A 34.056 34.056 0 0 0 479.85 39 A 26.922 26.922 0 0 0 469.789 40.835 A 24.96 24.96 0 0 0 462.225 45.6 A 24.64 24.64 0 0 0 455.095 57.323 A 35.152 35.152 0 0 0 453.9 63.9 Z"
-                id="p5"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 577.95 6.45 L 637.05 6.45 L 637.05 17.55 L 591.6 17.55 L 591.6 52.8 L 628.5 52.8 L 628.5 63.9 L 591.6 63.9 L 591.6 111 L 577.95 111 L 577.95 6.45 Z"
-                id="p7"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 718.05 43.8 L 718.05 28.8 L 731.85 28.8 L 731.85 111 L 718.05 111 L 718.05 95.7 Q 714 102.9 705.975 107.625 A 34.037 34.037 0 0 1 693.083 111.976 A 43.497 43.497 0 0 1 687.3 112.35 A 38.098 38.098 0 0 1 672.368 109.445 A 36.578 36.578 0 0 1 667.5 106.95 A 37.689 37.689 0 0 1 653.954 92.555 A 44.851 44.851 0 0 1 653.55 91.8 A 44.807 44.807 0 0 1 648.81 76.024 A 55.982 55.982 0 0 1 648.45 69.6 A 52.703 52.703 0 0 1 649.685 57.942 A 41.447 41.447 0 0 1 653.55 47.475 Q 658.65 37.95 667.575 32.7 A 38.325 38.325 0 0 1 686.768 27.455 A 45.288 45.288 0 0 1 687.45 27.45 A 42.249 42.249 0 0 1 696.949 28.472 A 32.765 32.765 0 0 1 706.2 32.1 Q 714.15 36.75 718.05 43.8 Z M 718.05 69.75 A 38.917 38.917 0 0 0 717.226 61.559 A 29.782 29.782 0 0 0 714.3 53.55 Q 710.55 46.65 704.175 42.975 Q 697.8 39.3 690.15 39.3 A 28.029 28.029 0 0 0 678.815 41.586 A 27.171 27.171 0 0 0 676.2 42.9 A 25.697 25.697 0 0 0 667.001 51.93 A 31.237 31.237 0 0 0 666.15 53.4 Q 662.4 60.3 662.4 69.6 A 40.099 40.099 0 0 0 663.21 77.851 A 30.32 30.32 0 0 0 666.15 86.025 Q 669.9 93 676.2 96.675 Q 682.5 100.35 690.15 100.35 Q 697.8 100.35 704.175 96.675 A 26.018 26.018 0 0 0 713.574 87.304 A 31.453 31.453 0 0 0 714.3 86.025 A 31.109 31.109 0 0 0 717.602 75.902 A 40.767 40.767 0 0 0 718.05 69.75 Z"
-                id="p8"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 828.6 62.55 L 828.6 111 L 815.1 111 L 815.1 64.5 Q 815.1 52.2 808.95 45.675 A 20.313 20.313 0 0 0 797.527 39.617 A 29.57 29.57 0 0 0 792.15 39.15 A 27.949 27.949 0 0 0 784.672 40.099 A 20.66 20.66 0 0 0 774.975 45.9 Q 769.581 51.612 768.751 61.727 A 46.786 46.786 0 0 0 768.6 65.55 L 768.6 111 L 754.95 111 L 754.95 28.8 L 768.6 28.8 L 768.6 40.5 Q 772.65 34.2 779.625 30.75 A 33.633 33.633 0 0 1 792.922 27.354 A 39.663 39.663 0 0 1 795 27.3 A 40.457 40.457 0 0 1 805.849 28.685 A 30.686 30.686 0 0 1 819.3 36.375 Q 827.857 44.725 828.541 59.868 A 59.458 59.458 0 0 1 828.6 62.55 Z"
-                id="p9"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 930 111 L 891 111 L 891 6.45 L 928.5 6.45 A 53.879 53.879 0 0 1 936.633 7.032 Q 941.143 7.721 944.923 9.227 A 31.211 31.211 0 0 1 946.65 9.975 A 30.005 30.005 0 0 1 952.677 13.678 A 23.178 23.178 0 0 1 957.9 19.5 Q 961.65 25.5 961.65 33 A 28.315 28.315 0 0 1 960.821 40.024 A 21.121 21.121 0 0 1 956.625 48.375 A 27.35 27.35 0 0 1 945.97 56.173 A 33.88 33.88 0 0 1 943.35 57.15 Q 949.05 58.05 953.775 61.8 Q 958.5 65.55 961.275 71.1 Q 964.05 76.65 964.05 82.95 A 26.698 26.698 0 0 1 961.866 93.777 A 25.85 25.85 0 0 1 960 97.275 A 26.165 26.165 0 0 1 951.858 105.319 A 33.304 33.304 0 0 1 948.225 107.325 A 36.764 36.764 0 0 1 938.656 110.297 A 50.737 50.737 0 0 1 930 111 Z M 928.35 62.85 L 904.65 62.85 L 904.65 99.75 L 928.8 99.75 A 34.988 34.988 0 0 0 935.009 99.233 Q 938.489 98.605 941.253 97.213 A 17.66 17.66 0 0 0 944.7 94.95 A 15.684 15.684 0 0 0 950.191 84.736 A 22.722 22.722 0 0 0 950.4 81.6 A 20.298 20.298 0 0 0 949.521 75.478 A 16.023 16.023 0 0 0 944.4 67.875 A 20.602 20.602 0 0 0 936.141 63.753 Q 932.609 62.85 928.35 62.85 Z M 904.65 17.7 L 904.65 51.6 L 927.6 51.6 Q 937.2 51.6 942.45 47.1 Q 947.7 42.6 947.7 34.65 Q 947.7 26.7 942.45 22.2 Q 938.202 18.559 930.911 17.864 A 38.079 38.079 0 0 0 927.3 17.7 L 904.65 17.7 Z"
-                id="p11"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1056.6 62.55 L 1056.6 111 L 1043.1 111 L 1043.1 64.5 Q 1043.1 52.2 1036.95 45.675 A 20.313 20.313 0 0 0 1025.527 39.617 A 29.57 29.57 0 0 0 1020.15 39.15 A 27.949 27.949 0 0 0 1012.672 40.099 A 20.66 20.66 0 0 0 1002.975 45.9 Q 997.581 51.612 996.751 61.727 A 46.786 46.786 0 0 0 996.6 65.55 L 996.6 111 L 982.95 111 L 982.95 0 L 996.6 0 L 996.6 40.5 A 26.792 26.792 0 0 1 1007.333 30.968 A 31.808 31.808 0 0 1 1007.775 30.75 Q 1014.9 27.3 1023.75 27.3 A 37.487 37.487 0 0 1 1034.416 28.776 A 33.052 33.052 0 0 1 1040.55 31.275 A 28.053 28.053 0 0 1 1051.917 42.463 A 33.984 33.984 0 0 1 1052.325 43.2 A 34.309 34.309 0 0 1 1055.661 52.621 Q 1056.483 56.633 1056.585 61.226 A 59.208 59.208 0 0 1 1056.6 62.55 Z"
-                id="p12"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1143.45 43.8 L 1143.45 28.8 L 1157.25 28.8 L 1157.25 111 L 1143.45 111 L 1143.45 95.7 Q 1139.4 102.9 1131.375 107.625 A 34.037 34.037 0 0 1 1118.483 111.976 A 43.497 43.497 0 0 1 1112.7 112.35 A 38.098 38.098 0 0 1 1097.768 109.445 A 36.578 36.578 0 0 1 1092.9 106.95 A 37.689 37.689 0 0 1 1079.354 92.555 A 44.851 44.851 0 0 1 1078.95 91.8 A 44.807 44.807 0 0 1 1074.21 76.024 A 55.982 55.982 0 0 1 1073.85 69.6 A 52.703 52.703 0 0 1 1075.085 57.942 A 41.447 41.447 0 0 1 1078.95 47.475 Q 1084.05 37.95 1092.975 32.7 A 38.325 38.325 0 0 1 1112.168 27.455 A 45.288 45.288 0 0 1 1112.85 27.45 A 42.249 42.249 0 0 1 1122.349 28.472 A 32.765 32.765 0 0 1 1131.6 32.1 Q 1139.55 36.75 1143.45 43.8 Z M 1143.45 69.75 A 38.917 38.917 0 0 0 1142.626 61.559 A 29.782 29.782 0 0 0 1139.7 53.55 Q 1135.95 46.65 1129.575 42.975 Q 1123.2 39.3 1115.55 39.3 A 28.029 28.029 0 0 0 1104.215 41.586 A 27.171 27.171 0 0 0 1101.6 42.9 A 25.697 25.697 0 0 0 1092.401 51.93 A 31.237 31.237 0 0 0 1091.55 53.4 Q 1087.8 60.3 1087.8 69.6 A 40.099 40.099 0 0 0 1088.61 77.851 A 30.32 30.32 0 0 0 1091.55 86.025 Q 1095.3 93 1101.6 96.675 Q 1107.9 100.35 1115.55 100.35 Q 1123.2 100.35 1129.575 96.675 A 26.018 26.018 0 0 0 1138.974 87.304 A 31.453 31.453 0 0 0 1139.7 86.025 A 31.109 31.109 0 0 0 1143.002 75.902 A 40.767 40.767 0 0 0 1143.45 69.75 Z"
-                id="p13"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1254 62.55 L 1254 111 L 1240.5 111 L 1240.5 64.5 Q 1240.5 52.2 1234.35 45.675 A 20.313 20.313 0 0 0 1222.927 39.617 A 29.57 29.57 0 0 0 1217.55 39.15 A 27.949 27.949 0 0 0 1210.072 40.099 A 20.66 20.66 0 0 0 1200.375 45.9 Q 1194.981 51.612 1194.151 61.727 A 46.786 46.786 0 0 0 1194 65.55 L 1194 111 L 1180.35 111 L 1180.35 28.8 L 1194 28.8 L 1194 40.5 Q 1198.05 34.2 1205.025 30.75 A 33.633 33.633 0 0 1 1218.322 27.354 A 39.663 39.663 0 0 1 1220.4 27.3 A 40.457 40.457 0 0 1 1231.249 28.685 A 30.686 30.686 0 0 1 1244.7 36.375 Q 1253.257 44.725 1253.941 59.868 A 59.458 59.458 0 0 1 1254 62.55 Z"
-                id="p14"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1340.85 43.8 L 1340.85 28.8 L 1354.65 28.8 L 1354.65 112.8 A 45.133 45.133 0 0 1 1353.295 124.055 A 37.753 37.753 0 0 1 1349.85 132.825 Q 1345.05 141.6 1336.125 146.55 A 39.145 39.145 0 0 1 1322.641 150.992 A 50.686 50.686 0 0 1 1315.35 151.5 Q 1299.15 151.5 1288.35 143.85 A 29.81 29.81 0 0 1 1275.731 123.82 A 36.686 36.686 0 0 1 1275.6 123 L 1289.1 123 A 21.245 21.245 0 0 0 1297.485 134.454 A 27.104 27.104 0 0 0 1298.4 135.075 A 28.026 28.026 0 0 0 1309.16 139.157 A 37.457 37.457 0 0 0 1315.35 139.65 A 29.309 29.309 0 0 0 1323.959 138.441 A 23.44 23.44 0 0 0 1333.725 132.6 A 23.052 23.052 0 0 0 1339.806 121.726 Q 1340.85 117.681 1340.85 112.8 L 1340.85 95.55 A 31.348 31.348 0 0 1 1332.581 105 A 39.098 39.098 0 0 1 1328.85 107.55 A 33.203 33.203 0 0 1 1316.027 111.97 A 42.696 42.696 0 0 1 1310.25 112.35 Q 1299.3 112.35 1290.375 106.95 Q 1281.45 101.55 1276.35 91.8 A 44.807 44.807 0 0 1 1271.61 76.024 A 55.982 55.982 0 0 1 1271.25 69.6 A 52.703 52.703 0 0 1 1272.485 57.942 A 41.447 41.447 0 0 1 1276.35 47.475 Q 1281.45 37.95 1290.375 32.7 A 38.325 38.325 0 0 1 1309.568 27.455 A 45.288 45.288 0 0 1 1310.25 27.45 A 41.258 41.258 0 0 1 1320.244 28.612 A 33.233 33.233 0 0 1 1328.925 32.1 Q 1336.95 36.75 1340.85 43.8 Z M 1340.85 69.75 A 38.917 38.917 0 0 0 1340.026 61.559 A 29.782 29.782 0 0 0 1337.1 53.55 Q 1333.35 46.65 1326.975 42.975 Q 1320.6 39.3 1312.95 39.3 A 28.029 28.029 0 0 0 1301.615 41.586 A 27.171 27.171 0 0 0 1299 42.9 A 25.697 25.697 0 0 0 1289.801 51.93 A 31.237 31.237 0 0 0 1288.95 53.4 Q 1285.2 60.3 1285.2 69.6 A 40.099 40.099 0 0 0 1286.01 77.851 A 30.32 30.32 0 0 0 1288.95 86.025 Q 1292.7 93 1299 96.675 Q 1305.3 100.35 1312.95 100.35 Q 1320.6 100.35 1326.975 96.675 A 26.018 26.018 0 0 0 1336.374 87.304 A 31.453 31.453 0 0 0 1337.1 86.025 A 31.109 31.109 0 0 0 1340.402 75.902 A 40.767 40.767 0 0 0 1340.85 69.75 Z"
-                id="p15"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1417.95 27.3 L 1417.95 41.4 L 1414.35 41.4 A 30.281 30.281 0 0 0 1404.99 42.723 Q 1391.407 47.136 1391.4 66.279 A 55.358 55.358 0 0 0 1391.4 66.3 L 1391.4 111 L 1377.75 111 L 1377.75 28.8 L 1391.4 28.8 L 1391.4 42.15 Q 1395 35.1 1401.675 31.2 A 27.566 27.566 0 0 1 1410.11 28.046 Q 1413.522 27.347 1417.427 27.303 A 46.675 46.675 0 0 1 1417.95 27.3 Z"
-                id="p16"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1508.25 75 L 1442.55 75 A 33.607 33.607 0 0 0 1444.072 83.364 A 24.011 24.011 0 0 0 1450.875 93.975 Q 1458.45 100.8 1469.25 100.8 A 31.368 31.368 0 0 0 1475.958 100.119 A 22.288 22.288 0 0 0 1484.025 96.675 Q 1489.95 92.55 1492.35 85.65 L 1507.05 85.65 Q 1503.75 97.5 1493.85 104.925 A 36.473 36.473 0 0 1 1478.38 111.551 A 49.988 49.988 0 0 1 1469.25 112.35 A 44.606 44.606 0 0 1 1456.549 110.595 A 38.808 38.808 0 0 1 1448.325 107.1 Q 1439.1 101.85 1433.85 92.175 Q 1428.6 82.5 1428.6 69.75 Q 1428.6 57 1433.7 47.4 Q 1438.8 37.8 1448.025 32.625 Q 1457.25 27.45 1469.25 27.45 A 45.63 45.63 0 0 1 1480.839 28.868 A 37.81 37.81 0 0 1 1489.95 32.55 Q 1498.95 37.65 1503.825 46.575 Q 1508.7 55.5 1508.7 66.75 A 75.313 75.313 0 0 1 1508.524 71.801 A 89.424 89.424 0 0 1 1508.25 75 Z M 1442.7 63.9 L 1494.6 63.9 Q 1494.6 56.1 1491.15 50.475 Q 1487.7 44.85 1481.775 41.925 A 28.587 28.587 0 0 0 1470.869 39.071 A 34.056 34.056 0 0 0 1468.65 39 A 26.922 26.922 0 0 0 1458.589 40.835 A 24.96 24.96 0 0 0 1451.025 45.6 A 24.64 24.64 0 0 0 1443.895 57.323 A 35.152 35.152 0 0 0 1442.7 63.9 Z"
-                id="p17"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1599.3 111 L 1566.75 111 L 1566.75 6.45 L 1599.3 6.45 A 77.522 77.522 0 0 1 1613.387 7.67 A 56.803 56.803 0 0 1 1628.925 12.825 Q 1641.45 19.2 1648.125 31.05 A 51.175 51.175 0 0 1 1653.975 48.184 A 67.685 67.685 0 0 1 1654.8 58.95 Q 1654.8 75 1648.125 86.775 Q 1641.45 98.55 1628.925 104.775 A 57.755 57.755 0 0 1 1613.387 109.808 A 79.34 79.34 0 0 1 1599.3 111 Z M 1599.3 17.55 L 1580.4 17.55 L 1580.4 99.75 L 1599.3 99.75 A 61.171 61.171 0 0 0 1611.288 98.65 Q 1622.961 96.315 1630.2 89.025 A 35.136 35.136 0 0 0 1639.209 72.814 Q 1640.85 66.546 1640.85 58.95 Q 1640.85 42.449 1633.17 32.071 A 33.998 33.998 0 0 0 1630.125 28.5 A 34.591 34.591 0 0 0 1614.591 19.499 Q 1609.057 17.915 1602.421 17.619 A 69.836 69.836 0 0 0 1599.3 17.55 Z"
-                id="p19"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1747.35 75 L 1681.65 75 A 33.607 33.607 0 0 0 1683.172 83.364 A 24.011 24.011 0 0 0 1689.975 93.975 Q 1697.55 100.8 1708.35 100.8 A 31.368 31.368 0 0 0 1715.058 100.119 A 22.288 22.288 0 0 0 1723.125 96.675 Q 1729.05 92.55 1731.45 85.65 L 1746.15 85.65 Q 1742.85 97.5 1732.95 104.925 A 36.473 36.473 0 0 1 1717.48 111.551 A 49.988 49.988 0 0 1 1708.35 112.35 A 44.606 44.606 0 0 1 1695.649 110.595 A 38.808 38.808 0 0 1 1687.425 107.1 Q 1678.2 101.85 1672.95 92.175 Q 1667.7 82.5 1667.7 69.75 Q 1667.7 57 1672.8 47.4 Q 1677.9 37.8 1687.125 32.625 Q 1696.35 27.45 1708.35 27.45 A 45.63 45.63 0 0 1 1719.939 28.868 A 37.81 37.81 0 0 1 1729.05 32.55 Q 1738.05 37.65 1742.925 46.575 Q 1747.8 55.5 1747.8 66.75 A 75.313 75.313 0 0 1 1747.624 71.801 A 89.424 89.424 0 0 1 1747.35 75 Z M 1681.8 63.9 L 1733.7 63.9 Q 1733.7 56.1 1730.25 50.475 Q 1726.8 44.85 1720.875 41.925 A 28.587 28.587 0 0 0 1709.969 39.071 A 34.056 34.056 0 0 0 1707.75 39 A 26.922 26.922 0 0 0 1697.689 40.835 A 24.96 24.96 0 0 0 1690.125 45.6 A 24.64 24.64 0 0 0 1682.995 57.323 A 35.152 35.152 0 0 0 1681.8 63.9 Z"
-                id="p20"
-                vector-effect="non-scaling-stroke"
-              />
-              <path
-                d="M 1768.8 6.45 L 1783.5 6.45 L 1781.85 81.45 L 1770.45 81.45 L 1768.8 6.45 Z M 1772.742 111.046 A 9.289 9.289 0 0 0 1776.75 111.9 A 10.344 10.344 0 0 0 1776.87 111.899 Q 1780.542 111.857 1783.125 109.2 Q 1785.75 106.5 1785.75 102.6 Q 1785.75 98.7 1783.125 96 A 10.4 10.4 0 0 0 1782.96 95.834 A 8.537 8.537 0 0 0 1776.75 93.3 Q 1772.85 93.3 1770.15 96 A 9.202 9.202 0 0 0 1768.304 98.592 A 9.289 9.289 0 0 0 1767.45 102.6 Q 1767.45 106.5 1770.15 109.2 A 9.202 9.202 0 0 0 1772.742 111.046 Z"
-                id="p21"
-                vector-effect="non-scaling-stroke"
-              />
-            </g>
-          </svg>
-        </div> -->
+          <h4 data-aos="fade-left">From stage to soul, we lead the way</h4>
+          <h4 data-aos="fade-left">We are FAN BHANGRE DE</h4>
         </div>
       </div>
     </section>
@@ -264,17 +138,16 @@
       <div class="header-bar">
         <div class="header-nav">
           <input type="checkbox" id="menuToggle" hidden />
-
           <label for="menuToggle" class="toggle-nav">
             <i class="fa-solid fa-bars" id="openNavButton"></i>
             <i class="fa-solid fa-xmark" id="closeNavButton"></i>
           </label>
-
           <nav class="bloom-mobile-header" id="header-menu-mobile">
             <ol class="nav mobile-nav">
               <li class="item">
                 <a class="header-link" href="#about">ABOUT</a>
               </li>
+
               <li class="item">
                 <a class="header-link" href="#services">SERVICES</a>
               </li>
@@ -288,41 +161,9 @@
                 <a class="header-link" href="#contactUs">CONTACT US</a>
               </li>
             </ol>
-          
           </nav>
-          
-          <!-- <div class="bloom-mobile-header" id="header-menu-mobile">
-            <div class="toggle-nav">
-              <i class="fa-solid fa-bars" id="openNavButton"></i>
-              <i class="fa-solid fa-xmark" id="closeNavButton"></i>
-            </div>
-
-            <ol class="nav">
-              <li class="item">
-                <a class="header-link" href="#about">ABOUT</a>
-              </li>
-              <li class="item">
-                <a class="header-link" href="#services">SERVICES</a>
-              </li>
-              <li class="item">
-                <a class="header-link open-gallery">GALLERY</a>
-              </li>
-              <li class="item">
-                <a class="header-link" href="#whyFbd">WHY FBD?</a>
-              </li>
-              <li class="item">
-                <a class="header-link" href="#contactUs">CONTACT US</a>
-              </li>
-            </ol>
-
-            <button
-              class="bhangra-button-inverse"
-              onclick="scrollToSection('contactUs')"
-            >
-              JOIN FBD
-            </button>
-          </div> -->
         </div>
+
         <button
           class="bhangra-button-inverse joinUs"
           onclick="scrollToSection('contactUs')"
@@ -330,103 +171,93 @@
           JOIN FBD
         </button>
       </div>
+    </header>
 
-      <div class="header-description" id="about">
-        <div class="video-card">
-          <div class="header-description-video">
-            <!-- <div class="video-overlay-bhangra" id="videoOverlayBhangra"></div> -->
-            <img src="./resources/videos/bhangra-landing.webp" alt="" />
-            <!-- <video
-              id="bhangraVideo"
-              poster="./resources/videos/bhangra-landing.webp"
-              muted
-              loop
-              preload="metadata"
-              playsinline
-              autoplay
-            >
-              <source
-                src="./resources/videos/bhangra-landing.MP4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video> -->
-            <!-- <div class="play-button-bhangra" id="playButtonBhangra">&#9658;</div> -->
-          </div>
-        </div>
-
-        <div class="header-description-container">
-          <div class="header-description-content">
-            <h1 data-aos="fade-left" data-aos-duration="500">
-              Learn Bhangra with <span> FAN BHANGRE DE</span>
-            </h1>
-            <h3 data-aos="fade-left" data-aos-duration="600">
-              Join our vibrant community and master the traditional Punjabi
-              dance from expert instructors.
-            </h3>
-            <div class="button-container">
-              <button
-                class="bhangra-button"
-                onclick="scrollToSection('contactUs')"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-              >
-                JOIN FBD
-              </button>
-              <button
-                class="bhangra-button-inverse open-gallery"
-                data-aos-duration="2000"
-                data-aos="zoom-in"
-                id="open-gallery"
-              >
-                Watch Gallery <i class="fa-solid fa-play"></i>
-              </button>
+    <main>
+      <section class="about" id="about">
+        <h2 class="visually-hidden">
+          Join our vibrant community and master the traditional Punjabi dance
+          from expert instructors.
+        </h2>
+        <div class="header-description">
+          <div class="video-card">
+            <div class="header-description-video">
+              <!-- <div class="video-overlay-bhangra" id="videoOverlayBhangra"></div> -->
+              <img src="./resources/videos/bhangra-landing.webp" alt="" />
             </div>
-            <div class="counter-section">
-              <div id="counter">
-                <div class="item">
-                  <div class="count-number">
-                    <p class="count" data-number="100"></p>
-                    <h1>+</h1>
+          </div>
+
+          <div class="header-description-container">
+            <div class="header-description-content">
+              <h2 data-aos="fade-left" data-aos-duration="500">
+                Learn Bhangra with <span> FAN BHANGRE DE</span>
+              </h2>
+              <h4 data-aos="fade-left" data-aos-duration="600">
+                Join our vibrant community and master the traditional Punjabi
+                dance from expert instructors.
+              </h4>
+              <div class="button-container">
+                <button
+                  class="bhangra-button"
+                  onclick="scrollToSection('contactUs')"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                >
+                  JOIN FBD
+                </button>
+                <button
+                  class="bhangra-button-inverse open-gallery"
+                  data-aos-duration="2000"
+                  data-aos="zoom-in"
+                  id="open-gallery"
+                >
+                  Watch Gallery <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+              <div class="counter-section">
+                <div id="counter">
+                  <div class="item">
+                    <div class="count-number">
+                      <p class="count" data-number="100"></p>
+                      <h3>+</h3>
+                    </div>
+                    <h4 class="text">Clients</h4>
                   </div>
-                  <h3 class="text">Clients</h3>
-                </div>
-                <div class="item">
-                  <div class="count-number">
-                    <p class="count" data-number="10"></p>
-                    <h1>+</h1>
+                  <div class="item">
+                    <div class="count-number">
+                      <p class="count" data-number="10"></p>
+                      <h3>+</h3>
+                    </div>
+                    <h4 class="text">Competitions</h4>
                   </div>
-                  <h3 class="text">Competitions</h3>
-                </div>
-                <div class="item">
-                  <div class="count-number">
-                    <p class="count" data-number="5"></p>
-                    <h1>+</h1>
+                  <div class="item">
+                    <div class="count-number">
+                      <p class="count" data-number="5"></p>
+                      <h3>+</h3>
+                    </div>
+                    <h4 class="text">Teams</h4>
                   </div>
-                  <h3 class="text">Teams</h3>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </section>
 
-    <main>
       <section class="services-offer" id="services">
         <h2 class="visually-hidden">Experience Our Signature Services</h2>
 
         <div class="services-container">
           <div class="left-offer-section">
             <section class="horizontal-scroll-container">
-              <h2
+              <h3
                 class="heading-line"
                 data-aos="fade-right"
                 data-aos-offset="100"
                 data-aos-easing="ease-in-sine"
               >
                 Experience Our Signature Services
-              </h2>
+              </h3>
 
               <div class="horizontal-scroll-wrapper">
                 <div class="scroll-buttons">
@@ -461,7 +292,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Junior Bhangra Program</h4>
+                    <h5>Junior Bhangra Program</h5>
                     <!-- <p>Energetic and fun-filled Bhangra classes designed to introduce kids to the rhythm, culture, and confidence of Punjabi dance.</p> -->
                   </div>
                 </div>
@@ -486,7 +317,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Private 1-on-1 Bhangra Coaching</h4>
+                    <h5>Private 1-on-1 Bhangra Coaching</h5>
                     <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat.</p> -->
                   </div>
                 </div>
@@ -511,7 +342,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Professional Giddha Training</h4>
+                    <h5>Professional Giddha Training</h5>
                     <!-- <p>Master the grace and rhythm of Giddha with expert-led, performance-ready instruction.
                       </p> -->
                   </div>
@@ -537,7 +368,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Cultural Fusion Shows</h4>
+                    <h5>Cultural Fusion Shows</h5>
                     <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
                   </div>
                 </div>
@@ -562,7 +393,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Bhangra Fitness Sessions</h4>
+                    <h5>Bhangra Fitness Sessions</h5>
                     <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit..</p> -->
                   </div>
                 </div>
@@ -586,7 +417,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Turban Tying Services</h4>
+                    <h5>Turban Tying Services</h5>
                     <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
                   </div>
                 </div>
@@ -611,7 +442,7 @@
                     <div class="video-overlay"></div>
                   </div>
                   <div class="services-card-content">
-                    <h4>Custom Choreography</h4>
+                    <h5>Custom Choreography</h5>
                     <!-- <p>Fun, engaging lessons for all ages and skill levels.</p> -->
                   </div>
                 </div>
@@ -638,14 +469,14 @@
 
       <section class="content-section" id="whyFbd">
         <h2 class="visually-hidden">OUR SPECIALIZATION</h2>
-        <div
-          class="content-container"
-         
-        >
+        <div class="content-container">
           <div class="content-text-container">
-            <div class="mySlideContent"  data-aos="zoom-out-up"
-            data-aos-duration="2000">
-              <h1>Who Are We, Really?</h1>
+            <div
+              class="mySlideContent"
+              data-aos="zoom-out-up"
+              data-aos-duration="2000"
+            >
+              <h3>Who Are We, Really?</h3>
               <p>
                 Fan Bhangre De was founded in 2021 by Bhupinder Singh, a
                 passionate performer with a vision to promote authentic Punjabi
@@ -665,7 +496,7 @@
               </div>
             </div>
             <div class="mySlideContent">
-              <h1>Why Join Fan Bhangre De?</h1>
+              <h3>Why Join Fan Bhangre De?</h3>
               <p>
                 Fan Bhangre De is more than a dance school — it’s a vibrant
                 community rooted deeply in Punjabi culture and Sikh traditions.
@@ -676,9 +507,14 @@
                 generation. Join us to be part of a supportive family that
                 embraces culture, faith, and togetherness with every step.
               </p>
+              <div class="slide-button">
+                <button class="bhangra-button-inverse open-gallery">
+                  Watch Gallery
+                </button>
+              </div>
             </div>
             <div class="mySlideContent">
-              <h1>How Do You Join Our Cultural Family?</h1>
+              <h3>How Do You Join Our Cultural Family?</h3>
               <p>
                 Joining Fan Bhangre De means stepping into a warm, welcoming
                 community that cherishes Punjabi culture, faith, and tradition.
@@ -895,14 +731,14 @@
       </section>
 
       <section class="review-section" id="reviews">
-        <h2
+        <h3
           class="heading-line"
           data-aos="fade-right"
           data-aos-offset="100"
           data-aos-easing="ease-in-sine"
         >
           What our client says about us
-        </h2>
+        </h3>
 
         <div class="review-section-header">
           <div class="header-left-section">
@@ -943,14 +779,14 @@
 
         <div class="contact-container">
           <div class="contact-form-container">
-            <h2
+            <h3
               class="heading-half-line"
               data-aos="fade-right"
               data-aos-offset="100"
               data-aos-easing="ease-in-sine"
             >
-              Get In Touch
-            </h2>
+              GET IN TOUCH
+            </h3>
 
             <div class="contact-form">
               <div
@@ -960,11 +796,7 @@
                 data-aos-offset="100"
                 data-aos-duration="2000"
               >
-                <form
-                  action="mailto:your-email@example.com"
-                  method="POST"
-                  enctype="text/plain"
-                >
+                <form id="fbdContactForm">
                   <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" name="name" id="name" required />
@@ -979,133 +811,168 @@
                   </div>
                   <button type="submit" class="bhangra-button">JOIN FBD</button>
                 </form>
+                <div id="form-status-success">
+                  <h3>
+                    Thank you for reaching out. We’ll be in touch with you
+                    shortly !
+                  </h3>
+                  <button class="bhangra-button-inverse open-gallery">
+                    Watch Gallery
+                  </button>
+                </div>
+                <div id="form-status-fail" style="margin-top: 10px">
+                  <p>
+                    <i class="fa fa-warning"></i>
+                    Oops! Something went wrong. Please try again later or
+                    contact support if the issue persists
+                  </p>
+                </div>
               </div>
             </div>
-            <div
-              class="social-links social-web"
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-offset="10"
-              data-aos-duration="2500"
-            >
+            <div class="social-icons-contact-web">
               <div>
-                <a href="tel:+12369715969"><i class="fa-solid fa-phone"></i></a>
+                <a
+                  href="https://wa.me/12369715969?text=Hi!%20I'm%20interested%20in%20your%20services.%20Please%20tell%20me%20more."
+                  target="_blank"
+                >
+                  <img
+                    src="./resources/images/social-icons/whatsapp.png"
+                    alt="whatsapp-icon"
+                /></a>
               </div>
               <div>
-                <a href="mailto:fanbhangrede@gmail.com"
-                  ><i class="fa-solid fa-envelope"></i
-                ></a>
+                <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
+                  ><img
+                    src="./resources/images/social-icons/facebook.png"
+                    alt="facebook-icon"
+                  />
+                </a>
               </div>
               <div>
                 <a
                   href="https://www.instagram.com/fanbhangrede/?hl=en"
                   target="_blank"
-                  ><i class="fab fa-instagram"></i
-                ></a>
+                  ><img
+                    src="./resources/images/social-icons/instagram.png"
+                    alt="instagram-icon"
+                /></a>
               </div>
               <div>
-                <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
+                <a
+                  href="https://www.youtube.com/channel/UC3q0f7nz5L0Znzi573fLhpg"
+                  target="_blank"
+                  ><img
+                    src="./resources/images/social-icons/youtube.png"
+                    alt="youtube-icon"
+                /></a>
               </div>
             </div>
           </div>
 
           <div class="contact-info">
-            <h3 class="heading-half-line">Contact Info</h3>
-            <div class="info-item">
-              <a href="mailto:fanbhangrede@gmail.com"
-                ><i class="fa-solid fa-envelope"></i
-              ></a>
+            <h3 class="heading-half-line">CONTACT INFO</h3>
+
+            <a href="mailto:fanbhangrede@gmail.com" class="info-item"
+              ><i class="fa-solid fa-envelope"></i>
               <p>fanbhangrede@gmail.com</p>
-            </div>
+            </a>
 
             <div class="info-item">
-              <a href="tel:+12369715969"><i class="fa-solid fa-phone"> </i> </a>
-
-              <p>+1 (236) 971-5969</p>
+              <i class="fa-solid fa-phone"> </i>
+              <a href="tel:+12369715969"> +1 (236) 971-5969 </a> &nbsp; &nbsp; | &nbsp;&nbsp;
+              <a href="tel:+17786287121"> +1 (778) 628-7121 </a>
             </div>
 
-            <div class="info-item">
-              <a
-                href="https://maps.app.goo.gl/sQJMdmcLzcGtsXuEA"
-                target="_blank"
-              >
-                <i class="fas fa-location-dot"></i>
-              </a>
-              <p>8065 D 130 St Surrey, BC V3W 4G1</p>
-            </div>
-
-            <div class="info-item">
-              <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <p>/fanbhangreda</p>
-            </div>
-
-            <div class="info-item">
-              <a
-                href="https://www.instagram.com/fanbhangrede/?hl=en"
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <p>/fanbhangreda</p>
-            </div>
-
-            <!-- <div
-              class="social-links"
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-duration="100"
+            <a
+              href="https://maps.app.goo.gl/sQJMdmcLzcGtsXuEA"
+              target="_blank"
+              class="info-item"
             >
+              <i class="fas fa-location-dot"></i>
+
+              <p>8065 D 130 St Surrey, BC V3W 4G1</p>
+            </a>
+
+            <div class="social-icons-contact-mobile">
               <div>
-                <a href="tel:+1236971-5969"
-                  ><i class="fa-solid fa-phone"></i
-                ></a>
+                <a
+                  href="https://wa.me/12369715969?text=Hi!%20I'm%20interested%20in%20your%20services.%20Please%20tell%20me%20more."
+                  target="_blank"
+                >
+                  <img
+                    src="./resources/images/social-icons/whatsapp.png"
+                    alt="whatsapp-icon"
+                /></a>
               </div>
               <div>
-                <a href="mailto:fanbhangrede@gmail.com"
-                  ><i class="fa-solid fa-envelope"></i
-                ></a>
+                <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
+                  ><img
+                    src="./resources/images/social-icons/facebook.png"
+                    alt="facebook-icon"
+                  />
+                </a>
               </div>
               <div>
                 <a
                   href="https://www.instagram.com/fanbhangrede/?hl=en"
                   target="_blank"
-                  ><i class="fab fa-instagram"></i
-                ></a>
+                  ><img
+                    src="./resources/images/social-icons/instagram.png"
+                    alt="instagram-icon"
+                /></a>
               </div>
               <div>
-                <a href="https://www.facebook.com/fanbhangreda/" target="_blank"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
+                <a
+                  href="https://www.youtube.com/channel/UC3q0f7nz5L0Znzi573fLhpg"
+                  target="_blank"
+                  ><img
+                    src="./resources/images/social-icons/youtube.png"
+                    alt="youtube-icon"
+                /></a>
               </div>
-            </div> -->
+            </div>
           </div>
 
-          <div
-            class="contact-map"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            data-aos-offset="100"
-            data-aos-duration="2000"
-          >
+          <div class="contact-map">
             <div class="contact-info-web">
               <div class="info-item-web">
-                <h3>ADDRESS</h3>
-                <!-- <i class="fas fa-envelope"></i> -->
+                <h4>ADDRESS</h4>
+                <a
+                  href="https://maps.app.goo.gl/sQJMdmcLzcGtsXuEA"
+                  target="_blank"
+                  class="info-item-web-content"
+                >
+                  <i class="fa fa-location-dot"></i>
+                  <p>8065 D 130 St Surrey, BC V3W 4G1</p>
+                </a>
+              </div>
+              <div class="info-item-web">
+                <h4>PHONE</h4>
+                <div  class="info-item-web-content">
+                  <i class="fa fa-phone"></i>
+                  <a href="tel:+12369715969">
+                  
+                   +1 (236) 971-5969
+                  </a>
+                  &nbsp;|&nbsp;
+                  <a href="tel:+17786287121" >
+                   
+                  +1 (778) 628-7121
+                  </a>
 
-                <p>8065 D 130 St Surrey, BC V3W 4G1</p>
+                </div>
+             
               </div>
               <div class="info-item-web">
-                <h3>CALL US</h3>
-                <p>+1 (236) 971-5969</p>
-                <p>+1 (778) 628-7121</p>
-              </div>
-              <div class="info-item-web">
-                <h3>OPENING OURS</h3>
-                <p>Monday - Friday : 07:00 to 23:00</p>
-                <p>Saturday - Sunday : Closed</p>
+                <h4>OPENING HOURS</h4>
+                <div class="info-item-web-content">
+                  <i class="fa-regular fa-clock"></i>
+                  <p>Monday - Friday : 07:00 to 23:00</p>
+                </div>
+                <div class="info-item-web-content">
+                  <i class="fa-regular fa-clock"></i>
+                  <p>Saturday - Sunday : Closed</p>
+                </div>
               </div>
             </div>
             <iframe
@@ -1123,12 +990,12 @@
     <footer class="footer-section">
       <section class="footer-info">
         <h4 class="visually-hidden">Logo and description</h4>
-        <div class="footer-logo">
+        <a class="footer-logo" href="#top">
           <img
             src="./resources/images/bhangra-logo.webp"
             alt="fan bhangre de logo"
           />
-        </div>
+        </a>
         <div class="footer-description">
           <p>Learn Bhangra with Fan Bhangre De</p>
         </div>
@@ -1150,14 +1017,37 @@
         <h4>Contact us</h4>
         <div class="footer-contact">
           <ul>
-            <li>Phone: +1 (236)-971-5969</li>
             <li>
-              Email:
-              <a href="mailto:info@fanbhangradance.com">
-                fanbhangrede@gmail.com
+              <a href="tel:+12369715969" class="info-item-web-content">
+                <i class="fa fa-phone"></i>
+                <p>+1 (236) 971-5969</p>
               </a>
             </li>
-            <li>Address: 8065 D 130 St Surrey, BC V3W 4G1</li>
+            <li>
+              <a href="tel:+17786287121" class="info-item-web-content">
+                <i class="fa fa-phone"></i>
+                <p>+1 (778) 628-7121</p>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:info@fanbhangradance.com"
+                class="info-item-web-content"
+              >
+                <i class="fa fa-envelope"></i>
+                <p>fanbhangrede@gmail.com</p>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maps.app.goo.gl/sQJMdmcLzcGtsXuEA"
+                target="_blank"
+                class="info-item-web-content"
+              >
+                <i class="fa fa-location-dot"></i>
+                <p>8065 D 130 St Surrey, BC V3W 4G1</p>
+              </a>
+            </li>
           </ul>
         </div>
       </section>
@@ -1165,6 +1055,12 @@
       <section class="footer-social-media footer-column">
         <h4>Social media</h4>
         <div class="footer-social-media-icons">
+          <a
+            href="https://wa.me/12369715969?text=Hi!%20I'm%20interested%20in%20your%20services.%20Please%20tell%20me%20more."
+            target="_blank"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
           <a href="https://www.facebook.com/fanbhangreda/" target="_blank">
             <i class="fa-brands fa-facebook"></i>
           </a>
@@ -1183,6 +1079,42 @@
         </div>
       </section>
     </footer>
+
+    <div class="floating-social">
+      <button id="toggleSocial" aria-label="Toggle Social Links">
+        <i class="fas fa-share-alt"></i>
+      </button>
+      <div id="socialPopup" class="social-popup hidden">
+        <a href="tel:+12369715969" class="icon">
+          <i class="fa fa-phone"></i>
+        </a>
+        <a
+        href="https://wa.me/12369715969?text=Hi!%20I'm%20interested%20in%20your%20services.%20Please%20tell%20me%20more."
+        target="_blank"
+        class="icon"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/fanbhangreda/" target="_blank" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+         <a
+            href="https://www.youtube.com/channel/UC3q0f7nz5L0Znzi573fLhpg"
+            target="_blank"
+            class="icon"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        <a
+            href="https://www.instagram.com/fanbhangrede/?hl=en"
+            target="_blank"
+            class="icon"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+      </div>
+    </div>
 
     <div id="gallery-overlay" class="gallery-overlay">
       <div class="gallery-header">
@@ -1323,8 +1255,8 @@
         </video> -->
       </div>
     </div>
-    <p class="copyright">© reserved by fan bhangre de 2025. Powered by amneeshsingh5@gmail.com</p>
-
+    <p class="copyright">
+      © reserved by fan bhangre de 2025. Powered by amneeshsingh5@gmail.com
+    </p>
   </body>
-
 </html>
