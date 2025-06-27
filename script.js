@@ -605,5 +605,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleBtn.addEventListener('click', () => {
     socialPopup.classList.toggle('hidden');
+    toggleBtn.classList.toggle('active'); // <--- Add this line
   });
 });

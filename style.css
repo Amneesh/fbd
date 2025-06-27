@@ -3047,9 +3047,14 @@ h2 {
 
 #toggleSocial:hover {
   background-color: var(--primary-royal-purple-color);
-  transform: rotate(90deg);
+ 
 }
 
+#toggleSocial.active {
+  background-color: var(--primary-royal-purple-color);
+  transform: rotate(90deg);
+
+}
 .social-popup {
   display: flex;
   flex-direction: column;
