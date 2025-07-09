@@ -17,30 +17,6 @@ window.addEventListener("load", function () {
 
 
 var headerMenu = document.getElementById('header-menu-mobile');
-// window.addEventListener('load', () => {
-//   const banner = document.getElementById('banner-video-placeholder');
-
-//   const video = document.createElement('video');
-//   video.className = 'banner-video-run';
-//   video.poster = './resources/videos/main-landing.webp';
-//   video.muted = true;
-//   video.loop = true;
-//   video.autoplay = true;
-//   video.playsInline = true;
-//   video.style.width = '100%';
-//   video.style.height = '100vh';
-//   video.style.objectFit = 'cover';
-
-//   const source = document.createElement('source');
-//   source.src = './resources/videos/bhangra-video-main-landing-c.mp4';
-//   source.type = 'video/mp4';
-
-//   video.appendChild(source);
-//   banner.innerHTML = '';
-//   banner.appendChild(video);
-// });
-
-
 
 window.addEventListener("load", function () {
   const menuToggle = document.getElementById("menuToggle");
@@ -362,6 +338,54 @@ document.querySelectorAll('.services-card-video').forEach(card => {
     overlay.style.opacity = '1';
 
   });
+});
+
+
+async function fetchAndShowGallery() {
+  try {
+    // Step 1: Get media list
+    const res = await fetch('https://aura-snap-backend.vercel.app/api/media');
+    const files = await res.json();
+
+    // Select gallery container
+    const galleryGrid = document.querySelector('.gallery-grid');
+    if (!galleryGrid) {
+      console.error('No element with class "gallery-grid" found');
+      return;
+    }
+    galleryGrid.innerHTML = ''; // Clear existing images
+
+    // Step 2: For each file, fetch real signed URL
+    const mediaWithUrls = await Promise.all(
+      files.map(async (file) => {
+        const signedRes = await fetch(`https://aura-snap-backend.vercel.app${file.signedUrl}`);
+        const signedData = await signedRes.json();
+        return {
+          key: file.key,
+          title: file.title,
+          url: signedData.signedUrl,
+        };
+      })
+    );
+
+    // Append images to gallery-grid
+    mediaWithUrls.forEach((item) => {
+      const img = document.createElement('img');
+      img.src = item.url;
+      img.alt = item.title || 'Image';
+      img.style.width = '100%';
+      img.style.height = 'auto';
+      img.style.objectFit = 'cover';
+      galleryGrid.appendChild(img);
+    });
+  } catch (error) {
+    console.error('Error fetching gallery:', error);
+  }
+}
+
+// Call this function whenever you want to load images, e.g., after page load or button click
+window.addEventListener('load', () => {
+  fetchAndShowGallery();
 });
 
 
