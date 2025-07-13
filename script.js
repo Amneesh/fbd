@@ -430,7 +430,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const formFail = document.querySelector("#form-status-fail");
 
   const form = document.querySelector("form");
-  const to = "amneeshsingh5@gmail.com"; // Set to whoever should receive this form
+  const to = "fanbhangrede@gmail.com";
   const subject = `FAN BHANGRE DE website inquiry from ${name}`;
   const html = `
     <h2>New Inquiry from Website</h2>
