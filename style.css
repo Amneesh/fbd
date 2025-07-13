@@ -251,7 +251,13 @@ i {
 }
 
 /* banner */
+.carouselContainer{
+  img{
+    width: 100%;
+    object-fit: cover;
 
+  }
+}
 .banner-container-discount {
   display: none;
   width: 100%;

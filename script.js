@@ -292,7 +292,9 @@ scrollRightBtn.addEventListener('click', () => {
 
 
 
-document.querySelectorAll('.services-card-video').forEach(card => {
+const serviceCards = document.querySelectorAll('.services-card-video');
+
+serviceCards.forEach(card => {
   const servicesVideo = card.querySelector('video');
   const button = card.querySelector('.play-button');
   const overlay = card.querySelector('.video-overlay');
@@ -300,43 +302,57 @@ document.querySelectorAll('.services-card-video').forEach(card => {
   // Remove autoplay so it starts paused
   servicesVideo.removeAttribute('autoplay');
   servicesVideo.pause();
-  overlay.style.opacity = '1'; // Start with overlay visible
+  overlay.style.opacity = '1'; // Show overlay initially
 
-  // Play/pause when clicking the play button
+  const pauseAllOtherVideos = () => {
+    serviceCards.forEach(otherCard => {
+      if (otherCard !== card) {
+        const otherVideo = otherCard.querySelector('video');
+        const otherButton = otherCard.querySelector('.play-button');
+        const otherOverlay = otherCard.querySelector('.video-overlay');
+
+        otherVideo.pause();
+        otherButton.style.display = 'flex';
+        otherOverlay.style.opacity = '1';
+      }
+    });
+  };
+
+  const playVideo = () => {
+    pauseAllOtherVideos();
+    servicesVideo.play();
+    button.style.display = 'none';
+    overlay.style.opacity = '0';
+  };
+
+  const pauseVideo = () => {
+    servicesVideo.pause();
+    button.style.display = 'flex';
+    overlay.style.opacity = '1';
+  };
+
+  // Button click handler
   button.addEventListener('click', () => {
     if (servicesVideo.paused) {
-      servicesVideo.play();
-      button.style.display = 'none'; // Hide button when playing
-      overlay.style.opacity = '0'; // ✅ Hide overlay
-
+      playVideo();
     } else {
-      servicesVideo.pause();
-      button.style.display = 'flex';
-      overlay.style.opacity = '1'; // ✅ Show overlay
-
+      pauseVideo();
     }
   });
 
-  // 🔁 Play/pause when clicking the video itself
+  // Video click handler
   servicesVideo.addEventListener('click', () => {
     if (servicesVideo.paused) {
-      servicesVideo.play();
-      button.style.display = 'none';
-      overlay.style.opacity = '0';
-
+      playVideo();
     } else {
-      servicesVideo.pause();
-      button.style.display = 'flex';
-      overlay.style.opacity = '1';
-
+      pauseVideo();
     }
   });
 
-  // Show play button again when video ends
+  // When video ends, show overlay and button again
   servicesVideo.addEventListener('ended', () => {
     button.style.display = 'flex';
     overlay.style.opacity = '1';
-
   });
 });
 
