@@ -446,14 +446,22 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const formFail = document.querySelector("#form-status-fail");
 
   const form = document.querySelector("form");
-  console.log(name , email , message)
+  const to = "fanbhangrede@gmail.com";
+  const subject = `FAN BHANGRE DE website inquiry from ${name}`;
+  const html = `
+    <h2>New Inquiry from Website</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Message:</strong><br>${message}</p>
+  `;
+  
   try {
     const res = await fetch("https://email-backend-live.vercel.app/api/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, email, message ,to, subject, html }),
     });
 
     if (!res.ok) throw new Error("Server error");
