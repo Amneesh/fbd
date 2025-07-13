@@ -438,14 +438,14 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>Message:</strong><br>${message}</p>
   `;
-  console.log(name , email , message)
+  
   try {
     const res = await fetch("https://email-backend-live.vercel.app/api/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, message ,to, subject, message }),
+      body: JSON.stringify({ name, email, message ,to, subject, html }),
     });
 
     if (!res.ok) throw new Error("Server error");
