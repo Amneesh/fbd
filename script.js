@@ -360,7 +360,7 @@ serviceCards.forEach(card => {
 async function fetchAndShowGallery() {
   try {
     // Step 1: Get media list
-    const res = await fetch('https://aura-snap-backend.vercel.app/api/media');
+    const res = await fetch(`https://aura-snap-backend.vercel.app/api/media?bucket=${encodeURIComponent('fanbhangrede')}`);
     const files = await res.json();
 
     // Select gallery container

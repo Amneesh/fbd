@@ -2989,7 +2989,7 @@ h3{
   cursor: pointer;
 }
 
-.gallery-grid {
+/* .gallery-grid {
   overflow-y: auto;
   margin-top: 20px;
   display: grid;
@@ -3003,7 +3003,41 @@ h3{
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
+} */
+
+.gallery-grid {
+  overflow-y: auto;
+  column-count: 4;       /* Number of columns */
+  column-gap: 16px;      /* Gap between columns */
+  padding: 10px;
 }
+
+.gallery-grid img {
+  width: 100%;           /* Make image fill column width */
+  margin-bottom: 16px;
+  border-radius: 8px;
+  display: block;
+  break-inside: avoid;   /* Prevent images from breaking columns */
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery-grid {
+    column-count: 1;
+  }
+}
+
 
 .copyright {
   text-align: center;
