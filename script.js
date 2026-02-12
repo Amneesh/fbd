@@ -113,40 +113,7 @@ window.addEventListener('load', () => {
   }
 });
 
-window.addEventListener('load', () => {
-  let slideIndex = 1;
-  showSlides(slideIndex);
 
-  // Expose these functions to global scope if you call them from HTML buttons
-  window.plusSlides = function(n) {
-    showSlides(slideIndex += n);
-  };
-
-  window.currentSlide = function(n) {
-    showSlides(slideIndex = n);
-  };
-
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let slidesContent = document.getElementsByClassName("mySlideContent");
-    let dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-      slidesContent[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "flex";
-    slidesContent[slideIndex - 1].style.display = "flex";
-    dots[slideIndex - 1].className += " active";
-  }
-});
 
 
 let count = document.querySelectorAll(".count")
@@ -357,73 +324,21 @@ serviceCards.forEach(card => {
 });
 
 
-async function fetchAndShowGallery() {
-  try {
-    // Step 1: Get media list
-    const res = await fetch(`https://aura-snap-backend.vercel.app/api/media?bucket=${encodeURIComponent('fanbhangrede')}`);
-    const files = await res.json();
-
-    // Select gallery container
-    const galleryGrid = document.querySelector('.gallery-grid');
-    if (!galleryGrid) {
-      console.error('No element with class "gallery-grid" found');
-      return;
-    }
-    galleryGrid.innerHTML = ''; // Clear existing images
-
-    // Step 2: For each file, fetch real signed URL
-    const mediaWithUrls = await Promise.all(
-      files.map(async (file) => {
-        const signedRes = await fetch(`https://aura-snap-backend.vercel.app${file.signedUrl}`);
-        const signedData = await signedRes.json();
-        return {
-          key: file.key,
-          title: file.title,
-          url: signedData.signedUrl,
-        };
-      })
-    );
-
-    // Append images to gallery-grid
-    mediaWithUrls.forEach((item) => {
-      const img = document.createElement('img');
-      img.src = item.url;
-      img.alt = item.title || 'Image';
-      img.style.width = '100%';
-      img.style.height = 'auto';
-      img.style.objectFit = 'cover';
-      galleryGrid.appendChild(img);
-    });
-  } catch (error) {
-    console.error('Error fetching gallery:', error);
-  }
-}
 
 // Call this function whenever you want to load images, e.g., after page load or button click
-window.addEventListener('load', () => {
-  fetchAndShowGallery();
-});
+
 
 
 
 const openGalleryBtn = document.querySelectorAll('.open-gallery');
-const closeGalleryBtn = document.getElementById('close-gallery');
 const galleryOverlay = document.getElementById('gallery-overlay');
 
 openGalleryBtn.forEach(btn => {
   btn.addEventListener('click', () => {
-    galleryOverlay.classList.remove('hidden');
-    galleryOverlay.classList.add('active');
+    window.location.href = "./gallery.html";
   });
 });
 
-// Close popup
-closeGalleryBtn.addEventListener('click', () => {
-  galleryOverlay.classList.remove('active');
-  setTimeout(() => {
-    galleryOverlay.classList.add('hidden');
-  }, 500); // match transition duration
-});
 
 
 window.addEventListener('load', function () {
@@ -486,43 +401,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-window.onload = function () {
-  // 1. Inject videos dynamically
-  document.querySelectorAll('.card-int').forEach(card => {
-    const poster = card.getAttribute('data-poster');
-    const src = card.getAttribute('data-src');
-
-    const video = document.createElement('video');
-    video.setAttribute('poster', poster);
-    video.setAttribute('controls', '');
-    video.setAttribute('playsinline', '');
-
-    const source = document.createElement('source');
-    source.setAttribute('src', src);
-    source.setAttribute('type', 'video/mp4');
-
-    video.appendChild(source);
-    card.appendChild(video);
-  });
-
-  // 2. Pause videos when they leave the viewport
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        const video = entry.target.querySelector('video');
-        if (video && !entry.isIntersecting && !video.paused) {
-          video.pause();
-        }
-      });
-    },
-    {
-      threshold: 0.25, // Trigger when at least 25% of the element is visible
-    }
-  );
-
-  // 3. Observe each card that contains a video
-  document.querySelectorAll('.card-int').forEach(card => {
-    observer.observe(card);
-  });
-};

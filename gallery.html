@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="description"
+    content="Fan Bhangre De (FBD) delivers high-energy Bhangra, Giddha, and live entertainment for weddings, festivals, and cultural events." />
+  <link rel="canonical" href="https://fanbhangrede.com/" />
+  <title>Fan Bhangre De</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="./resources/images/bhangra-logo.webp" />
+
+
+  <!-- Preconnect for fonts and CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Main styles (non-blocking) -->
+  <!-- <link
+      rel="stylesheet"
+      href="./style.css"
+      media="print"
+      onload="this.media='all'"
+    /> -->
+  <link rel="stylesheet" href="./style.css" />
+  <noscript>
+    <link rel="stylesheet" href="./style.css" />
+  </noscript>
+
+  <!-- AOS CSS (non-blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </noscript>
+
+  <!-- Font Awesome CSS (non-blocking) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  </noscript>
+
+  <!-- Your main script (deferred) -->
+  <script src="./script.js" defer></script>
+   <script src="./gallery.js" defer></script>
+</head>
+
+
+
+<body id="top">
+
+  <header class="header-section">
+    <h1 class="visually-hidden">Header</h1>
+ 
+    <div class="fbd-header">
+    <ul class="fbd-nav">
+         <li class="fbd-nav-li">
+        <a class="fbd-nav-link" href="./index.html">HOME</a>
+      </li>
+      <li class="fbd-nav-li">
+        <a class="fbd-nav-link" href="./about.html">ABOUT</a>
+      </li>
+      <li class="fbd-nav-li">
+        <a class="fbd-nav-link" href="#services">SERVICES</a>
+      </li>
+      <li class="fbd-nav-li open-gallery">
+        <a class="fbd-nav-link ">GALLERY</a>
+      </li>
+      <li class="fbd-nav-li">
+        <a class="fbd-nav-link" href="#contactUs">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+
+
+    <div class="header-bar">
+      <div class="header-nav">
+        <input type="checkbox" id="menuToggle" hidden />
+        <label for="menuToggle" class="toggle-nav">
+          <i class="fa-solid fa-bars" id="openNavButton"></i>
+          <i class="fa-solid fa-xmark" id="closeNavButton"></i>
+        </label>
+        <nav class="bloom-mobile-header" id="header-menu-mobile">
+          <ol class="nav mobile-nav">
+            <li class="item">
+              <a class="header-link" href="#about">ABOUT</a>
+            </li>
+
+            <li class="item">
+              <a class="header-link" href="#services">SERVICES</a>
+            </li>
+            <li class="item">
+              <a class="header-link open-gallery">GALLERY</a>
+            </li>
+            <li class="item">
+              <a class="header-link" href="#whyFbd">WHY FBD?</a>
+            </li>
+            <li class="item">
+              <a class="header-link" href="#contactUs">CONTACT US</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <button class="bhangra-button-inverse joinUs" onclick="scrollToSection('contactUs')">
+        JOIN FBD
+      </button>
+    </div>
+  </header>
+
+
+
+
+  <main>
+  
+   <div id="gallery-overlay" class="gallery-overlay">
+    <div class="gallery-header">
+      <h2 class="heading-half-line">Watch us perform</h2>
+    </div>
+    <div class="gallery-grid">
+    
+    </div>
+  </div>
+
+   
+
+
+
+
+ 
+
+
+  </main>
+
+
+
+  <div class="floating-social">
+    <button id="toggleSocial" aria-label="Toggle Social Links">
+      <i class="fas fa-share-alt"></i>
+    </button>
+    <div id="socialPopup" class="social-popup hidden">
+      <a href="tel:+12369715969" class="icon">
+        <i class="fa fa-phone"></i>
+      </a>
+      <a href="https://wa.me/12369715969?text=Hi!%20I'm%20interested%20in%20your%20services.%20Please%20tell%20me%20more."
+        target="_blank" class="icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/fanbhangreda/" target="_blank" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <a href="https://www.youtube.com/channel/UC3q0f7nz5L0Znzi573fLhpg" target="_blank" class="icon">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/fanbhangrede/?hl=en" target="_blank" class="icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
+ 
+  <p class="copyright">
+    © reserved by fan bhangre de 2025. Powered by amneeshsingh5@gmail.com
+  </p>
+</body>
+
+</html>

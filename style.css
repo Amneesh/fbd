@@ -454,6 +454,26 @@ width: 50vw;
        
    } */
 
+  .fbd-nav{
+    display: flex;
+    flex-flow: row ;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1rem;
+    
+    
+  }
+  .fbd-nav{
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .fbd-nav-link{
+    text-decoration: none;
+            color: var(--secondary-energetic-orange-color);
+
+  }
 .banner-main {
   height: 70vh;
   position: relative;
@@ -751,6 +771,43 @@ header {
     font-weight: 100;
   }
 }
+
+.fbd-image-frame {
+  position: relative;
+  width: 520px; /* Make image bigger here */
+  max-width: 100%;
+}
+
+.fbd-image-frame img {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Frame (Left + Right + Bottom only) */
+.fbd-image-frame::before {
+  content: "";
+  position: absolute;
+  bottom: 130px;
+    right: 0px;
+  width: 60%;
+  height: 60%;
+  border-left: 10px solid var(--primary-energetic-orange-color);
+  border-right: 10px solid var(--primary-energetic-orange-color);
+  border-bottom: 10px solid var(--primary-energetic-orange-color);
+  border-top: 10px solid var(--primary-energetic-orange-color);
+  z-index: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .fbd-image-frame {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
 
 @media only screen and (min-width: 768px) {
   .header-description {
@@ -1161,8 +1218,10 @@ nav {
 }
 
 .meet-our-instructor {
-  padding: 0rem 5%;
+  padding: 5% 5%;
 }
+
+
 .instructor-wrapper {
   /* background: linear-gradient(180deg, rgba(248, 219, 156, 1) 0%, rgba(241, 234, 219, 1) 100%); */
   position: relative;
@@ -2485,7 +2544,7 @@ h3{
   height: 600px;
 
   margin: 0 2.5vw;
-
+border-radius: 20px;
   border: 10px solid var(--primary-energetic-orange-color);
 
   overflow: hidden;
@@ -2925,13 +2984,405 @@ h3{
   }
 }
 
+
+
+/* community */
+
+/* ===== Community Impact (FBD) ===== */
+.fbd-impact{
+  background: var(--primary-black-color);
+  padding: 80px 0 70px;
+}
+
+.fbd-impact__wrap{
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* Top layout */
+.fbd-impact__top{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.fbd-impact__kicker{
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-energetic-orange-color);
+}
+
+.fbd-impact__title{
+  margin: 0 0 12px;
+  font-weight: 800;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.1;
+  color: var(--secondary-energetic-orange-color);
+}
+
+.fbd-impact__desc{
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(0,0,0,0.68);
+  max-width: 52ch;
+}
+
+.fbd-impact__btn{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--primary-royal-purple-color);
+  color: var(--primary-white-color);
+  border: 1px solid rgba(55, 10, 78, 0.25);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.fbd-impact__btn:hover{
+  transform: translateY(-2px);
+  opacity: .95;
+}
+
+/* Media side (rounded photos like reference) */
+.fbd-impact__media{
+  position: relative;
+  min-height: 360px;
+}
+
+.impact-photo{
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+.impact-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tall rounded */
+.impact-photo--a{
+  width: 52%;
+  height: 340px;
+  left: 0;
+  top: 0;
+  border-radius: 180px;
+  outline: 10px solid var(--c2); /* warm halo */
+}
+
+/* Right rounded */
+.impact-photo--b{
+  width: 55%;
+  height: 260px;
+  right: 0;
+  bottom: 0;
+  border-radius: 170px;
+}
+
+/* Badge */
+.impact-badge{
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-18px);
+  background: var(--secondary-energetic-orange-color);
+  border: 1px solid rgba(205, 85, 0, 0.22);
+  border-radius: 18px;
+  padding: 12px 14px;
+  width: 180px;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+}
+
+.impact-badge__top{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.impact-badge__num{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--primary-energetic-orange-color);
+}
+
+.impact-badge__label{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--primary-royal-purple-color);
+}
+
+.impact-badge__hint{
+  margin-top: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: rgba(0,0,0,0.6);
+}
+
+/* 4 Cards */
+.fbd-impact__cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.impact-card{
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 16px 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(55, 10, 78, 0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.impact-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.12);
+}
+
+.impact-card__icon{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgb(255, 255, 255);
+  color: var(--primary-royal-purple-color);
+  margin-top: -34px; /* creates “floating circle” like reference */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(55, 10, 78, 0.10);
+}
+
+.impact-card__title{
+  margin: 10px 0 6px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--primary-royal-purple-color);
+}
+
+.impact-card__text{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(0,0,0,0.65);
+}
+
+/* Photos row */
+.fbd-impact__photos{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.impact-shot{
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.10);
+}
+
+.impact-shot img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.impact-shot:hover img{
+  transform: scale(1.06);
+}
+
+/* Responsive */
+@media (max-width: 1050px){
+  .fbd-impact__cards{ grid-template-columns: repeat(2, 1fr); }
+  .fbd-impact__photos{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 850px){
+  .fbd-impact__top{ grid-template-columns: 1fr; }
+  .fbd-impact__media{ min-height: 380px; margin-top: 10px; }
+  .impact-photo--a{ width: 64%; }
+  .impact-photo--b{ width: 70%; }
+}
+
+@media (max-width: 520px){
+  .fbd-impact__cards{ grid-template-columns: 1fr; }
+  .fbd-impact__photos{ grid-template-columns: 1fr; }
+  .impact-shot img{ height: 210px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* portfolio */
+
+/* ===== FBD Portfolio/Gallery Layout ===== */
+.fbd-portfolio {
+ 
+  color: #fff;
+  padding: 70px 0 60px;
+}
+
+.fbd-portfolio__wrap {
+  width: min(1150px, 92%);
+  margin: 0 auto;
+}
+
+.fbd-portfolio__title {
+
+ color: var(--secondary-energetic-orange-color);
+}
+
+/* “Links” replaced with lines */
+.fbd-portfolio__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 18px;
+  opacity: 0.95;
+}
+
+.fbd-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.fbd-filter__label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.fbd-filter__line {
+  width: 52px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.fbd-filter.is-active .fbd-filter__label {
+  color: #ffc107; /* FBD gold accent */
+}
+
+.fbd-filter.is-active .fbd-filter__line {
+  background: rgba(255, 193, 7, 0.85);
+}
+
+/* Grid */
+.fbd-portfolio__grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  grid-template-rows: 190px 250px;
+  gap: 14px;
+}
+
+/* Cards */
+.fbd-card {
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 193, 7, 0.10);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.fbd-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%); /* screenshot is B/W */
+  transform: scale(1.01);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.fbd-card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+
+/* Placement to mimic screenshot */
+.fbd-card--a { grid-column: 1; grid-row: 1; }
+.fbd-card--b { grid-column: 1; grid-row: 2; }
+.fbd-card--c { grid-column: 2; grid-row: 1 / span 2; } /* tall right */
+.fbd-card--d { 
+  /* Optional: if you want only 3 tiles, remove this card. 
+     If you want 4 tiles, this creates a small overlay-ish tile look */
+  display: none;
+}
+
+/* CTA */
+.fbd-portfolio__cta {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fbd-viewmore {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #0b0b0b;
+  background: #ffc107;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255, 193, 7, 0.35);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.fbd-viewmore:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .fbd-portfolio__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .fbd-card--a { grid-column: 1; grid-row: auto; }
+  .fbd-card--b { grid-column: 1; grid-row: auto; }
+  .fbd-card--c { grid-column: 1; grid-row: auto; }
+}
+
+
+
+/* portfolio */
 /* test */
 
 .gallery-overlay {
-  position: fixed;
-
-  left: 0;
-  bottom: -100%;
+  
   width: 100%;
   height: 100%;
   background: black;
@@ -2966,13 +3417,10 @@ h3{
   flex-direction: column;
   padding: 20px 20px 20px 20px;
 
-  backdrop-filter: blur(20px);
 }
 
 
-.gallery-overlay.active {
-  bottom: 0;
-}
+
 
 .gallery-header {
   display: flex;
